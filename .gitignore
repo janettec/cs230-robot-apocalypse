@@ -1,8 +1,3 @@
-# Ignore everything
-*
+tf-seq2seq/*
 
-# But not these files...
-!.gitignore
-
-# if the files to be tracked are in subdirectories
-!*/tf-seq2seq/train.py
+!tf-seq2seq/train.py

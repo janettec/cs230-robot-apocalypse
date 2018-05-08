@@ -1,0 +1,100 @@
+  return repr ( list ( self ) )
+  yield data
+              return self . _size
+ if not chunk_size :
+          return bool ( self . name )
+  return self . size > chunk_size
+          return not self . file or self . file . closed
+                      line = buffer_ + line
+ from io import BytesIO , StringIO , UnsupportedOperation
+  from django . utils . encoding import smart_text
+   def __exit__ ( self , exc_type , exc_value , tb ) :
+ return self . _size
+   def _set_size ( self , size ) :
+  def _get_closed ( self ) :
+  else :
+ if name is None :
+ class File ( FileProxyMixin ) :
+from django . core . files . base import File
+  def chunks ( self , chunk_size = None ) :
+  except ( AttributeError , UnsupportedOperation ) :
+  import os
+          if not self . closed :
+          self . file = file
+     if buffer_ is not None :
+     if line [ - 1 : ] in ( b'\n' , b'\r' ) :
+   if hasattr ( self . file , 'tell' ) and hasattr ( self . file , 'seek' ) :
+   def __nonzero__ ( self ) :
+ return size
+   def __bool__ ( self ) :
+   def _get_size ( self ) :
+              pos = self . file . tell ( )
+   def _get_size_from_underlying_file ( self ) :
+              chunk_size = self . DEFAULT_CHUNK_SIZE
+              chunk_size = self . DEFAULT_CHUNK_SIZE
+   try :
+                      yield line
+              return self . file . size
+    def multiple_chunks ( self , chunk_size = None ) :
+                  pass
+              self . file = open ( self . name , mode or self . mode )
+                  break
+          return self
+    def __str__ ( self ) :
+   def __len__ ( self ) :
+          return self . size
+  except ( OSError , TypeError ) :
+ buffer_ = None
+  closed = property ( _get_closed )
+              self . mode = file . mode
+   def __repr__ ( self ) :
+ from django . utils . encoding import force_bytes , python_2_unicode_compatible
+   def open ( self , mode = None ) :
+          return 'ValidationError(%s)' % self
+          return type ( self ) . __bool__ ( self )
+  __all__ = [ 'File' ]
+   @ python_2_unicode_compatible
+              data = self . read ( chunk_size )
+  self . name = name
+              yield buffer_
+          if hasattr ( self . file , 'size' ) :
+  elif self . name and os . path . exists ( self . name ) :
+                  return os . path . getsize ( self . file . name )
+              chunk_buffer = BytesIO ( chunk )
+  self . _size = self . _get_size_from_underlying_file ( )
+          if hasattr ( self , '_size' ) :
+  for line in chunk_buffer :
+              self . seek ( 0 )
+    def __enter__ ( self ) :
+          return smart_text ( self . name or '' )
+           buffer_ = None
+          self . _size = size
+              raise ValueError ( "The file cannot be reopened." )
+ self . file . seek ( 0 , os . SEEK_END )
+ size = self . file . tell ( )
+  def __init__ ( self , file , name = None ) :
+   def __repr__ ( self ) :
+ from django . utils import six
+                      buffer_ = line
+ if not chunk_size :
+ if hasattr ( file , 'mode' ) :
+              pass
+ if not data :
+   size = property ( _get_size , _set_size )
+    def close ( self ) :
+              name = getattr ( file , 'name' , None )
+from __future__ import unicode_literals
+          return "<%s: %s>" % ( self . __class__ . __name__ , self or "None" )
+ self . file . seek ( pos )
+ for chunk in self . chunks ( ) :
+ from django . core . files . utils import FileProxyMixin
+   while True :
+      DEFAULT_CHUNK_SIZE = 64 * 2 ** 10
+   def __iter__ ( self ) :
+  raise AttributeError ( "Unable to determine the file's size." )
+          self . close ( )
+  else :
+  if hasattr ( self . file , 'name' ) :
+                  if buffer_ :
+              try :
+              self . seek ( 0 )

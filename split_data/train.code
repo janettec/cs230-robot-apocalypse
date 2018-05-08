@@ -1,0 +1,1000 @@
+          db = router . db_for_write ( self . cache_model_class )
+ m = dict ( zip ( new_keys , keys ) )
+    class DisallowedHost ( SuspiciousOperation ) :
+ from django . middleware . csrf import get_token
+  return default
+ if num > self . _max_entries :
+          return all ( getattr ( self , attr ) == getattr ( other , attr )  for attr in [ 'level' , 'msg' , 'hint' , 'obj' , 'id' ] )
+ super ( MemcachedCache , self ) . __init__ ( server , params ,  library = memcache ,  value_not_found_exception = ValueError )
+              with io . open ( fname , 'rb' ) as f :
+                  return default
+ _locks = { }
+      pass
+ if timeout is not None :
+       self . LibraryValueNotFoundException = value_not_found_exception
+          context_extras [ 'debug' ] = True
+  def inner ( check ) :
+                  self . _set ( key , pickled , timeout )
+  else :
+                  os . remove ( tmp_path )
+ raise NotImplementedError ( 'subclasses of BaseCache must provide a get() method' )
+ cursor . execute ( "DELETE FROM %s "  "WHERE cache_key < %%s" % table ,  [ cursor . fetchone ( ) [ 0 ] ] )
+  id = "(%s) " % self . id if self . id else ""
+ for k , v in ret . items ( ) :
+ return self . incr_version ( key , - delta , version )
+      errors = [ ]
+ for key , value in data . items ( ) :
+    signals . request_finished . connect ( cache . close )
+ key = self . make_key ( key , version = version )
+   cull_frequency = params . get ( 'cull_frequency' , options . get ( 'CULL_FREQUENCY' , 3 ) )
+                      messages = ValidationError ( messages )
+ from django . conf import settings
+  except OSError as e :
+ self . _createdir ( )
+  new_value = value + delta
+ try :
+ import errno
+      pass
+     elif not hasattr ( message , 'message' if six . PY3 else 'code' ) :
+ for field , messages in message . items ( ) :
+                          description = "An instance of the '%s' class" % receiver . __class__ . __name__
+    def get_key_func ( key_func ) :
+  except ( ValueError , TypeError ) :
+  except ImportError as e :
+  def __init__ ( self , dir , params ) :
+   def __iter__ ( self ) :
+ if token is None :
+  try :
+      import pickle
+                  exp = datetime . max
+    return default
+                          return pickle . loads ( zlib . decompress ( f . read ( ) ) )
+ def __init__ ( self , server , params ) :
+          key = self . make_key ( key , version = version )
+                   import_string ( backend )
+          BaseCache . __init__ ( self , params )
+   class InvalidCacheBackendError ( ImproperlyConfigured ) :
+   def _base_set ( self , mode , key , value , timeout = DEFAULT_TIMEOUT ) :
+              return default
+ from __future__ import unicode_literals
+    DEBUG = 10
+          cache . close ( )
+    class BaseMemcachedCache ( six . with_metaclass ( BaseMemcachedCacheMethods , BaseCache ) ) :
+ from django . utils . synch import RWLock
+          if self . _cull_frequency == 0 :
+ self . verbose_name_plural = 'cache entries'
+  return val
+   @ register ( Tags . compatibility )
+      cache_suffix = '.djcache'
+  import time
+     def _delete ( self , key ) :
+               now = now . replace ( tzinfo = None )
+  from itertools import chain
+                  del self . _cache [ key ]
+  if delta < 0 :
+  else :
+  return errors
+ self . validate_key ( key )
+ self . _cull ( )
+          try :
+ assert is_iterable ( new_errors ) , (  "The function %r did not return a list. All functions registered "  "with the checks registry must return a list." % check )
+              for reference , receivers in obj . unresolved_references . items ( ) :
+                  return True
+          key = self . make_key ( key , version = version )
+ return errors
+  except ( ValueError , TypeError ) :
+     def _check_boolean_field_default_value ( app_configs = None , ** kwargs ) :
+          BaseCache . __init__ ( self , params )
+                  _ [ m [ k ] ] = v
+ num = cursor . fetchone ( ) [ 0 ]
+                 expires = typecast_timestamp ( str ( expires ) )
+ def check_1_6_compatibility ( ** kwargs ) :
+   def __delattr__ ( self , name ) :
+   def default_key_func ( key , key_prefix , version ) :
+          self . _caches = local ( )
+          key = self . make_key ( key , version = version )
+              self . _cull_frequency = 3
+  now = timezone . now ( )
+ self . _cache . delete_multi ( map ( l , keys ) )
+  except KeyError :
+          return super ( Warning , self ) . __init__ ( WARNING , * args , ** kwargs )
+ ERROR = 40
+                      pass
+   def _cull ( self ) :
+ exp = pickle . load ( f )
+                  os . makedirs ( self . _dir , 0o700 )
+    if settings . is_overridden ( 'MANAGERS' ) :
+    def _set ( self , key , value , timeout = DEFAULT_TIMEOUT ) :
+   from django . conf import settings
+          if hasattr ( self , 'error_dict' ) :
+     def clear ( self ) :
+                  message , code , params = message . message , message . code , message . params
+          token = get_token ( request )
+ self . object_name = 'CacheEntry'
+  except AttributeError :
+ from django . utils import timezone , six
+ if isinstance ( server , six . string_types ) :
+ self . hint = hint
+   def get ( self , key , default = None , version = None ) :
+ self . version = params . get ( 'VERSION' , 1 )
+          return [ ]
+          if not os . path . exists ( self . _dir ) :
+            weight = 0
+               return 0
+  else :
+   def __getitem__ ( self , alias ) :
+ self . model_name = 'cacheentry'
+  else :
+ def check_all_models ( app_configs = None , ** kwargs ) :
+ context_extras [ 'LANGUAGES' ] = settings . LANGUAGES
+  except ( ValueError , TypeError ) :
+ self . error_list = [ self ]
+ return True
+   def add ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+   super ( ValidationError , self ) . __init__ ( message , code , params )
+ raise NotImplementedError ( 'subclasses of BaseCache must provide a delete() method' )
+                  raise
+              obj = force_str ( self . obj )
+ max_entries = params . get ( 'max_entries' , options . get ( 'MAX_ENTRIES' , 300 ) )
+   def delete ( self , key , version = None ) :
+ import warnings
+              _meta = Options ( table )
+  if delta < 0 :
+   class DummyCache ( BaseCache ) :
+  backend_cls = import_string ( backend )
+  if DEFAULT_CACHE_ALIAS not in settings . CACHES :
+   def make_template_fragment_key ( fragment_name , vary_on = None ) :
+ from django . db . backends . utils import typecast_timestamp
+ return cache
+   new_key = self . key_func ( key , self . key_prefix , version )
+      errors = [ model . check ( ** kwargs )  for model in apps . get_models ( )  if app_configs is None or model . _meta . app_config in app_configs ]
+  except ImportError :
+   filelist = random . sample ( filelist ,  int ( num_entries / self . _cull_frequency ) )
+                timeout = - 1
+    class DisallowedRedirect ( SuspiciousOperation ) :
+          pass
+  return context_extras
+   def tag_exists ( self , tag ) :
+ self . app_label = 'django_cache'
+          """         Set a value in the cache if the key does not already exist. If         timeout is given, that timeout will be used for the key; otherwise         the default cache timeout will be used.         Returns True if the value was stored, False otherwise.         """
+                if e . errno != errno . ENOENT :
+  self . _cache . set_multi ( safe_data , self . get_backend_timeout ( timeout ) )
+                  warnings . warn ( 'Cache key contains characters that will cause '  'errors if used with memcached: %r' % key ,  CacheKeyWarning )
+              return self . _cache . incr ( key , - delta )
+              raise ValueError ( "Key '%s' not found" % key )
+  from django . apps import apps
+  self . cache_model_class = CacheEntry
+ self . validate_key ( key )
+ import hashlib
+   def __eq__ ( self , other ) :
+   def clear ( self ) :
+   def close_caches ( ** kwargs ) :
+              for error in self . error_list :
+ return self . id in settings . SILENCED_SYSTEM_CHECKS
+ def message_dict ( self ) :
+ warnings . warn ( "'get_cache' is deprecated in favor of 'caches'." ,  RemovedInDjango19Warning , stacklevel = 2 )
+     class Error ( CheckMessage ) :
+ if result :
+ from django . utils . functional import lazy
+  return ret
+  return False
+ pass
+   def has_key ( self , key , version = None ) :
+              conf = settings . CACHES [ backend ]
+          return super ( Error , self ) . __init__ ( ERROR , * args , ** kwargs )
+  except AttributeError :
+          key = self . make_key ( key , version = version )
+   def update_error_dict ( self , error_dict ) :
+              version = self . version
+          return getattr ( self . _caches , 'caches' , { } ) . values ( )
+  return { 'csrf_token' : _get_val ( ) }
+ for key , value in data . items ( ) :
+    if 'django.middleware.clickjacking.XFrameOptionsMiddleware' not in set ( settings . MIDDLEWARE_CLASSES ) :
+              timeout = self . default_timeout
+  else :
+ self . proxy = False
+   def add ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+   import django . core . checks . compatibility . django_1_6_0
+  self . error_dict [ field ] = messages . error_list
+                  if e . errno != errno . EEXIST :
+  self . set ( key , value , timeout , version )
+  ret = _
+              self . message = message
+          self . db_table = table
+                  message = error . message
+ if not os . path . exists ( self . _dir ) :
+ if num_entries < self . _max_entries :
+   return False
+          obj = getattr ( models . signals , name )
+ now = now . replace ( microsecond = 0 )
+          l = lambda x : self . make_key ( x , version = version )
+              checks = self . registered_checks
+          return caches [ DEFAULT_CACHE_ALIAS ] != other
+     class PyLibMCCache ( BaseMemcachedCache ) :
+ def _cache ( self ) :
+              self . _cull ( )
+              settings . SITE_ID
+          key = self . make_key ( key , version = version )
+ from django . utils import six
+ errors . extend ( _check_test_runner ( ** kwargs ) )
+   def set ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+              cursor . execute ( 'DELETE FROM %s' % table )
+  for name in dir ( models . signals ) :
+ class CheckMessage ( object ) :
+   def make_key ( self , key , version = None ) :
+              return
+   cache = _create_cache ( alias )
+      class CacheClass ( DatabaseCache ) :
+    def _has_expired ( self , key ) :
+   def get_many ( self , keys , version = None ) :
+ self . validate_key ( key )
+          key = self . make_key ( key , version = version )
+      from django . utils . six . moves import cPickle as pickle
+   class Tags ( object ) :
+                          description = "The '%s' function" % receiver . __name__
+ pass
+ return TEMPLATE_FRAGMENT_KEY_TEMPLATE % ( fragment_name , args . hexdigest ( ) )
+  problem_fields = [  field  for model in apps . get_models ( ** kwargs )  if app_configs is None or model . _meta . app_config in app_configs  for field in model . _meta . local_fields  if isinstance ( field , models . BooleanField ) and not field . has_default ( )  ]
+   def close ( self , ** kwargs ) :
+      from django . utils . six . moves import cPickle as pickle
+ if len ( key ) > MEMCACHE_MAX_KEY_LENGTH :
+          client = self . _lib . Client ( self . _servers )
+   def __contains__ ( self , key ) :
+     def incr_version ( self , key , delta = 1 , version = None ) :
+              try :
+ pickled = pickle . dumps ( value , pickle . HIGHEST_PROTOCOL )
+ self . set ( key , new_value , version = version )
+ from __future__ import unicode_literals
+          key = self . make_key ( key , version = version )
+  return check
+              return [ ]
+    def _cull ( self , db , cursor , now ) :
+  except ImportError as e :
+          key = self . make_key ( key , version = version )
+  from django . apps import apps
+ return cache
+          super ( FileBasedCache , self ) . __init__ ( params )
+ db = router . db_for_read ( self . cache_model_class )
+      def __init__ ( self , table , params ) :
+ try :
+ self . delete ( key , version = version )
+  self . _lib = library
+              for field , error_list in self . error_dict . items ( ) :
+ filelist = self . _list_cache_files ( )
+          if callable ( key_func ) :
+              val = self . _cache . decr ( key , delta )
+ table = connections [ db ] . ops . quote_name ( self . _table )
+   def delete_many ( self , keys , version = None ) :
+              self . clear ( )
+ from django . core . cache . backends . base import (  InvalidCacheBackendError , CacheKeyWarning , BaseCache )
+ from django . core . cache . backends . base import BaseCache , DEFAULT_TIMEOUT
+   value = self . get ( key , version = version )
+              pass
+   return default_key_func
+                  del self . _cache [ key ]
+  file_move_safe ( tmp_path , fname , allow_overwrite = True )
+ from django . utils . encoding import force_text
+ if val is not None :
+ return self . _base_set ( 'add' , key , value , timeout )
+ from django . utils . deprecation import RemovedInDjango19Warning
+ def _get_val ( ) :
+ from django . utils . encoding import force_str
+          if self . _cull_frequency == 0 :
+  self . error_list . extend ( message . error_list )
+ context_extras [ 'LANGUAGE_BIDI' ] = translation . get_language_bidi ( )
+          try :
+          BaseCache . __init__ ( self , * args , ** kwargs )
+ del self . _expire_info [ key ]
+          return [  Warning (  "Some project unittests may not execute as expected." ,  hint = ( "Django 1.6 introduced a new default test runner. It looks like "  "this project was generated using Django 1.5 or earlier. You should "  "ensure your tests are all running & behaving as expected. See "  "https://docs.djangoproject.com/en/dev/releases/1.6/#new-test-runner "  "for more information." ) ,  obj = None ,  id = '1_6.W001' ,  )  ]
+ return cursor . fetchone ( ) is not None
+ return self . get ( key , version = version ) is not None
+ with self . _lock . writer ( ) :
+                 return 'NOTPROVIDED'
+   class BaseMemcachedCacheMethods ( RenameMethodsBase ) :
+    class SuspiciousMultipartForm ( SuspiciousOperation ) :
+   @ python_2_unicode_compatible
+              weight += 1
+                  pickled = self . _cache [ key ]
+      pass
+   if six . PY3 :
+ try :
+ return pickle . loads ( base64 . b64decode ( force_bytes ( value ) ) )
+  from django . conf import settings
+    def _check_middleware_classes ( app_configs = None , ** kwargs ) :
+  location = kwargs . pop ( 'LOCATION' , '' )
+ pass
+          import pylibmc
+ pass
+  if val is None :
+ def _cache ( self ) :
+ def __getattr__ ( self , name ) :
+    NON_FIELD_ERRORS = '__all__'
+  errors . append (  Error (  "%s was connected to the '%s' signal "  "with a lazy reference to the '%s' sender, "  "which has not been installed." % (  description , name , '.' . join ( reference )  ) ,  obj = receiver . __module__ ,  hint = None ,  id = 'signals.E001'  )  )
+  return { 'TIME_ZONE' : timezone . get_current_timezone_name ( ) }
+   def run_checks ( self , app_configs = None , tags = None ) :
+          """Close the cache connection"""
+ self . validate_key ( key )
+  try :
+   self . key_prefix = params . get ( 'KEY_PREFIX' , '' )
+  else :
+ pass
+              self . _client = self . _lib . Client ( self . _servers )
+   exp = connections [ db ] . ops . value_to_db_datetime ( exp )
+ from django . utils . functional import cached_property
+          assert isinstance ( level , int ) , "The first argument should be level."
+              self . _servers = server
+from __future__ import unicode_literals
+     class DatabaseCache ( BaseDatabaseCache ) :
+              try :
+ pass
+                      raise EnvironmentError (  "Cache directory '%s' does not exist "  "and could not be created'" % self . _dir )
+ silent_variable_failure = True
+              self . _client = self . _lib . Client ( self . _servers , pickleProtocol = pickle . HIGHEST_PROTOCOL )
+      from django . utils import timezone
+  except KeyError :
+     return errors
+  try :
+              self . error_list = [ ]
+ table = connections [ db ] . ops . quote_name ( self . _table )
+ location = params . pop ( 'LOCATION' , '' )
+    class SuspiciousOperation ( Exception ) :
+ if key_func is not None :
+ import base64
+ if num > self . _max_entries :
+   def clear ( self ) :
+ params . update ( kwargs )
+          return "<%s: level=%r, msg=%r, hint=%r, obj=%r, id=%r>" % ( self . __class__ . __name__ , self . level , self . msg , self . hint , self . obj , self . id )
+              del self . _expire_info [ key ]
+ tag_exists = registry . tag_exists
+       def __init__ ( self , level , msg , hint = None , obj = None , id = None ) :
+ if check not in self . registered_checks :
+                   if not isinstance ( message , ValidationError ) :
+ cursor . execute ( "DELETE FROM %s WHERE expires < %%s" % table ,  [ connections [ db ] . ops . value_to_db_datetime ( now ) ] )
+ import tempfile
+                 def get ( self , key , default = None , version = None ) :
+              return reduce ( operator . add , dict ( self ) . values ( ) )
+ from django . utils . encoding import smart_text
+  return False
+ from threading import local
+              self . _max_entries = int ( max_entries )
+  import hashlib
+      def __init__ ( self , name , params ) :
+              self . set ( key , value , timeout = timeout , version = version )
+                  exp = datetime . utcfromtimestamp ( timeout )
+ from . registry import register , run_checks , tag_exists , Tags
+  options = params . get ( 'OPTIONS' , { } )
+  return list ( self )
+   @ register ( Tags . compatibility )
+                              current_expires = typecast_timestamp ( str ( current_expires ) )
+ def check_1_7_compatibility ( ** kwargs ) :
+   @ cached_property
+          if self . has_key ( key , version ) :
+ self . level = level
+ self . obj = obj
+ import django . core . checks . compatibility . django_1_7_0
+   def _cull ( self ) :
+          fname = self . _key_to_file ( key , version )
+                  pass
+              pass
+ if timeout == DEFAULT_TIMEOUT :
+ self . _cache = _caches . setdefault ( name , { } )
+    class MultipleObjectsReturned ( Exception ) :
+  self . _cache [ key ] = value
+  else :
+ from __future__ import unicode_literals
+              return False
+   MEMCACHE_MAX_KEY_LENGTH = 250
+ try :
+                  cull_num = num // self . _cull_frequency
+    def static ( request ) :
+     class BaseDatabaseCache ( BaseCache ) :
+           try :
+  else :
+  else :
+  from django . utils import six
+   def __contains__ ( self , key ) :
+   def get_many ( self , keys , version = None ) :
+   def has_key ( self , key , version = None ) :
+    class ViewDoesNotExist ( Exception ) :
+ from django . utils . module_loading import import_string
+              error_dict . setdefault ( NON_FIELD_ERRORS , [ ] ) . extend ( self . error_list )
+ table = connections [ db ] . ops . quote_name ( self . _table )
+ signals = 'signals'
+              if not self . _has_expired ( key ) :
+ if getattr ( self , '_client' , None ) is None :
+              cursor . execute ( "SELECT cache_key FROM %s "  "WHERE cache_key = %%s and expires > %%s" % table ,  [ key , connections [ db ] . ops . value_to_db_datetime ( now ) ] )
+                  exp = datetime . fromtimestamp ( timeout )
+          raise InvalidCacheBackendError (  "Could not find backend '%s': %s" % ( backend , e ) )
+  if self . obj is None :
+          if hasattr ( self , 'error_dict' ) :
+              if ord ( char ) < 33 or ord ( char ) == 127 :
+                    timeout += int ( time . time ( ) )
+              if hasattr ( message , 'error_dict' ) :
+  exp = exp . replace ( microsecond = 0 )
+ from __future__ import unicode_literals
+          self . _cache . disconnect_all ( )
+  return backend_cls ( location , params )
+                  return not self . _is_expired ( f )
+    cache = DefaultCacheProxy ( )
+    class CheckRegistry ( object ) :
+                          current_expires = result [ 1 ]
+ self . _options = params . get ( 'OPTIONS' , None )
+      renamed_methods = (  ( '_get_memcache_timeout' , 'get_backend_timeout' , RemovedInDjango19Warning ) ,  )
+  now = now . replace ( microsecond = 0 )
+   def incr ( self , key , delta = 1 , version = None ) :
+          super ( BaseMemcachedCache , self ) . __init__ ( params )
+    def i18n ( request ) :
+   def __setattr__ ( self , name , value ) :
+     _caches = { }
+ self . _expire_info [ key ] = self . get_backend_timeout ( timeout )
+   def get ( self , key , default = None , version = None ) :
+              self . _delete ( key )
+          return super ( Critical , self ) . __init__ ( CRITICAL , * args , ** kwargs )
+ table = connections [ db ] . ops . quote_name ( self . _table )
+          value = self . get ( key , version = version )
+          return { }
+              db = router . db_for_write ( self . cache_model_class )
+    def _is_expired ( self , f ) :
+    return self . has_key ( key )
+    def clear ( self ) :
+          self . _createdir ( )
+          key = self . make_key ( key , version = version )
+     class MemcachedCache ( BaseMemcachedCache ) :
+ if os . path . exists ( fname ) :
+ if value is None :
+  import time
+          from django . db import models
+              os . remove ( fname )
+  else :
+              self . _cache [ key ] = pickled
+              try :
+   def close ( self , ** kwargs ) :
+              weight += 2
+  else :
+   def is_serious ( self ) :
+ return self . incr ( key , - delta , version = version )
+   def all ( self ) :
+              self . error_dict = { }
+ import operator
+    except DatabaseError :
+          key = self . make_key ( key , version = version )
+ with self . _lock . writer ( ) :
+ if version is None :
+                  cursor . execute ( "DELETE FROM %s "  "WHERE cache_key = %%s" % table , [ key ] )
+ import zlib
+ val = self . _cache . get ( key )
+   def tags_available ( self ) :
+    def has_key ( self , key , version = None ) :
+ errors . extend ( _check_boolean_field_default_value ( ** kwargs ) )
+              client . behaviors = self . _options
+  except KeyError :
+          key = self . make_key ( key , version = version )
+     def delete ( self , key , version = None ) :
+      import pickle
+   def get ( self , key , default = None , version = None ) :
+ if ret :
+ import os
+   @ property
+    class PermissionDenied ( Exception ) :
+                          cursor . execute ( "INSERT INTO %s (cache_key, value, expires) "  "VALUES (%%s, %%s, %%s)" % table ,  [ key , b64encoded , exp ] )
+   def get_many ( self , keys , version = None ) :
+    else :
+ for key in keys :
+  else :
+ INFO = 20
+ self . _lock = _locks . setdefault ( name , RWLock ( ) )
+      errors = [ ]
+ def check_model_signals ( app_configs = None , ** kwargs ) :
+ self . _dir = os . path . abspath ( dir )
+      def _key_to_file ( self , key , version = None ) :
+   self . default_timeout = timeout
+  else :
+ self . validate_key ( key )
+              return smart_text ( token )
+      pass
+ from django . db import models
+   return d
+                      message %= error . params
+ fd , tmp_path = tempfile . mkstemp ( dir = self . _dir )
+ models = 'models'
+              cursor . execute ( "SELECT COUNT(*) FROM %s" % table )
+  with connections [ db ] . cursor ( ) as cursor :
+ cursor . execute ( "SELECT COUNT(*) FROM %s" % table )
+              val = self . get ( k , version = version )
+ from django . db import connection
+          return set ( chain ( * [ check . tags for check in self . registered_checks if hasattr ( check , 'tags' ) ] ) )
+ f . write ( zlib . compress ( pickle . dumps ( value ) , - 1 ) )
+                  if not isinstance ( messages , ValidationError ) :
+     def delete ( self , key , version = None ) :
+              key = self . make_key ( key , version = version )
+  else :
+  __all__ = [  'CheckMessage' ,  'Debug' , 'Info' , 'Warning' , 'Error' , 'Critical' ,  'DEBUG' , 'INFO' , 'WARNING' , 'ERROR' , 'CRITICAL' ,  'register' , 'run_checks' , 'tag_exists' , 'Tags' ,  ]
+ args = hashlib . md5 ( force_bytes ( key ) )
+   def __str__ ( self ) :
+  return False
+  if row is None :
+              return import_string ( key_func )
+   def decr ( self , key , delta = 1 , version = None ) :
+ self . _delete ( f . name )
+              raise ValueError ( "Key '%s' not found" % key )
+  except KeyError :
+     class Warning ( CheckMessage ) :
+  return new_value
+   def has_key ( self , key , version = None ) :
+      DEFAULT_TIMEOUT = object ( )
+  return default
+          return caches [ DEFAULT_CACHE_ALIAS ] == other
+ self . _cache . set ( key , value , self . get_backend_timeout ( timeout ) )
+      def __init__ ( self , * args , ** kwargs ) :
+ pass
+    class FieldError ( Exception ) :
+  DEFAULT_CACHE_ALIAS = 'default'
+          self . _cache . clear ( )
+  finally :
+ from django . utils . module_loading import import_string
+ cursor . execute (  connections [ db ] . ops . cache_key_culling_sql ( ) % table ,  [ cull_num ] )
+                      message = ValidationError ( message )
+    if isinstance ( message , dict ) :
+ if timeout is None :
+  return dict ( self )
+   def set_many ( self , data , timeout = DEFAULT_TIMEOUT , version = None ) :
+  return context_extras
+   class DjangoRuntimeWarning ( RuntimeWarning ) :
+ if timeout == DEFAULT_TIMEOUT :
+ return errors
+  db = router . db_for_write ( self . cache_model_class )
+  elif timeout == 0 :
+ from django . core . files . move import file_move_safe
+          key = self . make_key ( key , version = version )
+  except OSError as e :
+              raise ValueError ( "Key '%s' not found" % key )
+ if error . params :
+   if pickled is not None :
+          return super ( Debug , self ) . __init__ ( DEBUG , * args , ** kwargs )
+     if settings . is_overridden ( 'ADMINS' ) :
+ table = connections [ db ] . ops . quote_name ( self . _table )
+          vary_on = ( )
+              checks = [ check for check in self . registered_checks  if hasattr ( check , 'tags' ) and set ( check . tags ) & set ( tags ) ]
+ from django . db import connections , transaction , router , DatabaseError
+              with io . open ( fd , 'wb' ) as f :
+              self . delete ( key , version = version )
+              return default
+              settings . BASE_DIR
+ for fname in filelist :
+              return
+  from django . core . cache . backends . base import BaseCache , DEFAULT_TIMEOUT
+ for k in keys :
+    class AppRegistryNotReady ( Exception ) :
+                  d [ k ] = val
+ return version + delta
+ from __future__ import unicode_literals
+   def __ne__ ( self , other ) :
+ import warnings
+                      cursor . execute ( "SELECT cache_key, expires FROM %s "  "WHERE cache_key = %%s" % table , [ key ] )
+  except AttributeError :
+    class MiddlewareNotUsed ( Exception ) :
+                  message = message . error_dict
+  if val is None :
+ return new_key
+  from . import Error , Tags , register
+ pickled = None
+  if isinstance ( message , ValidationError ) :
+          timeout = self . get_backend_timeout ( timeout )
+ errors . extend ( _check_middleware_classes ( ** kwargs ) )
+              del self . _cache [ key ]
+ if connections [ db ] . features . needs_datetime_string_cast and not isinstance ( expires , datetime ) :
+              f . close ( )
+      return { 'request' : request }
+ self . _table = table
+          return not ( self == other )
+   def decr ( self , key , delta = 1 , version = None ) :
+ for k in doomed :
+ raise NotImplementedError ( 'subclasses of BaseCache must provide a clear() method' )
+          return setattr ( caches [ DEFAULT_CACHE_ALIAS ] , name , value )
+  except ImportError :
+              if not self . _has_expired ( key ) :
+ pickled = pickle . dumps ( new_value , pickle . HIGHEST_PROTOCOL )
+              return
+          return key in caches [ DEFAULT_CACHE_ALIAS ]
+ self . verbose_name = 'cache entry'
+          return super ( Info , self ) . __init__ ( INFO , * args , ** kwargs )
+                  self . _delete ( k )
+ self . abstract = False
+     def __str__ ( self ) :
+              params = conf . copy ( )
+   def get ( self , key , default = None , version = None ) :
+  except KeyError :
+              self . _max_entries = 300
+   def is_silenced ( self ) :
+ d = { }
+              timeout = self . default_timeout
+ hint = "\n\tHINT: %s" % self . hint if self . hint else ''
+ pass
+ fname = self . _key_to_file ( key , version )
+  filelist = [ os . path . join ( self . _dir , fname ) for fname  in glob . glob1 ( self . _dir , '*%s' % self . cache_suffix ) ]
+  try :
+    class ObjectDoesNotExist ( Exception ) :
+ self . id = id
+  return val
+ self . _caches . caches [ alias ] = cache
+      from django . utils import translation
+   def delete ( self , key , version = None ) :
+          key = self . make_key ( key , version = version )
+ cache = _create_cache ( backend , ** kwargs )
+  else :
+ if not os . path . exists ( self . _dir ) :
+  from . . import Warning , register , Tags
+    if settings . is_overridden ( 'TEMPLATE_LOADERS' ) :
+   return self . _client
+          return [  Warning (  "MIDDLEWARE_CLASSES is not set." ,  hint = ( "Django 1.7 changed the global defaults for the MIDDLEWARE_CLASSES. "  "django.contrib.sessions.middleware.SessionMiddleware, "  "django.contrib.auth.middleware.AuthenticationMiddleware, and "  "django.contrib.messages.middleware.MessageMiddleware were removed from the defaults. "  "If your project needs these middleware then you should configure this setting." ) ,  obj = None ,  id = '1_7.W001' ,  )  ]
+     class Debug ( CheckMessage ) :
+   def __eq__ ( self , other ) :
+ with self . _lock . reader ( ) :
+ db = router . db_for_write ( self . cache_model_class )
+   @ register ( Tags . models )
+          key = self . make_key ( key , version = version )
+         for cache in caches . all ( ) :
+    elif isinstance ( message , list ) :
+          if hasattr ( self , 'error_dict' ) :
+              new_errors = check ( app_configs = app_configs )
+ b64encoded = base64 . b64encode ( pickled )
+      from django . utils . six . moves import cPickle as pickle
+                  raise InvalidCacheBackendError ( "Could not find backend '%s': %s" % (  backend , e ) )
+          return delattr ( caches [ DEFAULT_CACHE_ALIAS ] , name )
+      class CacheClass ( FileBasedCache ) :
+    def delete ( self , key , version = None ) :
+ self . msg = msg
+ CRITICAL = 50
+ raise NotImplementedError ( 'subclasses of BaseCache must provide a set() method' )
+              try :
+ import io
+  return None if timeout is None else time . time ( ) + timeout
+    def debug ( request ) :
+   def get_backend_timeout ( self , timeout = DEFAULT_TIMEOUT ) :
+ num = cursor . fetchone ( ) [ 0 ]
+ import glob
+          safe_data = { }
+   def set_many ( self , data , timeout = DEFAULT_TIMEOUT , version = None ) :
+ del self . _expire_info [ key ]
+ from django . core . cache . backends . base import BaseCache , DEFAULT_TIMEOUT
+ self . validate_key ( key )
+ def __init__ ( self , message , code = None , params = None ) :
+    def media ( request ) :
+ from django . utils . encoding import force_bytes
+              return self . _cache . decr ( key , - delta )
+              if self . _has_expired ( key ) :
+    def request ( request ) :
+    class CacheHandler ( object ) :
+ pass
+    with self . _lock . writer ( ) :
+   class DefaultCacheProxy ( object ) :
+  return val
+                  b64encoded = b64encoded . decode ( 'latin1' )
+              obj = "?"
+    if weight >= 6 :
+              val = self . _cache . incr ( key , delta )
+                  if e . errno == errno . ENOENT :
+ def __init__ ( self , table ) :
+ now = timezone . now ( )
+ return False
+ with self . _lock . writer ( ) :
+  from django . core . exceptions import ImproperlyConfigured , DjangoRuntimeWarning
+ pickled = pickle . dumps ( value , pickle . HIGHEST_PROTOCOL )
+ if result and ( mode == 'set' or ( mode == 'add' and current_expires < now ) ) :
+    def _create_cache ( backend , ** kwargs ) :
+   def delete ( self , key , version = None ) :
+   class LocMemCache ( BaseCache ) :
+              if not renamed :
+              weight += 1
+ return os . path . join ( self . _dir , '' . join (  [ hashlib . md5 ( force_bytes ( key ) ) . hexdigest ( ) , self . cache_suffix ] ) )
+   class ValidationError ( Exception ) :
+   def incr ( self , key , delta = 1 , version = None ) :
+ self . code = code
+              doomed = [ k for ( i , k ) in enumerate ( self . _cache ) if i % self . _cull_frequency == 0 ]
+   def set ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+ with self . _lock . reader ( ) :
+   def csrf ( request ) :
+ for message in message :
+ return list ( chain ( * errors ) )
+   def set ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+  return [  Warning (  "BooleanField does not have a default value." ,  hint = ( "Django 1.6 changed the default value of BooleanField from False to None. "  "See https://docs.djangoproject.com/en/1.6/ref/models/fields/#booleanfield "  "for more information." ) ,  obj = field ,  id = '1_6.W002' ,  )  for field in problem_fields  ]
+          key = self . make_key ( key , version = version )
+  for fname in self . _list_cache_files ( ) :
+    with self . _lock . writer ( ) :
+   def set ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+ from django . conf import settings
+ from django . utils import six
+              for field , errors in self . error_dict . items ( ) :
+              self . _caches . caches = { }
+              return False
+                        if isinstance ( receiver , types . FunctionType ) :
+   def __repr__ ( self ) :
+ self . validate_key ( key )
+                      if not self . _is_expired ( f ) :
+ import random
+   if timeout is None :
+              check . tags = tags
+              pass
+              return self . clear ( )
+ self . params = params
+  try :
+   _get_val = lazy ( _get_val , six . text_type )
+  import time
+    class SuspiciousFileOperation ( SuspiciousOperation ) :
+   def set ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+ try :
+           return force_str ( super ( BaseMemcachedCache , self ) . make_key ( key , version ) )
+     registry = CheckRegistry ( )
+       def __init__ ( self ) :
+          import memcache
+ weight += 2
+              _ = { }
+ from django . utils . encoding import force_bytes
+ import types
+ errors . extend ( new_errors )
+ context_extras = { }
+  if settings . USE_TZ :
+                  error_dict . setdefault ( field , [ ] ) . extend ( error_list )
+  with connections [ db ] . cursor ( ) as cursor :
+   signals . request_finished . connect ( close_caches )
+ return filelist
+  try :
+          self . registered_checks = [ ]
+ run_checks = registry . run_checks
+   def make_key ( self , key , version = None ) :
+ obj = '%s.%s' % ( app , model . _meta . object_name )
+                  self . registered_checks . append ( check )
+   if timeout > 2592000 :
+    caches = CacheHandler ( )
+  from django . utils . itercompat import is_iterable
+          fname = self . _key_to_file ( key , version )
+   from django . core . cache . backends . base import BaseCache , DEFAULT_TIMEOUT
+ value = self . get ( key , version = version )
+ num_entries = len ( filelist )
+ renamed = False
+  else :
+ super ( PyLibMCCache , self ) . __init__ ( server , params ,  library = pylibmc ,  value_not_found_exception = pylibmc . NotFound )
+   @ property
+          self . _cache . flush_all ( )
+ errors = [ ]
+    if not settings . is_overridden ( 'MIDDLEWARE_CLASSES' ) :
+      def __init__ ( self , * args , ** kwargs ) :
+            getattr ( self , 'error_dict' )
+   self . set ( key , value , version = version + delta )
+ def __init__ ( self ) :
+ context_extras [ 'LANGUAGE_CODE' ] = translation . get_language ( )
+  with connections [ db ] . cursor ( ) as cursor :
+ self . _base_set ( 'set' , key , value , timeout )
+    @ property
+ return default
+              self . _delete ( fname )
+     if not settings . is_overridden ( 'TEST_RUNNER' ) :
+              now = datetime . utcnow ( )
+      class CacheClass ( DummyCache ) :
+              try :
+   def validate_key ( self , key ) :
+ self . _expire_info = _expire_info . setdefault ( name , { } )
+ self . _cache . delete ( key )
+ from __future__ import unicode_literals
+                  expiry = self . get_backend_timeout ( timeout )
+            try :
+ pass
+ if ( connections [ db ] . features . needs_datetime_string_cast and not  isinstance ( current_expires , datetime ) ) :
+          if len ( self . _cache ) >= self . _max_entries :
+          return [ ]
+  TEMPLATE_FRAGMENT_KEY_TEMPLATE = 'template.cache.%s.%s'
+ return { 'MEDIA_URL' : settings . MEDIA_URL }
+                  message = message . error_list
+ errors = [ ]
+ self . key_func = get_key_func ( params . get ( 'KEY_FUNCTION' , None ) )
+       except self . LibraryValueNotFoundException :
+    class ImproperlyConfigured ( Exception ) :
+ if isinstance ( obj , models . signals . ModelSignal ) :
+          new_keys = [ self . make_key ( x , version = version ) for x in keys ]
+ return new_value
+ return True
+              raise ValueError ( "Key '%s' not found" % key )
+          key = self . make_key ( key , version = version )
+                          cursor . execute ( "UPDATE %s SET value = %%s, expires = %%s "  "WHERE cache_key = %%s" % table ,  [ b64encoded , exp , key ] )
+  from django . utils . encoding import python_2_unicode_compatible , force_str
+                  self . _cull ( db , cursor , now )
+ if tags is not None :
+ self . _expire_info . clear ( )
+ from django . core . exceptions import ImproperlyConfigured
+ from datetime import datetime
+   def set_many ( self , data , timeout = DEFAULT_TIMEOUT , version = None ) :
+  if expires < now :
+                  with io . open ( fname , 'rb' ) as f :
+ from functools import reduce
+  return True
+              self . _servers = server . split ( ';' )
+ WARNING = 30
+                  pass
+               timeout = - 1
+ _expire_info = { }
+      raise ImproperlyConfigured ( "You must define a '%s' cache" % DEFAULT_CACHE_ALIAS )
+              weight += 2
+          if hasattr ( self , 'error_dict' ) :
+   return inner
+       except self . LibraryValueNotFoundException :
+   def clear ( self ) :
+ params = kwargs
+   def get_backend_timeout ( self , timeout = DEFAULT_TIMEOUT ) :
+   def add ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+ def messages ( self ) :
+ self . validate_key ( key )
+  elif settings . USE_TZ :
+  elif isinstance ( self . obj , models . base . ModelBase ) :
+ table = connections [ db ] . ops . quote_name ( self . _table )
+   if alias not in settings . CACHES :
+   def add ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+  from . . import Warning , register , Tags
+                  yield field , list ( ValidationError ( errors ) )
+     class Info ( CheckMessage ) :
+ self . validate_key ( key )
+   @ property
+ self . validate_key ( key )
+    def _createdir ( self ) :
+              now = datetime . now ( )
+    def clear ( self ) :
+ def _cache ( self ) :
+ return '%s:%s:%s' % ( key_prefix , version , key )
+              try :
+      def __init__ ( self , host , * args , ** kwargs ) :
+ from django . utils . http import urlquote
+                  return True
+  value = connections [ db ] . ops . process_clob ( row [ 1 ] )
+              return self . _caches . caches [ alias ]
+  from itertools import chain
+   __all__ = [  'get_cache' , 'cache' , 'DEFAULT_CACHE_ALIAS' , 'InvalidCacheBackendError' ,  'CacheKeyWarning' , 'BaseCache' ,  ]
+ from django . core import signals
+  new_value = value + delta
+ pass
+ if value is None :
+  return self . _client
+              self . _delete ( fname )
+              warnings . warn ( 'Cache key will cause errors if used with memcached: '  '%s (longer than %s)' % ( key , MEMCACHE_MAX_KEY_LENGTH ) ,  CacheKeyWarning )
+              self . _set ( key , pickled , timeout )
+  return error_dict
+ return self . _cache . add ( key , value , self . get_backend_timeout ( timeout ) )
+      def __init__ ( self , * args , ** kwargs ) :
+          self . _delete ( self . _key_to_file ( key , version ) )
+    class FileBasedCache ( BaseCache ) :
+              val = None
+ from django . db import models
+   else :
+   for check in checks :
+ self . validate_key ( key )
+ self . managed = True
+              self . clear ( )
+ self . validate_key ( key )
+   def __ne__ ( self , other ) :
+              val = None
+ compatibility = 'compatibility'
+   def set ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+   def register ( self , * tags ) :
+ register = registry . register
+ safe_data [ key ] = value
+   class Options ( object ) :
+ if settings . DEBUG and request . META . get ( 'REMOTE_ADDR' ) in settings . INTERNAL_IPS :
+  db = router . db_for_read ( self . cache_model_class )
+    def delete_many ( self , keys , version = None ) :
+ with self . _lock . writer ( ) :
+ with connections [ db ] . cursor ( ) as cursor :
+ key = self . make_key ( key , version = version )
+      try :
+              version = self . version
+   def _delete ( self , fname ) :
+              cursor . execute ( "DELETE FROM %s WHERE cache_key = %%s" % table , [ key ] )
+  pickled = pickle . dumps ( value , pickle . HIGHEST_PROTOCOL )
+                  return pickle . loads ( pickled )
+                  for receiver , _ , _ in receivers :
+              return key_func
+ self . validate_key ( key )
+ context_extras [ 'sql_queries' ] = connection . queries
+   def add ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+                   return False
+          key = self . make_key ( key , version = version )
+  if self . _cull_frequency == 0 :
+  with connections [ db ] . cursor ( ) as cursor :
+                  timeout = int ( timeout )
+  from . messages import ( CheckMessage ,  Debug , Info , Warning , Error , Critical ,  DEBUG , INFO , WARNING , ERROR , CRITICAL )
+ if val is None :
+          key = self . make_key ( key , version = version )
+  elif int ( timeout ) == 0 :
+   def _list_cache_files ( self ) :
+   def delete_many ( self , keys , version = None ) :
+    try :
+  class CacheEntry ( object ) :
+     class Critical ( CheckMessage ) :
+  for char in key :
+ return True
+              raise ValueError ( "Key '%s' not found" % key )
+ backend = params . pop ( 'BACKEND' )
+          from django . conf import settings
+ if os . path . exists ( fname ) :
+ from django . utils . encoding import force_bytes
+ row = cursor . fetchone ( )
+   def decr_version ( self , key , delta = 1 , version = None ) :
+      def __init__ ( self , params ) :
+              try :
+  from django . conf import settings
+          return tag in self . tags_available ( )
+ return "%s: %s%s%s" % ( obj , id , self . msg , hint )
+ with connections [ db ] . cursor ( ) as cursor :
+ from django . utils . deprecation import RenameMethodsBase , RemovedInDjango19Warning
+      def __init__ ( self , * args , ** kwargs ) :
+          timeout = params . get ( 'timeout' , params . get ( 'TIMEOUT' , 300 ) )
+  return int ( timeout )
+ import django . core . checks . model_checks
+          if not fname . startswith ( self . _dir ) or not os . path . exists ( fname ) :
+          if getattr ( self , '_client' , None ) is None :
+    @ register ( Tags . models , Tags . signals )
+ admin = 'admin'
+      class CacheClass ( LocMemCache ) :
+  from django . core . cache . backends . base import BaseCache , DEFAULT_TIMEOUT
+    except IOError as e :
+                model = self . obj
+    def incr ( self , key , delta = 1 , version = None ) :
+                      with transaction . atomic ( using = db ) :
+   else :
+    def tz ( request ) :
+   return client
+      import pickle
+      if vary_on is None :
+          pass
+ import time
+          key = self . make_key ( key , version = version )
+  except pickle . PickleError :
+          exp = self . _expire_info . get ( key , - 1 )
+              cursor . execute ( "SELECT cache_key, value, expires FROM %s "  "WHERE cache_key = %%s" % table , [ key ] )
+    def get_cache ( backend , ** kwargs ) :
+                  timeout = 300
+   def add ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+    class CacheKeyWarning ( DjangoRuntimeWarning ) :
+ if exp is None or exp > time . time ( ) :
+ renamed = True
+ pass
+          pass
+ self . validate_key ( key )
+              raise InvalidCacheBackendError (  "Could not find config for '%s' in settings.CACHES" % alias  )
+  except ImportError :
+ if version is None :
+              weight += 2
+          key = self . make_key ( key , version = version )
+ self . validate_key ( key )
+ if self . _options :
+ result = cursor . fetchone ( )
+  except KeyError :
+ return { 'STATIC_URL' : settings . STATIC_URL }
+      def __init__ ( self , server , params , library , value_not_found_exception ) :
+ f . write ( pickle . dumps ( expiry , - 1 ) )
+              return repr ( dict ( self ) )
+ raise NotImplementedError ( 'subclasses of BaseCache must provide an add() method' )
+ def __init__ ( self , server , params ) :
+ app = model . _meta . app_label
+  context_extras = { }
+      pass
+ return True
+ expires = row [ 2 ]
+      pass
+  yield force_text ( message )
+      def __init__ ( self , * args , ** kwargs ) :
+ import pickle
+    def _check_test_runner ( app_configs = None , ** kwargs ) :
+  key = ':' . join ( urlquote ( var ) for var in vary_on )
+          key = self . make_key ( key , version = version )
+              pass
+ if value is None :
+ if exp is not None and exp < time . time ( ) :
+ self . validate_key ( key )
+    class BaseCache ( object ) :
+from __future__ import unicode_literals
+     def has_key ( self , key , version = None ) :
+    def get ( self , key , default = None , version = None ) :
+ from __future__ import unicode_literals
+          return getattr ( caches [ DEFAULT_CACHE_ALIAS ] , name )
+      pass
+ ret = self . _cache . get_multi ( new_keys )
+          return self . level >= ERROR
+              self . _cull_frequency = int ( cull_frequency )

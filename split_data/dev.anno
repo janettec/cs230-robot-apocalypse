@@ -1,0 +1,100 @@
+  return the printable representation of the self object converted to a list.
+  yield one element of data iterable.
+  return self._size.
+  if chunk_size is false,
+  convert self.name into an boolean, return it.
+  if self.size is greater than chunk_size, return boolean True, otherwise return boolean False.
+  if self.file is false or self.file.closed is true, return boolean true, otherwise return boolean false.
+  increment line by buffer_.
+  from io import BytesIO,  StringIO and UnsupportedOperation into default name space.
+  from django.utils.encoding import smart_text into default name space.
+  define the method __exit__ with self, exc_type, exc_value and tb as arguments.
+  return self._size.
+  define the method _set_size with arguments self and size.
+  define the method _get_closed with argument self.
+  if not,
+  if name is None,
+  derive the class File from the FileProxyMixin base class.
+  from django.core.files.base import File into default name space.
+  define the method chunks with arguments self and chunk_size defaulting to None.
+  if AttributeError or UnsupportedOperation exception occurred.
+  import module os.
+  if file self is not closed,
+  substitute file for self.file.
+  if buffer_ is not None,
+  if last element of line is newline or carriage return character,
+  if self.file has an attribute 'tell' and an attribute 'seek',
+  define the method __nonzero__ with argument self.
+  return size.
+  define the method __bool__ with argument self.
+  define the method _get_size with argument self.
+  get the position of the self.file file pointer, substitute it for pos.
+  define the method _get_size_from_underlying_file with argument self.
+  substitute the self.DEFAULT_CHUNK_SIZE for chunk_size.
+  substitute self.DEFAULT_CHUNK_SIZE for chunk_size.
+  try,
+  yield one element of line iterable.
+  return self.file.size.
+  define the method __multiple_chunks__ with arguments self and chunk_size defaulting to None.
+  do nothing.
+  open the file self.name in mode or self.mode mode, whichever exists, assign the file handler to self.file.
+  break from the smallest enclosing loop.
+  return self.
+  define the method __str__ with argument self.
+  define the method __len__ with argument self.
+  return self.size.
+  if OSError or TypeError errors occurred.
+  buffer_ is None.
+  closed is a property object with _get_closed as a getter method.
+  substitute file.mode for self.mode.
+  define the method __repr__ with argument self.
+  from django.utils.encoding import force_bytes and python_2_unicode_compatible into default name space.
+  define the method open with arguments self and mode defaulting to None.
+  return the string 'ValidationError(%s)', replace '%s' with self.
+  call the __bool__ method with argument self, on the return value of the type function with argument self, return the result.
+  __all__ is an list containing a string 'File'.
+  decorator python_2_unicode_compatible,
+  call the self.read method with argument chunk_size, substitute the result for data.
+  substitute name for self.name.
+  yield one element from the buffer_ iterable.
+  if self.file has an attribute 'size',
+  otherwise if self.name exists and self.name file path exists,
+  call the os.path.getsize function with argument self.file.name, return the result.
+  evaluate the function BytesIO with argument chunk, substitute it for chunk_buffer.
+  call the method self._get_size_from_underlying_file, substitute the result for self._size.
+  if self has an attribute '_size'.
+  for every line in chunk_buffer,
+  position the file pointer at the beginning of self file.
+  define the method __enter__ with argument self.
+  evaluate the function smart_text with argument self.name, if exists, or an empty string, if not, return the result.
+  buffer_ is None.
+  substitute size for self._size.
+  raise an ValueError exception with string "The file cannot be reopened." as an argument.
+  position the file self.file pointer at the end.
+  get the position of the file self.file pointer, substitute it for size.
+  define the method __init__ with self class instance, file, and name defaulting to None as arguments.
+  define the method __repr__ with an argument self.
+  from django.utils import six into default name space.
+  substitute line for buffer_.
+  if chunk_size is false,
+  if file object has an attribute 'mode',
+  do nothing.
+  if data is false,
+  size is a property object with _get_size as getter method and _set_size as setter method.
+  define the method close with argument self.
+  get 'name' attribute from the file object, if it doesnt exists use None, substitute it for name.
+  from __future__ import unicode_literals into default name space.
+  substitute '%s' in string '<%s: %s>' with self.__class__.__name__ and self, if exists, or string 'None' if it doesnt, return it.
+  position file self.file pointer at the pos position.
+  for every chunk in return value of the method self.chunks,
+  from django.core.files.utils import FileProxyMixin into default name space.
+  endless loop,
+  bring integer 2 to the power of 10, multiply it by 64, substitute the result for DEFAULT_CHUNK_SIZE.
+  define the method __iter__ with argument self.
+  raise an AttributeError exception with string "Unable to determine the file's size." as argument.
+  close the file self.
+  if not,
+  if self.file has an attribute 'name',
+  if buffer_ is true,
+  try,
+  position the file pointer at the beginning of self file.
