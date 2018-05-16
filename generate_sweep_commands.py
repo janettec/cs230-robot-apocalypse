@@ -12,7 +12,7 @@ hidden_units_sweep = np.random.randint(25,2000,n)
 dropout_rate_sweep = 0.95*np.random.rand(n) #Probably wouldn't want to use dropout higher than 0.95
 #batch_size_sweep = np.power(2,np.random.randint(4,9,n)) #Commented out because we decided batch size doesn't really need to be tuned - just using default of 128
 batch_size = 128
-save_freq = int(ceil(train_len/batch_size)) #Want to save at the end of each epoch
+save_freq = 5*int(ceil(train_len/batch_size)) #Want to save every 5 epochs
 disp_freq = 1 #I think this is what saves the loss scalar info so I set it to 1 so we have loss information for each minibatch iteration
 
 f = open('train_sweep.sh', 'w')
