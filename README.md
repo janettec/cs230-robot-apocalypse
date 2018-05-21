@@ -1,8 +1,9 @@
 # cs230-robot-apocalypse
 
 ## Preprocessing: 
-- Generate python syntax corpus
+- Generate python code corpus
 - Generate annotation corpus
+- Shuffle data
 - Split data to train/dev
 
 ## Running: 
