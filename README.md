@@ -1,9 +1,9 @@
 # cs230-robot-apocalypse
 
 ## Preprocessing: 
-Generate python syntax corpus
-Generate annotation corpus
-Split data to train/dev
+- Generate python syntax corpus
+- Generate annotation corpus
+- Split data to train/dev
 
 ## Running: 
 A shell script for hyperparameter tuning was generated using generate_sweep_commands.py. The data used for the coarse sweep can be found in split_data.
