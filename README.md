@@ -32,6 +32,7 @@ python decode.py  --beam_width 5 \
                     --decode_output $PATH_TO_DECODE_OUTPUT
                     
 ```
+Seq2seq model modified from JayParks (https://github.com/JayParks/tf-seq2seq)
 
 BLEU score calculation: 
 ```perl
