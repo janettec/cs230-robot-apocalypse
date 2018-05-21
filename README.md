@@ -1,11 +1,14 @@
 # cs230-robot-apocalypse
 
-Preprocessing: 
+## Preprocessing: 
 Generate python syntax corpus
 Generate annotation corpus
 Split data to train/dev
 
-To train:
+## Running: 
+A shell script for hyperparameter tuning was generated using generate_sweep_commands.py. The data used for the coarse sweep can be found in split_data.
+
+To train manually:
 ```ruby
 python train.py   --cell_type 'lstm' \ 
                     --attention_type 'luong' \
@@ -17,7 +20,7 @@ python train.py   --cell_type 'lstm' \
                     
 ```
 
-To decode: 
+To decode manually: 
 ```ruby
 python decode.py  --beam_width 5 \
                     --decode_batch_size 30 \
