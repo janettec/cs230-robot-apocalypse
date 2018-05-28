@@ -1,0 +1,200 @@
+         for cache in caches . all ( ) :
+ if val is not None :
+ if version is None :
+              self . _cull_frequency = 3
+ self . set ( key , new_value , version = version )
+  return backend_cls ( location , params )
+ from django . utils . module_loading import import_string
+   self . set ( key , value , version = version + delta )
+ from django . core . cache . backends . base import BaseCache , DEFAULT_TIMEOUT
+   def close ( self , ** kwargs ) :
+ from django . db . backends . utils import typecast_timestamp
+  DEFAULT_CACHE_ALIAS = 'default'
+  if DEFAULT_CACHE_ALIAS not in settings . CACHES :
+    class BaseCache ( object ) :
+              raise ValueError ( "Key '%s' not found" % key )
+              return key_func
+  try :
+    caches = CacheHandler ( )
+              val = self . get ( k , version = version )
+    cache = DefaultCacheProxy ( )
+ def __getattr__ ( self , name ) :
+ location = params . pop ( 'LOCATION' , '' )
+  except ( ValueError , TypeError ) :
+ return self . get ( key , version = version ) is not None
+ import warnings
+              return self . _caches . caches [ alias ]
+  except ( ValueError , TypeError ) :
+                  d [ k ] = val
+ for key in keys :
+ from django . core . cache . backends . base import (  InvalidCacheBackendError , CacheKeyWarning , BaseCache )
+ cache = _create_cache ( backend , ** kwargs )
+              version = self . version
+   def set ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+          self . _caches = local ( )
+  import time
+               timeout = - 1
+  options = params . get ( 'OPTIONS' , { } )
+      pass
+ for k in keys :
+  else :
+              try :
+  except AttributeError :
+   def add ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+          return getattr ( caches [ DEFAULT_CACHE_ALIAS ] , name )
+   def validate_key ( self , key ) :
+              raise InvalidCacheBackendError (  "Could not find config for '%s' in settings.CACHES" % alias  )
+   def __eq__ ( self , other ) :
+     def incr_version ( self , key , delta = 1 , version = None ) :
+ try :
+   cull_frequency = params . get ( 'cull_frequency' , options . get ( 'CULL_FREQUENCY' , 3 ) )
+   self . key_prefix = params . get ( 'KEY_PREFIX' , '' )
+                  raise InvalidCacheBackendError ( "Could not find backend '%s': %s" % (  backend , e ) )
+ backend = params . pop ( 'BACKEND' )
+ pass
+ try :
+              self . _cull_frequency = int ( cull_frequency )
+          if callable ( key_func ) :
+              timeout = self . default_timeout
+   def incr ( self , key , delta = 1 , version = None ) :
+ raise NotImplementedError ( 'subclasses of BaseCache must provide an add() method' )
+  except KeyError :
+ return new_key
+    class CacheKeyWarning ( DjangoRuntimeWarning ) :
+          return setattr ( caches [ DEFAULT_CACHE_ALIAS ] , name , value )
+  except ImportError :
+   cache = _create_cache ( alias )
+ d = { }
+ def __init__ ( self , table ) :
+          return getattr ( self . _caches , 'caches' , { } ) . values ( )
+                  warnings . warn ( 'Cache key contains characters that will cause '  'errors if used with memcached: %r' % key ,  CacheKeyWarning )
+   def get_backend_timeout ( self , timeout = DEFAULT_TIMEOUT ) :
+ return self . incr ( key , - delta , version = version )
+              version = self . version
+      try :
+    def get_key_func ( key_func ) :
+          return caches [ DEFAULT_CACHE_ALIAS ] == other
+   new_key = self . key_func ( key , self . key_prefix , version )
+   def get ( self , key , default = None , version = None ) :
+              self . _max_entries = int ( max_entries )
+ if value is None :
+ import warnings
+      pass
+ warnings . warn ( "'get_cache' is deprecated in favor of 'caches'." ,  RemovedInDjango19Warning , stacklevel = 2 )
+          try :
+ for key , value in data . items ( ) :
+              warnings . warn ( 'Cache key will cause errors if used with memcached: '  '%s (longer than %s)' % ( key , MEMCACHE_MAX_KEY_LENGTH ) ,  CacheKeyWarning )
+    return self . has_key ( key )
+  from django . conf import settings
+   value = self . get ( key , version = version )
+ from django . utils . encoding import force_bytes
+              return import_string ( key_func )
+ raise NotImplementedError ( 'subclasses of BaseCache must provide a get() method' )
+   return default_key_func
+ self . key_func = get_key_func ( params . get ( 'KEY_FUNCTION' , None ) )
+ raise NotImplementedError ( 'subclasses of BaseCache must provide a set() method' )
+          self . db_table = table
+                  timeout = int ( timeout )
+   def close_caches ( ** kwargs ) :
+ return version + delta
+   __all__ = [  'get_cache' , 'cache' , 'DEFAULT_CACHE_ALIAS' , 'InvalidCacheBackendError' ,  'CacheKeyWarning' , 'BaseCache' ,  ]
+ if len ( key ) > MEMCACHE_MAX_KEY_LENGTH :
+  except ImportError as e :
+ if timeout is not None :
+ if timeout == DEFAULT_TIMEOUT :
+   MEMCACHE_MAX_KEY_LENGTH = 250
+          timeout = params . get ( 'timeout' , params . get ( 'TIMEOUT' , 300 ) )
+      import pickle
+   from django . conf import settings
+  elif timeout == 0 :
+              self . _caches . caches = { }
+   def decr ( self , key , delta = 1 , version = None ) :
+              self . _max_entries = 300
+    def clear ( self ) :
+  return None if timeout is None else time . time ( ) + timeout
+              conf = settings . CACHES [ backend ]
+   def __ne__ ( self , other ) :
+    def _create_cache ( backend , ** kwargs ) :
+          cache . close ( )
+              try :
+              if ord ( char ) < 33 or ord ( char ) == 127 :
+   return d
+ def __init__ ( self ) :
+ return cache
+  location = kwargs . pop ( 'LOCATION' , '' )
+   def __getitem__ ( self , alias ) :
+ if version is None :
+  except ( ValueError , TypeError ) :
+          """Close the cache connection"""
+   def __setattr__ ( self , name , value ) :
+   def all ( self ) :
+ from django . db import connections , transaction , router , DatabaseError
+   class Options ( object ) :
+ self . version = params . get ( 'VERSION' , 1 )
+ from __future__ import unicode_literals
+ from datetime import datetime
+    def get_cache ( backend , ** kwargs ) :
+ from django . utils . module_loading import import_string
+ params = kwargs
+    signals . request_finished . connect ( cache . close )
+   def make_key ( self , key , version = None ) :
+  new_value = value + delta
+  else :
+              pass
+      raise ImproperlyConfigured ( "You must define a '%s' cache" % DEFAULT_CACHE_ALIAS )
+   signals . request_finished . connect ( close_caches )
+ from django . core import signals
+   self . default_timeout = timeout
+   def decr_version ( self , key , delta = 1 , version = None ) :
+    def delete_many ( self , keys , version = None ) :
+ self . app_label = 'django_cache'
+   def set_many ( self , data , timeout = DEFAULT_TIMEOUT , version = None ) :
+ from django . core . exceptions import ImproperlyConfigured
+   def default_key_func ( key , key_prefix , version ) :
+ return cache
+   def get_many ( self , keys , version = None ) :
+  from django . core . exceptions import ImproperlyConfigured , DjangoRuntimeWarning
+   def __delattr__ ( self , name ) :
+ value = self . get ( key , version = version )
+ if key_func is not None :
+          """         Set a value in the cache if the key does not already exist. If         timeout is given, that timeout will be used for the key; otherwise         the default cache timeout will be used.         Returns True if the value was stored, False otherwise.         """
+ if value is None :
+ raise NotImplementedError ( 'subclasses of BaseCache must provide a delete() method' )
+   def has_key ( self , key , version = None ) :
+  backend_cls = import_string ( backend )
+      DEFAULT_TIMEOUT = object ( )
+      from django . utils . six . moves import cPickle as pickle
+          return key in caches [ DEFAULT_CACHE_ALIAS ]
+ return new_value
+   def delete ( self , key , version = None ) :
+ from threading import local
+   if alias not in settings . CACHES :
+ max_entries = params . get ( 'max_entries' , options . get ( 'MAX_ENTRIES' , 300 ) )
+ return '%s:%s:%s' % ( key_prefix , version , key )
+              raise ValueError ( "Key '%s' not found" % key )
+   def __contains__ ( self , key ) :
+ from django . utils . deprecation import RemovedInDjango19Warning
+              self . delete ( key , version = version )
+   class DefaultCacheProxy ( object ) :
+   def __contains__ ( self , key ) :
+      def __init__ ( self , params ) :
+ self . delete ( key , version = version )
+ return self . incr_version ( key , - delta , version )
+  for char in key :
+  except ImportError as e :
+                   import_string ( backend )
+ self . _caches . caches [ alias ] = cache
+ raise NotImplementedError ( 'subclasses of BaseCache must provide a clear() method' )
+              params = conf . copy ( )
+ params . update ( kwargs )
+           try :
+ import base64
+   class InvalidCacheBackendError ( ImproperlyConfigured ) :
+  except KeyError :
+          raise InvalidCacheBackendError (  "Could not find backend '%s': %s" % ( backend , e ) )
+              self . set ( key , value , timeout = timeout , version = version )
+    class CacheHandler ( object ) :
+          return caches [ DEFAULT_CACHE_ALIAS ] != other
+                  timeout = 300
+ from django . utils import timezone , six
+          return delattr ( caches [ DEFAULT_CACHE_ALIAS ] , name )

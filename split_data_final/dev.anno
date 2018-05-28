@@ -1,0 +1,200 @@
+  for every cache in return value of the function caches.all.
+  if val is not None,
+  if version is None,
+  self._cull_frequency is integer 3.
+  call the self.set method with key, new_value and version set to version as arguments.
+  evaluate the function backend_cls with location and params as arguments, return the result.
+  from django.utils.module_loading import import_string into default name space.
+  call the method self.set with key, value, version incremented by delta, as arguments.
+  from django.core.cache.backends.base import BaseCache and DEFAULT_TIMEOUT into default name space.
+  define the close method with 2 arguments, self and dictionary of argument pairs kwargs.
+  from django.db.backends.utils import typecast_timestamp into default name space.
+  'CacheKeyWarning' and 'BaseCache'   DEFAULT_CACHE_ALIAS is a string 'default'.
+  if DEFAULT_CACHE_ALIAS is not contained in settings.CACHES,
+  derive the class BaseCache from the object base class.
+  raise an exception of the class ValueError with string "Key '%s' not found" as argument, '%s' is substituted for key.
+  return key_func.
+  try,
+  call the CacheHandler function, substitute the result for caches.
+  call the self.get method with k and version set to version as arguments, substitute the result for val.
+  call the DefaultCacheProxy function, substitute it for cache.
+  define the method __getattr__ with self and name as arguments.
+  remove 'LOCATION' key from kwargs dictionary and put it into location, or use an empty string if key doesnt exists.
+  if ValueError or TypeError exceptions occurred,
+  call the self.get method with key and version set to version as arguments, return it if it is not None.
+  import module warnings.
+  return value under the alias key of self._caches.caches dictionary.
+  if ValueError or TypeError exceptions occurred,
+  substitute val for value under the k key of dictionary d.
+  for every key in keys,
+  from django.core.cache.backends.base import InvalidCacheBackendError, CacheKeyWarning and BaseCache into default name space.
+  and stacklevel set to 2 as arguments.   call the _create_cache with backend and dictionary kwargs as arguments, substitute the result for cache.
+  substitute self.version for version.
+  define the method set with 5 arguments, self, key, value, timeout set to DEFAULT_TIMEOUT and version set to None.
+  call the function local, substitute the result for self._caches.
+  import module time.
+  timeout is a integer -1.
+  call the params.get with string 'OPTIONS' and empty dictionary as arguments, substitute the result for options.
+  do nothing.
+  for every k in keys,
+  if not,
+  try,
+  except if AttributeError is caught,
+  define the method add with 5 arguments, self, key, value, timeout defaulting to DEFAULT_TIMEOUT and version defaulting to None.
+  get attribute name from value under the DEFAULT_CACHE_ALIAS key of caches dictionary, return it.
+  define the method validate_key with self class instance and key as arguments.
+  raise and exception InvalidCacheBackendError with string "Could not find config for '%s' in settings.CACHES" as argument, replace '%s' with alias.
+  define the method __eq__ with self and other as arguments.
+  call the function warnings.warn with previous string and CacheKeyWarning as arguments.   define the method incr_version with 4 arguments, self, key, delta defaulting to integer 1 and version defaulting to None.
+  try,
+  call the options.get method with string 'CULL_FREQUENCY' and integer 3 as arguments, use the string 'cull_frequency' and previous result as the arguments for the call to the params.get method, substitute the result for cull_frequency.
+  call the params.get method with string 'KEY_PREFIX' and an empty string as arguments, substitute the result for self._key_prefix.
+  raise and exception InvalidCacheBackendError with string "Could not find backend '%s': %s" as argument, replace '%s' with backend and e, respectively.
+  remove 'BACKEND' key from params dictionary and put it into backend.
+  do nothing.
+  try,
+  convert cull_frequency into an integer and substitute it for self._cull_frequency.
+  if key_function is callable object,
+  substitute self.default_timeout for timeout.
+  define the method incr with 4 arguments, self class instance, key, delta defaulting to integer 1 and version defaulting to None.
+  raise an exception of class NotImplementedError with string 'subclasses of BaseCache must provide an add() method' as argument.
+  except if KeyError exception is caught,
+  return new_key.
+  derive class CacheKeyWarning from the DjangoRuntimeWarning base class.
+  set the attribute name from value under the DEFAULT_CACHE_ALIAS key of caches dictionary to value, return it.
+  if ImportError exception occurred,
+  call the function _create_cache with argument alias.
+  d is an empty dictionary.
+  define the initialization method __init__ with self class instance and table as arguments.
+  get attribute 'caches' from the self._caches if exists, otherwise get an empty dictionary, call the values method on the return value, return it.
+  substitute '%r' in string 'Cache key contains characters that will cause errors if used with memcached: %r' with key,
+  define the method get_backend_timeout with self class instance and timeout set to DEFAULT_TIMEOUT as arguments,
+  call the self.incr method with key, negative delta and version set to version as arguments.
+  substitute self.version for version.
+  try,
+  define the function get_key_func with argument key_func.
+  if value under the DEFAULT_CACHE_ALIAS key of caches dictionary equals to other, return boolean True, otherwise return False.
+  call the method self.key_function with key, self.key_prefix and version as arguments, substitute the result for new_key.
+  define the method get with 4 arguments, self, key, default set to None and version set to None.
+  convert max_entries into a string, substitute it for self._max_entries.
+  if value is None,
+  import module warnings.
+  do nothing.
+  call the function warnings.warn with string "'get_cache' is deprecated in favor of 'caches'.", RemovedInDjango19Warning,
+  try,
+  for every key and value in data.items method return value,
+  substitute '%s' in string 'Cache key will cause errors if used with memcached: %s (longer than %s)' with key,
+  evaluate the self.has_key method with key as argument, return the result.
+  from django.conf import settings into default name space.
+  call the self.get method with arguments key and version set to version, substitute the result for value.
+  from django.utils.encoding import force_bytes into default name space.
+  evaluate the function import_string with key_func as argument, return the result.
+  raise an exception of class NotImplementedError, with string 'subclasses of BaseCache must provide a get() method' as argument.
+  return default_key_func.
+  call the method params.get with 2 arguments, string 'KEY_FUNCTION' and None, use the result as the argument for the call to the function get_key_func, substitute the result for the self.key_func.
+  raise an exception of class NotImplementedError, with string 'subclasses of BaseCache must provide a set() method' as argument.
+  substitute table for self.db_table.
+  convert timeout into an integer.
+  define the function close_caches with dictionary pair of elements kwargs as argument.
+  sum version and delta together, return the result.
+  __all__ is an list containing 6 elements: 'get_cache', 'cache', 'DEFAULT_CACHE_ALIAS', 'InvalidCacheBackendError',
+  if length of key is greater than MEMCACHE_MAX_KEY_LENGTH,
+  if ImportError, renamed to e, exception is caught,
+  if timeout is not None,
+  if timeout equals to DEFAULT_TIMEOUT,
+  MEMCACHE_MAX_KEY_LENGTH is integer 250.
+  call the params.get method with string 'TIMEOUT' and integer 300 as arguments, use the string 'timeout' and previous result as the arguments for the call to the params.get method, substitute the result for timeout.
+  import pickle.
+  from django.conf import settings into default name space.
+  else if timeout equals to integer 0,
+  self._caches.caches is an empty dictionary.
+  define the method decr with arguments self, key, delta defaulting to integer 1 and version defaulting to None.
+  self._max_entries is integer 300.
+  define the method clear with self class instance as the argument,
+  if timeouts is None return None, otherwise return the sum of function time.time return value and timeout.
+  substitute value under the backend key of settings.CACHES dictionary for conf.
+  define the method __ne__ with self and other as arguments.
+  define the function _create_cache with backend and dictionary pair of elements kwargs as arguments.
+  call the function cache.close.
+  try,
+  if ascii value of char is smaller than integer 33 or is equal to integer 127,
+  return d.
+  define the __init__ method with argument self.
+  return cache.
+  remove 'LOCATION' key from kwargs dictionary and put it into location, or use an empty string if key doesnt exists.
+  define the __getitem__ method with self and alias arguments.
+  if version is None,
+  if ValueError or TypeError exceptions occurred,
+  docstirng
+  define the method __setattr__ with self, name and value as arguments.
+  define the method all with argument self.
+  from django.db import connections, transaction, router and DatabaseError into default name space.
+  derive class Options from the base class object.
+  call the params.get method wit string 'VERSION' and integer 1 as arguments, substitute the result for self.version.
+  from __future__ import unicode_literals into default name space.
+  from datetime import datetime into default name space.
+  define the function get_cache with backend and dictionary pair of elements kwargs as arguments.
+  from django.utils.module_loading import import_string into default name space.
+  substitute kwargs for params.
+  call the function signals.request_finished.connect with argument cache.close.
+  define the function make_key with self class instance, key and version set to None as arguments.
+  add value and delta together, substitute the result for new_value.
+  if not,
+  do nothing.
+  raise an exception ImproperlyConfigured with string "You must define a '%s' cache" as argument, with '%s' replaced with DEFAULT_CACHE_ALIAS converted into a string.
+  call the function signals.request_finished.connect with argument close_caches.
+  from django.core import signals into default name space.
+  substitute timeout for self.default_timeout.
+  define the method decr_version with 4 arguments, self, key, delta defaulting to integer 1 and version defaulting to None.
+  define the method delete_many with arguments self, keys and version defaulting to None.
+  self.app_label is a string 'django_cache'.
+  define the method set_many with arguments, self, data, timeout defaulting to DEFAULT_TIMEOUT and version set to None.
+  from django.core.exceptions import ImproperlyConfigured into default name space.
+  define the function default_key_func with 3 arguments, key, key_prefix and version.
+  reuturn cache.
+  define the get_many method with self class instance, keys and version set to None as arguments.
+  from django.core.exceptions import ImproperlyConfigured and DjangoRuntimeWarning into default name space.
+  define the method __delattr__ with self and name as arguments.
+  call the method self.get with key and version set to version as arguments, substitute the result for value.
+  if key_func is not of None type,
+  docsring
+  if value is None,
+  raise an exception of class NotImplementedError, with string 'subclasses of BaseCache must provide a delete() method' as argument.
+  define method has_key with self class instance, key and version set to None as arguments.
+  call the import_string with argument backend, substitute it for backend_cls.
+  DEFAULT_TIMEOUT is a instance of the class object.
+  from django.utils.six.moves import cPickle as pickle, into default namespace.
+  if key if contained in value under the DEFAULT_CACHE_ALIAS key of caches dictionary, return boolean True, otherwise return False.
+  return new_value.
+  define delete method with self class instance, key and version set to None, as arguments.
+  from threading import local into default name space.
+  if alias is not contained in setting.CACHES,
+  call the options.get method with string 'MAX_ENTRIES' and integer 300 as arguments, use the string 'max_entries' and previous result as the arguments for the call to the params.get method, substitute the result for max_entries.
+  convert key_prefix, version and key into strings, concatenate them respectively, with character ':' as delimiter, return the result.
+  raise an exception of class ValueError, with string "Key '%s' not found" as argument, where '%s' is substituted for key.
+  define the private method __contains__ with self class instance and key as arguments.
+  from django.utils.deprecation import RemovedInDjango19Warning into default name space.
+  call the delete method with key and version set to version as arguments.
+  derive the class DefaultCacheProxy from the base class object.
+  define the method __contains__ with self and key as arguments.
+  define the initialization function __init__ with self class instance and params as arguments.
+  call the self.delete method with key and version set to version as arguments.
+  call the method self.incr_version with key, negative delta and version as arguments.
+  and MEMCACHE_MAX_KEY_LENGTH, call the function warnings.warn with previous string and CacheKeyWarning as arguments.   for every char in key,
+  if ImportError, renamed to e, is caught,
+  call the function import_string with argument backend.
+  substitute cache for value under the alias key of self._caches.caches dictionary.
+  raise an exception NotImplementedError with string 'subclasses of BaseCache must provide a clear() method' as argument.
+  call the function conf.copy, substitute it for params.
+  call the function params.update with argument kwargs.
+  try,
+  import module base64.
+  derive class InvalidCacheBackendError from the ImproperlyConfigured base class.
+  if KeyError exception is caught,
+  aise and exception InvalidCacheBackendError with string "Could not find backend '%s': %s" as argument, replace '%s' with backend and e, respectively.
+  call the method self.set with arguments key, value, timeout set to timeout, version set to version.
+  derive the class CacheHandler from the object base class.
+  if value under the DEFAULT_CACHE_ALIAS key of caches dictionary is not equal to other, return boolean True, otherwise return False.
+  timeout is integer 300.
+  from django.utils import timezone and six into default name space.
+  delete the attribute name from the cache dictionary under the DEFAULT_CACHE_ALIAS key.

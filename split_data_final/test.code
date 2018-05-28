@@ -1,0 +1,200 @@
+      def __init__ ( self , host , * args , ** kwargs ) :
+          key = self . make_key ( key , version = version )
+    except DatabaseError :
+   def set_many ( self , data , timeout = DEFAULT_TIMEOUT , version = None ) :
+ renamed = False
+                 expires = typecast_timestamp ( str ( expires ) )
+ fd , tmp_path = tempfile . mkstemp ( dir = self . _dir )
+ cursor . execute ( "DELETE FROM %s "  "WHERE cache_key < %%s" % table ,  [ cursor . fetchone ( ) [ 0 ] ] )
+    def has_key ( self , key , version = None ) :
+          super ( FileBasedCache , self ) . __init__ ( params )
+          if self . _cull_frequency == 0 :
+          key = self . make_key ( key , version = version )
+ from django . utils . encoding import force_bytes
+      import pickle
+      from django . utils . six . moves import cPickle as pickle
+ self . validate_key ( key )
+ self . proxy = False
+                   return False
+ if result and ( mode == 'set' or ( mode == 'add' and current_expires < now ) ) :
+ self . validate_key ( key )
+              _meta = Options ( table )
+ import os
+     class BaseDatabaseCache ( BaseCache ) :
+     class DatabaseCache ( BaseDatabaseCache ) :
+ return pickle . loads ( base64 . b64decode ( force_bytes ( value ) ) )
+ return cursor . fetchone ( ) is not None
+   def clear ( self ) :
+  return default
+      pass
+                  cursor . execute ( "DELETE FROM %s "  "WHERE cache_key = %%s" % table , [ key ] )
+ with connections [ db ] . cursor ( ) as cursor :
+   if six . PY3 :
+ cursor . execute ( "DELETE FROM %s WHERE expires < %%s" % table ,  [ connections [ db ] . ops . value_to_db_datetime ( now ) ] )
+  else :
+ table = connections [ db ] . ops . quote_name ( self . _table )
+                              current_expires = typecast_timestamp ( str ( current_expires ) )
+ self . managed = True
+ result = cursor . fetchone ( )
+      class CacheClass ( DatabaseCache ) :
+  with connections [ db ] . cursor ( ) as cursor :
+                      pass
+ import io
+              cursor . execute ( "SELECT cache_key, value, expires FROM %s "  "WHERE cache_key = %%s" % table , [ key ] )
+  elif settings . USE_TZ :
+              return False
+          key = self . make_key ( key , version = version )
+ import random
+                  exp = datetime . utcfromtimestamp ( timeout )
+          fname = self . _key_to_file ( key , version )
+ self . validate_key ( key )
+ self . validate_key ( key )
+ table = connections [ db ] . ops . quote_name ( self . _table )
+     def clear ( self ) :
+ if connections [ db ] . features . needs_datetime_string_cast and not isinstance ( expires , datetime ) :
+ if num > self . _max_entries :
+  self . cache_model_class = CacheEntry
+  pickled = pickle . dumps ( value , pickle . HIGHEST_PROTOCOL )
+  def __init__ ( self , dir , params ) :
+   def set ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+  from django . core . cache . backends . base import BaseCache , DEFAULT_TIMEOUT
+ if ( connections [ db ] . features . needs_datetime_string_cast and not  isinstance ( current_expires , datetime ) ) :
+               now = now . replace ( tzinfo = None )
+          BaseCache . __init__ ( self , * args , ** kwargs )
+          self . _createdir ( )
+          pass
+ self . validate_key ( key )
+ import tempfile
+              cursor . execute ( 'DELETE FROM %s' % table )
+  now = now . replace ( microsecond = 0 )
+ import glob
+                  cull_num = num // self . _cull_frequency
+          if self . has_key ( key , version ) :
+ try :
+ now = now . replace ( microsecond = 0 )
+    except IOError as e :
+                          cursor . execute ( "INSERT INTO %s (cache_key, value, expires) "  "VALUES (%%s, %%s, %%s)" % table ,  [ key , b64encoded , exp ] )
+ return True
+ db = router . db_for_write ( self . cache_model_class )
+   def set ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+ self . validate_key ( key )
+ now = timezone . now ( )
+  with connections [ db ] . cursor ( ) as cursor :
+      pass
+ from django . core . files . move import file_move_safe
+              cursor . execute ( "DELETE FROM %s WHERE cache_key = %%s" % table , [ key ] )
+          return { }
+ fname = self . _key_to_file ( key , version )
+                          current_expires = result [ 1 ]
+ if os . path . exists ( fname ) :
+   def add ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+   def has_key ( self , key , version = None ) :
+   class DummyCache ( BaseCache ) :
+                  self . _cull ( db , cursor , now )
+ from django . core . cache . backends . base import BaseCache , DEFAULT_TIMEOUT
+  else :
+          key = self . make_key ( key , version = version )
+ db = router . db_for_read ( self . cache_model_class )
+ import hashlib
+                      if not self . _is_expired ( f ) :
+                  exp = datetime . fromtimestamp ( timeout )
+ return False
+              cursor . execute ( "SELECT cache_key FROM %s "  "WHERE cache_key = %%s and expires > %%s" % table ,  [ key , connections [ db ] . ops . value_to_db_datetime ( now ) ] )
+ return self . _base_set ( 'add' , key , value , timeout )
+   def delete ( self , key , version = None ) :
+ cursor . execute (  connections [ db ] . ops . cache_key_culling_sql ( ) % table ,  [ cull_num ] )
+    return default
+ self . validate_key ( key )
+ self . validate_key ( key )
+                      with transaction . atomic ( using = db ) :
+              now = datetime . utcnow ( )
+   def add ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+  value = connections [ db ] . ops . process_clob ( row [ 1 ] )
+          key = self . make_key ( key , version = version )
+              try :
+                      cursor . execute ( "SELECT cache_key, expires FROM %s "  "WHERE cache_key = %%s" % table , [ key ] )
+          key = self . make_key ( key , version = version )
+ cursor . execute ( "SELECT COUNT(*) FROM %s" % table )
+          key = self . make_key ( key , version = version )
+  if settings . USE_TZ :
+          key = self . make_key ( key , version = version )
+          key = self . make_key ( key , version = version )
+  db = router . db_for_read ( self . cache_model_class )
+                  return True
+ self . verbose_name = 'cache entry'
+              db = router . db_for_write ( self . cache_model_class )
+  now = timezone . now ( )
+ b64encoded = base64 . b64encode ( pickled )
+ self . validate_key ( key )
+   def get ( self , key , default = None , version = None ) :
+    class FileBasedCache ( BaseCache ) :
+ self . object_name = 'CacheEntry'
+ self . _cull ( )
+  if expires < now :
+ self . _base_set ( 'set' , key , value , timeout )
+  db = router . db_for_write ( self . cache_model_class )
+ self . _table = table
+ return True
+ num = cursor . fetchone ( ) [ 0 ]
+ self . model_name = 'cacheentry'
+ if result :
+  except ImportError :
+          timeout = self . get_backend_timeout ( timeout )
+ try :
+   def set ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+                 def get ( self , key , default = None , version = None ) :
+ self . verbose_name_plural = 'cache entries'
+    def _cull ( self , db , cursor , now ) :
+          key = self . make_key ( key , version = version )
+ row = cursor . fetchone ( )
+   def get_many ( self , keys , version = None ) :
+              return default
+      def __init__ ( self , table , params ) :
+          BaseCache . __init__ ( self , params )
+  self . set ( key , value , timeout , version )
+   exp = connections [ db ] . ops . value_to_db_datetime ( exp )
+   def delete_many ( self , keys , version = None ) :
+                  with io . open ( fname , 'rb' ) as f :
+ table = connections [ db ] . ops . quote_name ( self . _table )
+                  b64encoded = b64encoded . decode ( 'latin1' )
+          pass
+  with connections [ db ] . cursor ( ) as cursor :
+ if num > self . _max_entries :
+  else :
+      class CacheClass ( DummyCache ) :
+          pass
+  class CacheEntry ( object ) :
+ import time
+                          return pickle . loads ( zlib . decompress ( f . read ( ) ) )
+ table = connections [ db ] . ops . quote_name ( self . _table )
+  else :
+   def get ( self , key , default = None , version = None ) :
+          db = router . db_for_write ( self . cache_model_class )
+              now = datetime . now ( )
+  with connections [ db ] . cursor ( ) as cursor :
+ self . _dir = os . path . abspath ( dir )
+  if row is None :
+                  if e . errno == errno . ENOENT :
+                          cursor . execute ( "UPDATE %s SET value = %%s, expires = %%s "  "WHERE cache_key = %%s" % table ,  [ b64encoded , exp , key ] )
+  else :
+ table = connections [ db ] . ops . quote_name ( self . _table )
+              cursor . execute ( "SELECT COUNT(*) FROM %s" % table )
+ if timeout is None :
+ expires = row [ 2 ]
+ import errno
+ table = connections [ db ] . ops . quote_name ( self . _table )
+              self . clear ( )
+ num = cursor . fetchone ( ) [ 0 ]
+ self . validate_key ( key )
+ import zlib
+  exp = exp . replace ( microsecond = 0 )
+ self . abstract = False
+ return default
+   def add ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+ with connections [ db ] . cursor ( ) as cursor :
+   def _base_set ( self , mode , key , value , timeout = DEFAULT_TIMEOUT ) :
+ self . _createdir ( )
+  try :
+      cache_suffix = '.djcache'
+     def delete ( self , key , version = None ) :
+                  exp = datetime . max

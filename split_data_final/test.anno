@@ -1,0 +1,200 @@
+  define initialization method __init__ with 4 arguments: self, host, list of arguments args and dictionary of arguments kwargs.
+  call the method self.make_key with key and version set to version as arguments, substitute the result for key.
+  substitute the '%s' with table and 3 elements of a list: b64encoded, exp and key, respectively.   if DatabaseError exception is caught,
+  define the method set_many with 4 arguments: self, data, timeout set to DEFAULT_TIMEOUT and version set to None.
+  renamed is boolean False.
+  and expires is not an instance of datetime.   convert expires to a string, use it as argument for the call to the function typecast_timestamp, substitute the result for expires.
+  call the method tempfile.mkstemp with dir set to self._dir, substitute result for fd and tmp_path, respectively.
+  with previous result and list containing cull_num, respectively as arguments.   call the method cursor.execute with string "DELETE FROM %s WHERE cache_key < %%s" as argument,
+  substitute the '%s' with table and list containing key, respectively.   define the method has_key with self class instance, key and version defaulting to None as arguments.
+  call method __init__ with argument params from the base class of the FileBaseCache.
+  if self._cull_frequency equals to integer 0.
+  call the method self.make_key with key and version set to version as arguments, substitute it for key.
+  from django.utils.encoding import force_bytes into default name space.
+  import pickle.
+  from django.utils.six.moves import cPickle as pickle into default name space.
+  call the method self.validate_key with argument key.
+  self.proxy is boolean False.
+  return boolean False.
+  if mode equals to string 'add' and current_expires is lesser than now, or mode equals to string 'set', and result is true,
+  call the self.validate_key method with argument key.
+  _meta is class Options class instance initialized with table argument.
+  import module os.
+  derive class BaseDatabaseCache from BaseCache base class.
+  derive DatabaseCache from the BaseDatabaseCache base class.
+  call the function force_bytes with argument value, use the result as an argument for the call to the method base64.b64decode,
+  substitute the '%s' with table and list containing return value of the method call ops.value_to_db_datetime with argument now on the object under the db key of connections dictionary, respectively.   if exists return next entry from the database that cursor points at.
+  define the method clear with argument self.
+  substitute the '%s' with table and list containing key, respectively.   return default.
+  do nothing.
+  call the method cursor.execute with string "DELETE FROM %s WHERE cache_key = %%s" as argument,
+  call the cursor method on the value under the db key of connections dictionary, preform following with return value named cursor,
+  if six.PY3 is true,
+  call the method cursor.execute with string "DELETE FROM %s WHERE expires < %%s" as argument,
+  if not,
+  call the ops.quote_name method with argument self._table on the object under the db key of connections dictionary, substitute the result for table.
+  convert current_expires to a string, use it as the argument for the call to the function typecast_timestamp, substitute the result for current_expires.
+  self.managed is boolean True.
+  substitute the '%s' with table and list containing key, respectively.   fetch one entry from the database that cursor points at, substitute it for the result.
+  derive the class CacheClass from the DatabaseCache base class.
+  call the cursor method on the value under the db key of connections dictionary, preform following with return value named cursor,
+  do nothing.
+  import module io.
+  call the method cursor.execute with string "SELECT cache_key, value, expires FROM %s WHERE cache_key = %%s" as argument,
+  otherwise is settings.USE_TI is true,
+  return boolean False.
+  call the method self.make_key with key and version set to version as arguments, substitute it for key.
+  import module random.
+  call the function datetime.utcfromtimestamp with argument timeout, substitute it for exp.
+  call the function self._key_to_file with key and version as arguments, substitute it for fname.
+  call the method self.validate_key with argument key.
+  call the method self.validate_key with argument key.
+  call the ops.quote_name method with argument self._table on the object under the db key of connections dictionary, substitute the result for table.
+  substitute the '%s' with table and list containing first element of cursor.fetchone method, respectively.   define the method clear with argument self.
+  if features.needs_datetime_string_cast field of the object represented stored under the db key of connections dictionary is true,
+  if num is greater than self._max_entries,
+  substitute CacheEntry for self.cache_model_class.
+  call the method pickle.dumps with value and pickle.HIGHEST_PROTOCOL as arguments, substitute it for pickled.
+  define the initialization method __init__ with arguments: self class instance, dir and params.
+  define the method set with 5 arguments: self, key, value, timeout set to DEFAULT_TIMEOUT and version set to None.
+  from django.core.cache.backends.base import BaseCache and DEFAULT_TIMEOUT into default name space.
+  if features.needs_datetime_string_cast field of object under the db key of connections dictionary is true and current_expires is not an instance of datetime object.
+  call the method now.replace with argument tzinfo set to None, substitute it for now.
+  call the BaseCache initialization method __init__ with 3 arguments self, list of arguments args and dictionary of arguments kwargs.
+  call the self._createdir method.
+  do nothing.
+  call the method self.validate_key with argument key.
+  import module tempfile.
+  call the method cursor.execute with string "DELETE FROM %s" as argument, substitute the '%s' with table.
+  call the method now.replace with the argument microsecond set to integer 0, substitute the result for now.
+  import module glob.
+  divide num by self._cull_frequency, floor the result and substitute it for cull_num.
+  evaluate method self.has_key with key and version as arguments, if the result is true,
+  try,
+  call the function now.replace with microseconds set to integer 0, substitute the result for now.
+  if IOError, renamed to e, exception is caught,
+  call the method cursor.execute with string "INSERT INTO %s (cache_key, value, expires) VALUES (%%s, %%s, %%s)",
+  return boolean True.
+  call the method router.db_for_write with argument self.cache_model_class, substitute the result for db.
+  use the result as the argument for the function call to the pickle.loads, return the result.   define the method set with 5 arguments, self class instance, key, value, timeout set to DEFAULT_TIMEOUT and version set to None.
+  call the method self.validate_key with argument key.
+  call the timezone.now function, substitute the result for now.
+  call the cursor method on the value under the db key of connections dictionary, preform following with return value named cursor,
+  do nothing.
+  from django.core.files.move import file_move_safe into default name space.
+  call the method cursor.execute with string "DELETE FROM %s WHERE cache_key = %%s" as argument,
+  return an empty dictionary.
+  call the function self._key_to_file with key and version as arguments, substitute it for fname.
+  substitute the second element of result for current_expires.
+  if fname file path exists,
+  define the method add with 5 arguments, self class instance, key, value, timeout set to DEFAULT_TIMEOUT and version set to None.
+  define the method has_key with 3 arguments: self, key, and version set to None.
+  derive the class DummyCache from the base class BaseCache.
+  call the method self._cull with db, cursor and now as arguments.
+  from django.core.cache.backends.base import BaseCache and DEFAULT_TIMEOUT into default name space.
+  if not,
+  call the method self.make_key with key and version set to version as arguments, substitute it for key.
+  call the method router.db_for_read with self.cache_model_class as argument, substitute the result for db.
+  import module hashlib.
+  evaluate self._is_expired method with f as argument, if the result is false,
+  call the function datetime.fromtimestamp with argument timeout, substitute it for exp.
+  return boolean False.
+  call the method cursor.execute with string "SELECT cache_key FROM %s WHERE cache_key = %%s and expires > %%s" as argument,
+  call the method self._base_set with string 'add', key, value and timeout as arguments, return the result.
+  define the method delete with 3 arguments: self, key, and version set to None.
+  evaluate the method connections[db].ops.cache_key_culling_sql, evaluate the result by table modulus, call the method cursor.execute,
+  return default.
+  call the method self.validate_key with argument key.
+  call the method self.validate_key with key as argument.
+  with return value of the function transaction.atomic with using set to db as arguments, perform the following,
+  call the function datetime.utcnow, substitute the result for now.
+  define the method add with 5 arguments: self, key, value, timeout set to DEFAULT_TIMEOUT and version set to None.
+  call the method ops.process_clob with second element of row as argument, on the object under the db key of connections dictionary, substitute the result for value.
+  call the method self.make_key with key and version set to version as arguments, substitute it for key.
+  try,
+  call the method cursor.execute with string "SELECT cache_key, expires FROM %s WHERE cache_key = %%s" as argument,
+  call the method self.make_key Whit key and version set to version as arguments, substitute the result for key.
+  substitute the '%s' with table and list containing return value of the method call ops.value_to_db_datetime with argument now on the object under the db key of connections dictionary, respectively.   call the method cursor.execute with string "SELECT COUNT(*) FROM %s" as argument, substitute the '%s' with table.
+  call the method self.make_key with key and version set to version as arguments, substitute it for key.
+  if settings.USE_TZ is true,
+  call the self.make_key with key and version set to version as arguments, substitute the result for key.
+  call the method self.make_key with key and version set to version as arguments, substitute the result for key.
+  call the method router.db_for_write with argument self.cache_model_class, substitute the result for db.
+  return boolean True.
+  self.verbose_name is a string 'cache entry'.
+  call the method router.db_for_write with argument self.cache_model_class, substitute the result for db.
+  call the timezone.now function, substitute the result for now.
+  call the method base64.b64encode with argument pickled, substitute the result for b64encoded.
+  call the method self.validate_key with argument key.
+  define the method get with 5 arguments, self class instance, key, default set to None and version set to None.
+  derive the class FileBasedCache from BaseCache base class.
+  self.object_name is a string 'CacheEntry'.
+  call the method self._cull.
+  if expires is lesser than now,
+  call the method self._base_set with string 'set', key, value and timeout as arguments.
+  call the method router.db_for_write with argument self.cache_model_class, substitute the result for db.
+  substitute table for self._table.
+  return boolean True.
+  fetch next entry for the database that cursor points into, substitute first element of it for num.
+  self.model_name is a string 'cacheentry'.
+  if result is true,
+  if ImportError exception is caught,
+  call the method self.get_backend_timeout with argument timeout, substitute the result for timeout.
+  try,
+  define the method set with 5 arguments, self class instance, key, value, timeout set to DEFAULT_TIMEOUT and version set to None.
+  define the method get with 4 arguments, self class instance, key, default set to None and version set to None.
+  self.verbose_name_plural is a string 'cache entries'.
+  define the protected method _cull with self class instance, db, cursor and now as arguments.
+  call the method self.make_key with key and version set to version as arguments, substitute the result for key.
+  substitute the '%s' with table and list containing key, respectively.   call the cursor.fetchone method, substitute the result for row.
+  define the method get_many with 3 arguments: self, keys, and version set to None.
+  return default.
+  define the initialization method __init__ with self, table and params as arguments.
+  call the BaseCache.__init__ method with self class instance and params as the arguments.
+  call the method self.set with key, value, timeout and version as arguments.
+  on the object under the db key of connections dictionary call the method ops.value_to_db_datetime with argument exp, substitute the result for the exp.
+  define the method delete_many with 3 arguments: self, keys, and version set to None.
+  with return value of the function io.open with fname and string 'rb' as arguments, named as f,
+  call the ops.quote_name method with argument self._table on the value under the db key of connections dictionary, substitute the result for table.
+  call the method b64encoded.decode with string 'latin1' as argument, substitute the result for b64encoded.
+  do nothing
+  call the cursor method on the value under the db key of connections dictionary, preform following with return value named cursor,
+  if num is greater than self._max_entries,
+  substitute the '%s' with table and 3 elements of a list: b64encoded, exp and key, respectively.   if not,
+  derive the class CacheClass from the DummyCache base class.
+  do nothing.
+  derive CacheEntry class from the object base class.
+  import module time.
+  call f.read function, use the result as the argument for zlib.decompress function call, call the pickle.loads function with the previous result as argument, return the result.
+  call the ops.quote_name method with argument self._table on the object under the db key of connections dictionary, substitute the result for table.
+  if not,
+  define the method get with 4 arguments: self, key, default set to None and version set to None.
+  call the method router.db_for_write with argument self.cache_model_class, substitute the result for db.
+  call the function datetime.now, substitute the result to now.
+  call the cursor method on the value under the db key of connections dictionary, preform following with return value named cursor,
+  get absolute directory path of dir, substitute it for self._dir.
+  if row is None,
+  if e.errno equals to errno.ENOENT,
+  call the method cursor.execute with string "UPDATE %s SET value = %%s, expires = %%s WHERE cache_key = %%s" as argument,
+  if not,
+  call the ops.quote_name method with argument self._table on the object under the db key of connections dictionary, substitute the result for table.
+  call the method cursor.execute with string "SELECT COUNT(*) FROM %s" as argument, substitute the '%s' with table.
+  if timeout is None,
+  substitute third element of row list for expires.
+  import module errno.
+  call the ops.quote_name method with argument self._table on the object under the db key of connections dictionary, substitute the result for table.
+  call the self.clear method.
+  fetch one record from the database cursor points at, substitute the first element of return value for num.
+  call the method self.validate_key with key as argument.
+  import module zlib.
+  call the exp.replace with microsecond set to integer 0, substitute the result for exp.
+  self.abstract is boolean False.
+  return default.
+  define the method add with 5 arguments, self class instance, key, value, timeout set to DEFAULT_TIMEOUT and version set to None.
+  call the cursor method on the value under the db key of connections dictionary, preform following with return value named cursor,
+  define the protected method _base_set with 4 arguments, self class instance, key, value and timeout set to DEFAULT_TIMEOUT.
+  call the self._createdir method.
+  try,
+  cache_suffix is a string '.djcache'.
+  define the method delete with self class instance, key and version set to None as arguments.
+  substitute the datetime.max for exp.
