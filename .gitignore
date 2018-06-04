@@ -3,3 +3,5 @@ tf-seq2seq/*
 !tf-seq2seq/train.py
 
 !tf-seq2seq/split_data_final/*
+
+!tf-seq2seq/split_data_final_final/*

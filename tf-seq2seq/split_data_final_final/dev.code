@@ -1,0 +1,1800 @@
+              self . file = BytesIO ( )
+  else :
+          timeout = params . get ( 'timeout' , params . get ( 'TIMEOUT' , 300 ) )
+      pass
+ fd , tmp_path = tempfile . mkstemp ( dir = self . _dir )
+  def __init__ ( self , location = None , base_url = None , file_permissions_mode = None ,  directory_permissions_mode = None ) :
+ backend = params . pop ( 'BACKEND' )
+   def __repr__ ( self ) :
+              yield buffer_
+         while True :
+          key = self . make_key ( key , version = version )
+    caches = CacheHandler ( )
+          super ( InMemoryUploadedFile , self ) . __init__ ( file , name , content_type , size , charset , content_type_extra )
+                  return pickle . loads ( pickled )
+                      response = middleware_method ( request , response )
+   def _save ( self , name , content ) :
+ return self . get ( key , version = version ) is not None
+ return bool ( ret )
+ from django . conf import settings
+                  os . remove ( name )
+      from django . utils . six . moves import cPickle as pickle
+    return default
+ return True
+                      pass
+                  raise InvalidCacheBackendError ( "Could not find backend '%s': %s" % (  backend , e ) )
+ self . file_name = file_name
+  if self . obj is None :
+    NON_FIELD_ERRORS = '__all__'
+  return errors
+ from django . utils . encoding import python_2_unicode_compatible
+   if content_length > settings . FILE_UPLOAD_MAX_MEMORY_SIZE :
+  from io import BytesIO
+  from django . core . exceptions import ImproperlyConfigured , DjangoRuntimeWarning
+     def __str__ ( self ) :
+   def __exit__ ( self , exc_type , exc_value , tb ) :
+              client . behaviors = self . _options
+ import itertools
+              return smart_text ( token )
+    if not os . path . isdir ( directory ) :
+          return datetime . fromtimestamp ( os . path . getctime ( self . path ( name ) ) )
+  return True
+              data = file . read ( chunk_size )
+ return self . _size
+              self . _delete ( fname )
+  return urljoin ( self . base_url , filepath_to_uri ( name ) )
+ full_path = self . path ( name )
+          key = self . make_key ( key , version = version )
+              logger . warning (  'Forbidden (Permission denied): %s' , request . path ,  extra = {  'status_code' : 403 ,  'request' : request  } )
+          fname = self . _key_to_file ( key , version )
+              version = self . version
+ name = self . path ( name )
+   def _get_size_from_underlying_file ( self ) :
+              try :
+    class MultipleObjectsReturned ( Exception ) :
+      pass
+   def lock ( f , flags ) :
+              self . file = open ( self . name , mode or self . mode )
+ self . obj = obj
+import os
+              now = datetime . now ( )
+ return new_key
+  try :
+          self . registered_checks = [ ]
+    def has_key ( self , key , version = None ) :
+          return File ( open ( self . path ( name ) , mode ) )
+ try :
+  if delta < 0 :
+                      raise EnvironmentError (  "Cache directory '%s' does not exist "  "and could not be created'" % self . _dir )
+  else :
+                     raise
+          self . _caches = local ( )
+ if value is None :
+    DEBUG = 10
+              self . _max_entries = int ( max_entries )
+ from django . utils . encoding import force_str
+              return default
+          return not self . file or self . file . closed
+              self . clear ( )
+ renamed = True
+ def from_dict ( cls , file_dict ) :
+              six . reraise ( * exc_info )
+              stream_class = BytesIO
+ pass
+  try :
+                  response = debug . technical_404_response ( request , e )
+                        old_umask = os . umask ( 0 )
+ try :
+              self . delete ( key , version = version )
+ self . _exception_middleware = [ ]
+          key = self . make_key ( key , version = version )
+          return super ( Error , self ) . __init__ ( ERROR , * args , ** kwargs )
+   def chunks ( self , chunk_size = None ) :
+  except :
+ from django . utils . functional import cached_property
+   while True :
+ expires = row [ 2 ]
+ from django . middleware . csrf import get_token
+ self . object_name = 'CacheEntry'
+ from django . utils . deprecation import RenameMethodsBase , RemovedInDjango19Warning
+  if hasattr ( mw_instance , 'process_exception' ) :
+ pass
+ self . field_name = field_name
+  except OSError as e :
+ if os . path . exists ( fname ) :
+   def csrf ( request ) :
+  with connections [ db ] . cursor ( ) as cursor :
+   def __ne__ ( self , other ) :
+ table = connections [ db ] . ops . quote_name ( self . _table )
+              for field , errors in self . error_dict . items ( ) :
+                   if not isinstance ( message , ValidationError ) :
+ from django . utils . encoding import force_text
+ import types
+ self . charset = charset
+  else :
+   def get ( self , key , default = None , version = None ) :
+ self . file . seek ( 0 , os . SEEK_END )
+ weight += 2
+                          raise ValueError (  "%s.process_template_response didn't return an "  "HttpResponse object. It returned None instead."  % ( middleware_method . __self__ . __class__ . __name__ ) )
+   def __contains__ ( self , key ) :
+  return False
+  for middleware_method in self . _request_middleware :
+   class Tags ( object ) :
+              os . chmod ( full_path , self . file_permissions_mode )
+ return self . file
+      unlink = os . unlink
+              weight += 1
+   def has_key ( self , key , version = None ) :
+   class Storage ( object ) :
+   def _base_set ( self , mode , key , value , timeout = DEFAULT_TIMEOUT ) :
+ if hasattr ( os , 'utime' ) :
+ response = self . handle_uncaught_exception ( request , resolver , sys . exc_info ( ) )
+ class File ( FileProxyMixin ) :
+      self . _request_middleware = request_middleware
+              return False
+    class ImproperlyConfigured ( Exception ) :
+ num = cursor . fetchone ( ) [ 0 ]
+   def set ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+ LockFileEx . restype = BOOL
+              return repr ( dict ( self ) )
+   @ cached_property
+  raise ValueError ( "The view %s.%s didn't return an HttpResponse object. It returned None instead."  % ( callback . __module__ , view_name ) )
+  try :
+    class DisallowedHost ( SuspiciousOperation ) :
+ from __future__ import unicode_literals
+   cache = _create_cache ( alias )
+ args = hashlib . md5 ( force_bytes ( key ) )
+          super ( FileBasedCache , self ) . __init__ ( params )
+  now = now . replace ( microsecond = 0 )
+ self . delete ( key , version = version )
+ def __getattr__ ( self , name ) :
+ self . _base_set ( 'set' , key , value , timeout )
+              key = self . make_key ( key , version = version )
+                  self . _response_middleware . insert ( 0 , mw_instance . process_response )
+              raise
+    if settings . is_overridden ( 'MANAGERS' ) :
+ self . abstract = False
+ from django . conf import settings
+  return dict ( self )
+ run_checks = registry . run_checks
+          return smart_text ( self . name or '' )
+ self . _table = table
+          token = get_token ( request )
+                  current_chunk = old_file . read ( chunk_size )
+ if response :
+ for func in self . response_fixes :
+ signals = 'signals'
+ def check_1_6_compatibility ( ** kwargs ) :
+   @ register ( Tags . compatibility )
+          return iter ( self . file )
+  elif settings . USE_TZ :
+              error_dict . setdefault ( NON_FIELD_ERRORS , [ ] ) . extend ( self . error_list )
+  value = connections [ db ] . ops . process_clob ( row [ 1 ] )
+          pass
+                  pass
+              self . _max_entries = 300
+ def _cache ( self ) :
+   def created_time ( self , name ) :
+ self . validate_key ( key )
+ from django . conf import settings
+            getattr ( self , 'error_dict' )
+ seek = property ( lambda self : self . file . seek )
+ xreadlines = property ( lambda self : self . file . xreadlines )
+                 return 'NOTPROVIDED'
+              self . _servers = server
+ from django . utils . module_loading import import_string
+          super ( BaseMemcachedCache , self ) . __init__ ( params )
+ tag_exists = registry . tag_exists
+  if hasattr ( mw_instance , 'process_template_response' ) :
+   def _delete ( self , fname ) :
+                      pass
+      errors = [ ]
+                  response = self . get_exception_response ( request , resolver , 404 )
+ if timeout == DEFAULT_TIMEOUT :
+          key = self . make_key ( key , version = version )
+     class Debug ( CheckMessage ) :
+  for line in chunk_buffer :
+   return directories , files
+   return name
+   return default_key_func
+              try :
+ fileno = property ( lambda self : self . file . fileno )
+ if token is None :
+  return self . _client
+ pass
+   LPOVERLAPPED = POINTER ( OVERLAPPED )
+                  if e . errno != errno . EEXIST :
+ return InMemoryUploadedFile (  file = self . file ,  field_name = self . field_name ,  name = self . file_name ,  content_type = self . content_type ,  size = file_size ,  charset = self . charset ,  content_type_extra = self . content_type_extra  )
+                  if isinstance ( callback , types . FunctionType ) :
+  import logging
+ self . _lock = _locks . setdefault ( name , RWLock ( ) )
+   def __len__ ( self ) :
+          return super ( Warning , self ) . __init__ ( WARNING , * args , ** kwargs )
+ from django . utils . deprecation import RemovedInDjango19Warning
+                      response = middleware_method ( request , callback , callback_args , callback_kwargs )
+ self . _expire_info [ key ] = self . get_backend_timeout ( timeout )
+               name = os . path . join ( dir_name , "%s_%s%s" % ( file_root , next ( count ) , file_ext ) )
+   except :
+ import types
+ response = self . handle_uncaught_exception ( request , resolver , sys . exc_info ( ) )
+   def delete ( self , key , version = None ) :
+          return super ( Critical , self ) . __init__ ( CRITICAL , * args , ** kwargs )
+      if vary_on is None :
+ from ctypes import ( sizeof , c_ulong , c_void_p , c_int64 ,  Structure , Union , POINTER , windll , byref )
+   return response
+              return self . _size
+ b64encoded = base64 . b64encode ( pickled )
+ DEFAULT_CHUNK_SIZE = 64 * 2 ** 10
+              try :
+ def __init__ ( self , name , content , content_type = 'text/plain' ) :
+     elif not hasattr ( message , 'message' if six . PY3 else 'code' ) :
+              self . file . __enter__ ( )
+ self . validate_key ( key )
+          import pylibmc
+              if getattr ( e , 'winerror' , 0 ) != 32 and getattr ( e , 'errno' , 0 ) != 13 :
+      class CacheClass ( FileBasedCache ) :
+ for chunk in content . chunks ( ) :
+                  self . _cull ( db , cursor , now )
+  if row is None :
+                  response = middleware_method ( request , response )
+                  if e . errno != errno . EEXIST :
+              return self . _cache . incr ( key , - delta )
+ raise NotImplementedError ( 'subclasses of Storage must provide a modified_time() method' )
+ self . _delete ( f . name )
+                  response = middleware_method ( request )
+ return version + delta
+ def __init__ ( self , mode = 'w+b' , bufsize = - 1 , suffix = '' , prefix = '' ,  dir = None ) :
+     def incr_version ( self , key , delta = 1 , version = None ) :
+              self . _client = self . _lib . Client ( self . _servers )
+               for middleware_method in self . _response_middleware :
+ overlapped = OVERLAPPED ( )
+  return ret
+    try :
+  from . . import Warning , register , Tags
+ callback , callback_args , callback_kwargs = resolver_match
+ from django . utils . synch import RWLock
+ dir_name , file_name = os . path . split ( name )
+              logger . warning ( 'Not Found: %s' , request . path ,  extra = {  'status_code' : 404 ,  'request' : request  } )
+              if not self . _has_expired ( key ) :
+ raise NotImplementedError ( 'subclasses of BaseCache must provide a clear() method' )
+              close = self . closed
+ raise NotImplementedError ( 'subclasses of Storage must provide a created_time() method' )
+ self . validate_key ( key )
+          self . db_table = table
+ self . _cache . set ( key , value , self . get_backend_timeout ( timeout ) )
+      DEFAULT_TIMEOUT = object ( )
+   if hasattr ( mw_instance , 'process_request' ) :
+              return
+ size = self . file . tell ( )
+ from __future__ import unicode_literals
+           try :
+ from django . core . files import temp as tempfile
+              try :
+          return datetime . fromtimestamp ( os . path . getatime ( self . path ( name ) ) )
+  key = ':' . join ( urlquote ( var ) for var in vary_on )
+ readinto = property ( lambda self : self . file . readinto )
+   return inner
+ self . _cache . delete_multi ( map ( l , keys ) )
+          return self . _get_image_dimensions ( ) [ 1 ]
+ for k in keys :
+      pass
+     @ python_2_unicode_compatible
+ for k in doomed :
+  new_value = value + delta
+  except AttributeError :
+                  self . _exception_middleware . insert ( 0 , mw_instance . process_exception )
+                   if hasattr ( content , 'temporary_file_path' ) :
+ if not data :
+          """Close the cache connection"""
+                  return True
+              if e . errno != errno . ENOENT :
+ raise NotImplementedError ( 'subclasses of FileUploadHandler must provide a file_complete() method' )
+ if timeout is not None :
+ import django . core . checks . model_checks
+                      message %= error . params
+          return force_str ( "<%s: %s (%s)>" % (  self . __class__ . __name__ , self . name , self . content_type ) )
+ filelist = self . _list_cache_files ( )
+ from django . utils . encoding import force_bytes
+  id = "(%s) " % self . id if self . id else ""
+          self . _size = size
+ def __init__ ( self , file , field_name , name , content_type , size , charset , content_type_extra = None ) :
+          vary_on = ( )
+   try :
+ import io
+   def set ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+     if hasattr ( response , 'render' ) and callable ( response . render ) :
+   def open ( self , mode = None ) :
+  now = timezone . now ( )
+              checks = self . registered_checks
+   def __repr__ ( self ) :
+  return context_extras
+              try :
+  finally :
+ self . verbose_name = 'cache entry'
+              data = self . read ( chunk_size )
+ self . _cull ( )
+ from django . core . files . move import file_move_safe
+                  timeout = 300
+  from . messages import ( CheckMessage ,  Debug , Info , Warning , Error , Critical ,  DEBUG , INFO , WARNING , ERROR , CRITICAL )
+  width = property ( _get_width )
+          if self . base_url is None :
+  context_extras = { }
+ from django . core . files . utils import FileProxyMixin
+ with connections [ db ] . cursor ( ) as cursor :
+      return { 'request' : request }
+              chunk_size = self . DEFAULT_CHUNK_SIZE
+  exp = exp . replace ( microsecond = 0 )
+ UnlockFileEx . restype = BOOL
+     class MemoryFileUploadHandler ( FileUploadHandler ) :
+   def open ( self , mode = None ) :
+     return errors
+                          cursor . execute ( "UPDATE %s SET value = %%s, expires = %%s "  "WHERE cache_key = %%s" % table ,  [ b64encoded , exp , key ] )
+              ret = fcntl . flock ( _fd ( f ) , flags )
+ self . set ( key , new_value , version = version )
+ class ContentFile ( File ) :
+              self . seek ( 0 )
+                  pass
+              self . message = message
+   signals . request_finished . connect ( close_caches )
+ del self . _expire_info [ key ]
+   def multiple_chunks ( self , chunk_size = None ) :
+ pass
+ os . write ( fd , current_chunk )
+ return False
+          l = lambda x : self . make_key ( x , version = version )
+ if tags is not None :
+ return cache
+ key = self . make_key ( key , version = version )
+ from __future__ import unicode_literals
+ pickled = None
+   name = property ( _get_name , _set_name )
+   def close ( self ) :
+              pos = self . file . tell ( )
+   def all ( self ) :
+                              os . close ( fd )
+   def file_complete ( self , file_size ) :
+              path = safe_join ( self . location , name )
+    if isinstance ( message , dict ) :
+          return os . path . exists ( self . path ( name ) )
+ row = cursor . fetchone ( )
+   copystat ( old_file_name , new_file_name )
+ import zlib
+  from django . conf import settings
+ pass
+              del self . _cache [ key ]
+          return bool ( self . name )
+  closed = property ( _get_closed )
+              response = func ( request , response )
+    except DatabaseError :
+  for fname in self . _list_cache_files ( ) :
+ LOCK_NB = 0x1
+   def upload_complete ( self ) :
+          raise InvalidCacheBackendError (  "Could not find backend '%s': %s" % ( backend , e ) )
+                      response = wrapped_callback ( request , * callback_args , ** callback_kwargs )
+   return self . _client
+  except ImportError :
+   def get_many ( self , keys , version = None ) :
+           buffer_ = None
+  except ( ValueError , TypeError ) :
+ if timeout == DEFAULT_TIMEOUT :
+  with connections [ db ] . cursor ( ) as cursor :
+           return force_str ( super ( BaseMemcachedCache , self ) . make_key ( key , version ) )
+   def __repr__ ( self ) :
+   class ImageFile ( File ) :
+ if key_func is not None :
+              weight += 2
+              self . _servers = server . split ( ';' )
+      def _key_to_file ( self , key , version = None ) :
+          self . _cache . disconnect_all ( )
+  def inner ( check ) :
+      from django . utils import timezone
+                  with io . open ( fname , 'rb' ) as f :
+ return True
+ while current_chunk != b'' :
+ self . app_label = 'django_cache'
+   def get_backend_timeout ( self , timeout = DEFAULT_TIMEOUT ) :
+   def _samefile ( src , dst ) :
+              version = self . version
+ urlresolvers . set_urlconf ( urlconf )
+ file . seek ( 0 )
+ ret = LockFileEx ( hfile , flags , 0 , 0 , 0xFFFF0000 , byref ( overlapped ) )
+ import glob
+ if val is None :
+          super ( MemoryFileUploadHandler , self ) . new_file ( * args , ** kwargs )
+  if isinstance ( message , ValidationError ) :
+              locks . lock ( fd , locks . LOCK_EX )
+                  self . _delete ( k )
+   def clear ( self ) :
+  else :
+  else :
+  except AttributeError :
+  else :
+                  os . remove ( tmp_path )
+   def __repr__ ( self ) :
+  except KeyError :
+ def __init__ ( self , message , code = None , params = None ) :
+              val = self . _cache . incr ( key , delta )
+          import fcntl
+  _file . write ( chunk )
+    def get ( self , key , default = None , version = None ) :
+   def clear ( self ) :
+ models = 'models'
+   if alias not in settings . CACHES :
+   if hasattr ( self . file , 'tell' ) and hasattr ( self . file , 'seek' ) :
+ from django . db . backends . utils import typecast_timestamp
+                      raise ValueError (  "%s.process_response didn't return an "  "HttpResponse object. It returned None instead."  % ( middleware_method . __self__ . __class__ . __name__ ) )
+              content = File ( content )
+          exp = self . _expire_info . get ( key , - 1 )
+  else :
+ now = timezone . now ( )
+ self . version = params . get ( 'VERSION' , 1 )
+              file = tempfile . NamedTemporaryFile ( suffix = '.upload' ,  dir = settings . FILE_UPLOAD_TEMP_DIR )
+ context_extras [ 'LANGUAGES' ] = settings . LANGUAGES
+    if os . name == 'nt' :
+          non_atomic_requests = getattr ( view , '_non_atomic_requests' , set ( ) )
+                  message , code , params = message . message , message . code , message . params
+ tell = property ( lambda self : self . file . tell )
+ from django . core import signals
+  elif isinstance ( self . obj , models . base . ModelBase ) :
+ renamed = False
+   def set ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+   def has_key ( self , key , version = None ) :
+                   break
+  else :
+    @ property
+     class PyLibMCCache ( BaseMemcachedCache ) :
+ from threading import Lock
+ try :
+  __all__ = ( 'LOCK_EX' , 'LOCK_SH' , 'LOCK_NB' , 'lock' , 'unlock' )
+   if p . image :
+  def __init__ ( self , file , name = None ) :
+                              _file . close ( )
+ resolver = urlresolvers . RegexURLResolver ( r'^/' , urlconf )
+ try :
+    def close ( self ) :
+ self . verbose_name_plural = 'cache entries'
+  except ( OSError , TypeError ) :
+          if self . _cull_frequency == 0 :
+ if version is None :
+ self . location = abspathu ( self . base_location )
+          _fields_ = [  ( 'Offset' , DWORD ) ,  ( 'OffsetHigh' , DWORD ) ]
+ if settings . DEBUG :
+  else :
+ value = self . get ( key , version = version )
+ from io import BytesIO
+ context_extras = { }
+   class Options ( object ) :
+  from django . apps import apps
+ import os
+      def _setup ( self ) :
+   class InvalidCacheBackendError ( ImproperlyConfigured ) :
+ for middleware_path in settings . MIDDLEWARE_CLASSES :
+ return '%s:%s:%s' % ( key_prefix , version , key )
+ if version is None :
+                  if e . errno != errno . ENOENT :
+              return import_string ( key_func )
+   def delete ( self , key , version = None ) :
+     class BaseDatabaseCache ( BaseCache ) :
+ resolver = urlresolvers . RegexURLResolver ( r'^/' , urlconf )
+                  del self . _cache [ key ]
+    class MiddlewareNotUsed ( Exception ) :
+              doomed = [ k for ( i , k ) in enumerate ( self . _cache ) if i % self . _cull_frequency == 0 ]
+ from django . core . files . uploadedfile import TemporaryUploadedFile , InMemoryUploadedFile
+  return repr ( list ( self ) )
+              obj = force_str ( self . obj )
+ from django . core import signals
+   def receive_data_chunk ( self , raw_data , start ) :
+                  if self . directory_permissions_mode is not None :
+  return default
+     def delete ( self , key , version = None ) :
+              signals . got_request_exception . send ( sender = self . __class__ , request = request )
+   logger . error ( 'Internal Server Error: %s' , request . path ,  exc_info = exc_info ,  extra = {  'status_code' : 500 ,  'request' : request  }  )
+              cursor . execute ( 'DELETE FROM %s' % table )
+ _file = os . fdopen ( fd , mode )
+ f . write ( pickle . dumps ( expiry , - 1 ) )
+   def __iter__ ( self ) :
+ from django . core . files import locks , File
+                  error_dict . setdefault ( field , [ ] ) . extend ( error_list )
+   new_key = self . key_func ( key , self . key_prefix , version )
+             chunk_size = 1024
+   _get_val = lazy ( _get_val , six . text_type )
+     return ( os . path . normcase ( os . path . abspath ( src ) ) ==  os . path . normcase ( os . path . abspath ( dst ) ) )
+      def load_handler ( path , * args , ** kwargs ) :
+      class CacheClass ( LocMemCache ) :
+ return self . incr ( key , - delta , version = version )
+   if len ( name ) > 255 :
+ return errors
+ self . file . seek ( pos )
+                  b64encoded = b64encoded . decode ( 'latin1' )
+ from django . core . cache . backends . base import BaseCache , DEFAULT_TIMEOUT
+  self . _cache [ key ] = value
+    count = itertools . count ( 1 )
+     __all__ = [ 'file_move_safe' ]
+ raise NotImplementedError ( 'subclasses of Storage must provide an accessed_time() method' )
+ _fields_ = [  ( 'Internal' , ULONG_PTR ) ,  ( 'InternalHigh' , ULONG_PTR ) ,  ( '_offset_union' , _OFFSET_UNION ) ,  ( 'hEvent' , HANDLE ) ]
+  import cgi
+  return [  Warning (  "BooleanField does not have a default value." ,  hint = ( "Django 1.6 changed the default value of BooleanField from False to None. "  "See https://docs.djangoproject.com/en/1.6/ref/models/fields/#booleanfield "  "for more information." ) ,  obj = field ,  id = '1_6.W002' ,  )  for field in problem_fields  ]
+    def _set ( self , key , value , timeout = DEFAULT_TIMEOUT ) :
+              mw_class = import_string ( middleware_path )
+  return self . size > chunk_size
+              _meta = Options ( table )
+ response = callback ( request , ** param_dict )
+   def url ( self , name ) :
+     class Warning ( CheckMessage ) :
+           if name is not None :
+          ULONG_PTR = c_ulong
+          key = self . make_key ( key , version = version )
+   def apply_response_fixes ( self , request , response ) :
+  except ( ValueError , TypeError ) :
+   def __eq__ ( self , other ) :
+   def __nonzero__ ( self ) :
+ self . open ( )
+  problem_fields = [  field  for model in apps . get_models ( ** kwargs )  if app_configs is None or model . _meta . app_config in app_configs  for field in model . _meta . local_fields  if isinstance ( field , models . BooleanField ) and not field . has_default ( )  ]
+ from django . utils . encoding import force_str
+   def file_complete ( self , file_size ) :
+   def add ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+  __all__ = [  'UploadFileException' , 'StopUpload' , 'SkipFile' , 'FileUploadHandler' ,  'TemporaryFileUploadHandler' , 'MemoryFileUploadHandler' , 'load_handler' ,  'StopFutureHandlers'  ]
+ from django . utils . encoding import force_bytes , python_2_unicode_compatible
+     def has_key ( self , key , version = None ) :
+          return self . _get_image_dimensions ( ) [ 0 ]
+ LOCK_NB = fcntl . LOCK_NB
+    def _has_expired ( self , key ) :
+                       name = self . get_available_name ( name )
+          return 'Raw content'
+ errors = [ ]
+  file_move_safe ( tmp_path , fname , allow_overwrite = True )
+ if error . params :
+              return self . _cache . decr ( key , - delta )
+              self . error_list = [ ]
+ try :
+ from django . utils . module_loading import import_string
+ def _cache ( self ) :
+   @ property
+   def get_exception_response ( self , request , resolver , status_code ) :
+   self . default_timeout = timeout
+                                  mode = 'wb' if isinstance ( chunk , bytes ) else 'wt'
+  def __init__ ( self ) :
+ self . file = TemporaryUploadedFile ( self . file_name , self . content_type , 0 , self . charset , self . content_type_extra )
+ from django . core . handlers import base
+      from django . utils . six . moves import cPickle as pickle
+     _caches = { }
+  except ValueError :
+              base_url = settings . MEDIA_URL
+      def __init__ ( self , table , params ) :
+     class Critical ( CheckMessage ) :
+   def _set_size ( self , size ) :
+          return tag in self . tags_available ( )
+  from django . core . files import File
+          key = self . make_key ( key , version = version )
+              location = settings . MEDIA_ROOT
+ if not data :
+  elif int ( timeout ) == 0 :
+ self . directory_permissions_mode = (  directory_permissions_mode if directory_permissions_mode is not None  else settings . FILE_UPLOAD_DIRECTORY_PERMISSIONS  )
+  else :
+              return
+   os . rename ( old_file_name , new_file_name )
+  return error_dict
+              weight += 2
+ return cursor . fetchone ( ) is not None
+           return False
+                  wrapped_callback = self . make_view_atomic ( callback )
+                      message = ValidationError ( message )
+   def size ( self , name ) :
+ try :
+   @ register ( Tags . models )
+      if response is None :
+                  if e . errno == errno . EEXIST :
+  __all__ = [  'CheckMessage' ,  'Debug' , 'Info' , 'Warning' , 'Error' , 'Critical' ,  'DEBUG' , 'INFO' , 'WARNING' , 'ERROR' , 'CRITICAL' ,  'register' , 'run_checks' , 'tag_exists' , 'Tags' ,  ]
+  else :
+ import hashlib
+  else :
+ val = self . _cache . get ( key )
+ from django . utils import six
+              return os . path . samefile ( src , dst )
+          return [ ]
+   def set_many ( self , data , timeout = DEFAULT_TIMEOUT , version = None ) :
+   exp = connections [ db ] . ops . value_to_db_datetime ( exp )
+                      cursor . execute ( "SELECT cache_key, expires FROM %s "  "WHERE cache_key = %%s" % table , [ key ] )
+ if not os . path . exists ( directory ) :
+              self . error_dict = { }
+ ret = UnlockFileEx ( hfile , 0 , 0 , 0xFFFF0000 , byref ( overlapped ) )
+ obj = '%s.%s' % ( app , model . _meta . object_name )
+              return key_func
+  except KeyError :
+ register = registry . register
+ raise NotImplementedError ( 'subclasses of Storage must provide an exists() method' )
+   try :
+          super ( TemporaryFileUploadHandler , self ) . __init__ ( * args , ** kwargs )
+      def __init__ ( self , * args , ** kwargs ) :
+  return val
+      def __init__ ( self , params ) :
+              raise ValueError ( "Key '%s' not found" % key )
+          key = self . make_key ( key , version = version )
+ from django . core . urlresolvers import set_script_prefix
+          return setattr ( caches [ DEFAULT_CACHE_ALIAS ] , name , value )
+   @ register ( Tags . compatibility )
+      def exists ( self , name ) :
+    def _check_test_runner ( app_configs = None , ** kwargs ) :
+ if not chunk_size :
+   def get_backend_timeout ( self , timeout = DEFAULT_TIMEOUT ) :
+ del self . _expire_info [ key ]
+                          description = "An instance of the '%s' class" % receiver . __class__ . __name__
+          from django . db import models
+ return get_valid_filename ( name )
+ ext = ext [ : 255 ]
+   def get ( self , key , default = None , version = None ) :
+     def get_image_dimensions ( file_or_path , close = False ) :
+   def path ( self , name ) :
+   def __eq__ ( self , other ) :
+                      self . unlink ( self . name )
+  if DEFAULT_CACHE_ALIAS not in settings . CACHES :
+ from django . utils . six . moves . urllib . parse import urljoin
+ pass
+  import time
+                  for middleware_method in self . _template_response_middleware :
+  ret = _
+ pass
+    class BaseCache ( object ) :
+ if len ( key ) > MEMCACHE_MAX_KEY_LENGTH :
+    def clear ( self ) :
+ def __init__ ( self , server , params ) :
+                  if hasattr ( request , 'urlconf' ) :
+          _anonymous_ = [ '_offset' ]
+ pass
+   if pickled is not None :
+ LockFileEx . argtypes = [ HANDLE , DWORD , DWORD , DWORD , DWORD , LPOVERLAPPED ]
+    class SuspiciousMultipartForm ( SuspiciousOperation ) :
+ def __init__ ( self , table ) :
+                      break
+  finally :
+   def get_available_name ( self , name ) :
+   class UploadFileException ( Exception ) :
+  from itertools import chain
+      from shutil import copystat
+    def media ( request ) :
+ _file = None
+    if 'django.middleware.clickjacking.XFrameOptionsMiddleware' not in set ( settings . MIDDLEWARE_CLASSES ) :
+  def __init__ ( self , request = None ) :
+ self . content_length = content_length
+   def set ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+   def __contains__ ( self , key ) :
+ from django . core . exceptions import SuspiciousFileOperation
+     if settings . is_overridden ( 'ADMINS' ) :
+                       urlconf = request . urlconf
+  def chunks ( self , chunk_size = None ) :
+ if self . activated :
+  from . . import Warning , register , Tags
+   def __ne__ ( self , other ) :
+  __all__ = ( 'UploadedFile' , 'TemporaryUploadedFile' , 'InMemoryUploadedFile' ,  'SimpleUploadedFile' )
+          super ( UploadedFile , self ) . __init__ ( file , name )
+  super ( ContentFile , self ) . __init__ ( stream_class ( content ) , name = name )
+   def listdir ( self , path ) :
+from __future__ import unicode_literals
+ import base64
+   if _samefile ( old_file_name , new_file_name ) :
+ from __future__ import unicode_literals
+ pass
+   def validate_key ( self , key ) :
+     class MemcachedCache ( BaseMemcachedCache ) :
+ return pickle . loads ( base64 . b64decode ( force_bytes ( value ) ) )
+ pass
+          fname = self . _key_to_file ( key , version )
+  else :
+  from django . utils . encoding import smart_text
+ result = cursor . fetchone ( )
+          if close :
+ table = connections [ db ] . ops . quote_name ( self . _table )
+              try :
+   def add ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+ def __init__ ( self , connection_reset = False ) :
+          pass
+              return [ ]
+   if os . name == 'nt' :
+  self . name = name
+   __all__ = ( 'Storage' , 'FileSystemStorage' , 'DefaultStorage' , 'default_storage' )
+              os . remove ( fname )
+              f . close ( )
+ flush = property ( lambda self : self . file . flush )
+    def file_complete ( self , file_size ) :
+ self . _dir = os . path . abspath ( dir )
+ return os . path . join ( self . _dir , '' . join (  [ hashlib . md5 ( force_bytes ( key ) ) . hexdigest ( ) , self . cache_suffix ] ) )
+ import errno
+    def delete ( self , key , version = None ) :
+              raise InvalidCacheBackendError (  "Could not find config for '%s' in settings.CACHES" % alias  )
+  from django . conf import settings
+ import tempfile
+ if getattr ( self , '_client' , None ) is None :
+              self . _cull ( )
+   self . set ( key , value , version = version + delta )
+ if response :
+   def decr_version ( self , key , delta = 1 , version = None ) :
+   def decr ( self , key , delta = 1 , version = None ) :
+ import warnings
+ try :
+              params = conf . copy ( )
+   def close ( self , ** kwargs ) :
+ from django . core . files . utils import FileProxyMixin
+ return { 'STATIC_URL' : settings . STATIC_URL }
+ from django . utils . encoding import force_text
+     @ deconstructible
+ self . size = size
+              self . _set ( key , pickled , timeout )
+ from django . utils . module_loading import import_string
+   MEMCACHE_MAX_KEY_LENGTH = 250
+ for key , value in data . items ( ) :
+ try :
+ if not os . path . exists ( self . _dir ) :
+ from django . utils . module_loading import import_string
+ def __init__ ( self , server , params ) :
+          if settings . FILE_UPLOAD_TEMP_DIR :
+              pass
+ raise NotImplementedError ( 'subclasses of BaseCache must provide a delete() method' )
+          self . _delete ( self . _key_to_file ( key , version ) )
+                  return p . image . size
+ cursor . execute ( "DELETE FROM %s WHERE expires < %%s" % table ,  [ connections [ db ] . ops . value_to_db_datetime ( now ) ] )
+      errors = [ ]
+  import time
+ for chunk in self . chunks ( ) :
+          self . file . seek ( 0 )
+ super ( TemporaryFileUploadHandler , self ) . new_file ( file_name , * args , ** kwargs )
+ cache = _create_cache ( backend , ** kwargs )
+  except ImportError :
+              val = self . _cache . decr ( key , delta )
+ st = os . stat ( src )
+          os . remove ( old_file_name )
+              callback , param_dict = resolver . resolve_error_handler ( status_code )
+          return True
+ return { 'MEDIA_URL' : settings . MEDIA_URL }
+ if settings . DEBUG and request . META . get ( 'REMOTE_ADDR' ) in settings . INTERNAL_IPS :
+  if expires < now :
+          client = self . _lib . Client ( self . _servers )
+ def _cache ( self ) :
+              for reference , receivers in obj . unresolved_references . items ( ) :
+  if hasattr ( mw_instance , 'process_view' ) :
+  self . cache_model_class = CacheEntry
+ self . managed = True
+  with connections [ db ] . cursor ( ) as cursor :
+    def i18n ( request ) :
+              pass
+  def _get_image_dimensions ( self ) :
+              raise ValueError ( "Key '%s' not found" % key )
+    with open ( old_file_name , 'rb' ) as old_file :
+   def listdir ( self , path ) :
+   def decr ( self , key , delta = 1 , version = None ) :
+   def close ( self , ** kwargs ) :
+  else :
+      errors = [ model . check ( ** kwargs )  for model in apps . get_models ( )  if app_configs is None or model . _meta . app_config in app_configs ]
+   if timeout > 2592000 :
+  import os
+  try :
+          new_keys = [ self . make_key ( x , version = version ) for x in keys ]
+              raise ValueError ( "The file cannot be reopened." )
+ WARNING = 30
+ class CheckMessage ( object ) :
+                  _ [ m [ k ] ] = v
+                         for middleware_method in self . _exception_middleware :
+ self . file . size = file_size
+  return context_extras
+ pass
+   class OVERLAPPED ( Structure ) :
+    class FieldError ( Exception ) :
+ app = model . _meta . app_label
+  return new_value
+ try :
+              self . _caches . caches = { }
+                  message = error . message
+ import pickle
+ from __future__ import unicode_literals
+                  p . feed ( data )
+              if os . path . isdir ( os . path . join ( path , entry ) ) :
+       if hasattr ( os . path , 'samefile' ) :
+                      with transaction . atomic ( using = db ) :
+                      pass
+  return { 'TIME_ZONE' : timezone . get_current_timezone_name ( ) }
+                  view = transaction . atomic ( using = db . alias ) ( view )
+   def update_error_dict ( self , error_dict ) :
+  else :
+  class CacheEntry ( object ) :
+ from threading import local
+      import msvcrt
+ self . charset = None
+ return "%s: %s%s%s" % ( obj , id , self . msg , hint )
+              cursor . execute ( "SELECT COUNT(*) FROM %s" % table )
+    def multiple_chunks ( self , chunk_size = None ) :
+      try :
+   for check in checks :
+          content = content or b''
+  return val
+   def created_time ( self , name ) :
+   @ property
+    def file_move_safe ( old_file_name , new_file_name , chunk_size = 1024 * 64 , allow_overwrite = False ) :
+   def set ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+ return True
+  from django . utils import six
+ if num_entries < self . _max_entries :
+              stream_class = StringIO if isinstance ( content , six . text_type ) else BytesIO
+   self . key_prefix = params . get ( 'KEY_PREFIX' , '' )
+ return ( ret == 0 )
+          return self
+   return False
+              self . activated = False
+ self . _expire_info = _expire_info . setdefault ( name , { } )
+   LockFileEx = windll . kernel32 . LockFileEx
+          def lock ( f , flags ) :
+  if settings . DEBUG :
+ from django . core . exceptions import MiddlewareNotUsed , PermissionDenied , SuspiciousOperation
+      class CacheClass ( DatabaseCache ) :
+          return type ( self ) . __bool__ ( self )
+              val = self . get ( k , version = version )
+ import time
+ errors . extend ( _check_boolean_field_default_value ( ** kwargs ) )
+ class StopUpload ( UploadFileException ) :
+   if timeout is None :
+ self . close_called = False
+              checks = [ check for check in self . registered_checks  if hasattr ( check , 'tags' ) and set ( check . tags ) & set ( tags ) ]
+   def unlock ( f ) :
+ return new_value
+          if hasattr ( self . file , 'size' ) :
+ UnlockFileEx = windll . kernel32 . UnlockFileEx
+  DEFAULT_CACHE_ALIAS = 'default'
+ from django . db import connections , transaction
+  filelist = [ os . path . join ( self . _dir , fname ) for fname  in glob . glob1 ( self . _dir , '*%s' % self . cache_suffix ) ]
+              raise IOError ( "Destination file %s exists and allow_overwrite is False" % new_file_name )
+ return self
+  return { 'csrf_token' : _get_val ( ) }
+   def size ( self , name ) :
+  if val is None :
+ key = self . make_key ( key , version = version )
+ from django . core . exceptions import ImproperlyConfigured
+  if hasattr ( os , 'chmod' ) :
+       def __init__ ( self , level , msg , hint = None , obj = None , id = None ) :
+   finally :
+    except PermissionDenied :
+          return os . path . getsize ( self . path ( name ) )
+              try :
+ self . key_func = get_key_func ( params . get ( 'KEY_FUNCTION' , None ) )
+ self . name = name
+                  for receiver , _ , _ in receivers :
+              val = None
+          key = self . make_key ( key , version = version )
+   def default_key_func ( key , key_prefix , version ) :
+   def modified_time ( self , name ) :
+   resolver_match = resolver . resolve ( request . path_info )
+    @ python_2_unicode_compatible
+              del self . _expire_info [ key ]
+   class BaseHandler ( object ) :
+  else :
+ with self . _lock . reader ( ) :
+ try :
+          if hasattr ( self , 'error_dict' ) :
+  except ( AttributeError , UnsupportedOperation ) :
+    class BaseMemcachedCache ( six . with_metaclass ( BaseMemcachedCacheMethods , BaseCache ) ) :
+ read = property ( lambda self : self . file . read )
+ try :
+ from django . utils import six
+  elif timeout == 0 :
+   def tags_available ( self ) :
+          self . file_name = None
+ readline = property ( lambda self : self . file . readline )
+  self . base_location = location
+ self . code = code
+              db = router . db_for_write ( self . cache_model_class )
+  else :
+ pass
+ for db in connections . all ( ) :
+   try :
+ with self . _lock . reader ( ) :
+              _ = { }
+  try :
+          return key in caches [ DEFAULT_CACHE_ALIAS ]
+      DEFAULT_CHUNK_SIZE = 64 * 2 ** 10
+     except OSError as e :
+  return None
+  from django . utils . encoding import python_2_unicode_compatible , force_str
+ from django . utils . functional import LazyObject
+          key = self . make_key ( key , version = version )
+   def receive_data_chunk ( self , raw_data , start ) :
+   def handle_raw_input ( self , input_data , META , content_length , boundary , encoding = None ) :
+                  raise
+          key = self . make_key ( key , version = version )
+  return None if timeout is None else time . time ( ) + timeout
+          self . close ( )
+ from __future__ import unicode_literals
+  except OSError as e :
+ super ( SimpleUploadedFile , self ) . __init__ ( BytesIO ( content ) , None , name ,  content_type , len ( content ) , None , None )
+ table = connections [ db ] . ops . quote_name ( self . _table )
+  else :
+  except MiddlewareNotUsed :
+ self . validate_key ( key )
+ def _get_val ( ) :
+ def closed ( self ) :
+   def is_serious ( self ) :
+                  self . close_called = True
+              weight += 1
+ import warnings
+ if result and ( mode == 'set' or ( mode == 'add' and current_expires < now ) ) :
+  elif self . name and os . path . exists ( self . name ) :
+   class LocMemCache ( BaseCache ) :
+                      os . makedirs ( directory )
+          BaseCache . __init__ ( self , params )
+    def _check_middleware_classes ( app_configs = None , ** kwargs ) :
+  except ImportError as e :
+ self . connection_reset = connection_reset
+ if self . activated :
+   def __del__ ( self ) :
+          import memcache
+ import errno
+   def add ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+                      raise
+  from itertools import chain
+   return force_text ( name . replace ( '\\' , '/' ) )
+  from django . core . cache . backends . base import BaseCache , DEFAULT_TIMEOUT
+       except self . LibraryValueNotFoundException :
+               return 0
+              ret = fcntl . flock ( _fd ( f ) , fcntl . LOCK_UN )
+   def exists ( self , name ) :
+          if self . has_key ( key , version ) :
+    def _createdir ( self ) :
+  return response
+    def debug ( request ) :
+           fd = os . open ( new_file_name , ( os . O_WRONLY | os . O_CREAT | getattr ( os , 'O_BINARY' , 0 ) |  ( os . O_EXCL if not allow_overwrite else 0 ) ) )
+                  exp = datetime . utcfromtimestamp ( timeout )
+   import django . core . checks . compatibility . django_1_6_0
+              os . chmod ( dst , mode )
+ cursor . execute ( "DELETE FROM %s "  "WHERE cache_key < %%s" % table ,  [ cursor . fetchone ( ) [ 0 ] ] )
+                          description = "The '%s' function" % receiver . __name__
+              raise
+  from django . conf import settings
+ os . close ( fd )
+  else :
+      cache_suffix = '.djcache'
+  try :
+ raise NotImplementedError ( "This backend doesn't support absolute paths." )
+              name = content . name
+          if not hasattr ( self , '_dimensions_cache' ) :
+    def _is_expired ( self , f ) :
+                      raise
+     class DatabaseCache ( BaseDatabaseCache ) :
+  PVOID = c_void_p
+          if hasattr ( self , 'error_dict' ) :
+  else :
+          self . _cache . flush_all ( )
+  if hasattr ( self . file , 'name' ) :
+          self . _request_middleware = self . _view_middleware = self . _template_response_middleware = self . _response_middleware = self . _exception_middleware = None
+   def add ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+ import tempfile
+  except Exception as e :
+   except OSError as e :
+              for error in self . error_list :
+ softspace = property ( lambda self : self . file . softspace )
+    with self . _lock . writer ( ) :
+ for key in keys :
+ self . validate_key ( key )
+ urlresolvers . set_urlconf ( urlconf )
+              cursor . execute ( "SELECT cache_key FROM %s "  "WHERE cache_key = %%s and expires > %%s" % table ,  [ key , connections [ db ] . ops . value_to_db_datetime ( now ) ] )
+              try :
+ from io import BytesIO
+              self . seek ( 0 )
+ cursor . execute ( "SELECT COUNT(*) FROM %s" % table )
+  except AttributeError :
+    cache = DefaultCacheProxy ( )
+ while self . exists ( name ) :
+ for message in message :
+ num = cursor . fetchone ( ) [ 0 ]
+ pass
+    def receive_data_chunk ( self , raw_data , start ) :
+                          locks . unlock ( fd )
+ response = self . get_exception_response ( request , resolver , 403 )
+              return
+    else :
+          return all ( getattr ( self , attr ) == getattr ( other , attr )  for attr in [ 'level' , 'msg' , 'hint' , 'obj' , 'id' ] )
+ self . file = os . fdopen ( fd , mode , bufsize )
+  except KeyError :
+     def _delete ( self , key ) :
+    if resolver . urlconf_module is None :
+   def has_key ( self , key , version = None ) :
+     class Info ( CheckMessage ) :
+              raise ValueError ( "Key '%s' not found" % key )
+ f . write ( zlib . compress ( pickle . dumps ( value ) , - 1 ) )
+  else :
+              if not renamed :
+ from PIL import ImageFile as PillowImageFile
+  __all__ = ( 'NamedTemporaryFile' , 'gettempdir' , )
+   else :
+              fd , name = tempfile . mkstemp ( suffix = suffix , prefix = prefix , dir = dir )
+ exp = pickle . load ( f )
+          ULONG_PTR = c_int64
+   value = self . get ( key , version = version )
+          return delattr ( caches [ DEFAULT_CACHE_ALIAS ] , name )
+    else :
+from __future__ import unicode_literals
+   def save ( self , name , content ) :
+              self . clear ( )
+    class DisallowedRedirect ( SuspiciousOperation ) :
+ def __init__ ( self , * args , ** kwargs ) :
+                      buffer_ = line
+from __future__ import unicode_literals
+   def _list_cache_files ( self ) :
+              self . _client = self . _lib . Client ( self . _servers , pickleProtocol = pickle . HIGHEST_PROTOCOL )
+          if location is None :
+            pass
+ self . validate_key ( key )
+                          response = middleware_method ( request , e )
+          return caches [ DEFAULT_CACHE_ALIAS ] != other
+          BaseCache . __init__ ( self , params )
+  def copystat ( src , dst ) :
+  try :
+          return datetime . fromtimestamp ( os . path . getmtime ( self . path ( name ) ) )
+ from django . utils . functional import lazy
+   if response is None :
+   @ classmethod
+ ret = self . _cache . get_multi ( new_keys )
+ table = connections [ db ] . ops . quote_name ( self . _table )
+ if not self . activated :
+   def set_many ( self , data , timeout = DEFAULT_TIMEOUT , version = None ) :
+ if ( connections [ db ] . features . needs_datetime_string_cast and not  isinstance ( current_expires , datetime ) ) :
+              new_errors = check ( app_configs = app_configs )
+  with connections [ db ] . cursor ( ) as cursor :
+              self . close ( )
+   class DefaultCacheProxy ( object ) :
+ _locks = { }
+ from __future__ import unicode_literals
+                  expiry = self . get_backend_timeout ( timeout )
+ close = True
+ for fname in filelist :
+   def load_middleware ( self ) :
+ self . _cache = _caches . setdefault ( name , { } )
+ from django . utils . deconstruct import deconstructible
+ compatibility = 'compatibility'
+                          break
+  except :
+ self . validate_key ( key )
+   def __enter__ ( self ) :
+ raise NotImplementedError ( 'subclasses of Storage must provide a url() method' )
+              return self . file . size
+ return f . fileno ( ) if hasattr ( f , 'fileno' ) else f
+ self . validate_key ( key )
+          self . file . seek ( 0 )
+  else :
+          return caches [ DEFAULT_CACHE_ALIAS ] == other
+              self . _cache [ key ] = pickled
+  try :
+     @ property
+   response = self . get_exception_response ( request , resolver , 400 )
+ self . validate_key ( key )
+      class CacheClass ( DummyCache ) :
+    NamedTemporaryFile = TemporaryFile
+                      messages = ValidationError ( messages )
+   def _get_size ( self ) :
+              if ord ( char ) < 33 or ord ( char ) == 127 :
+ from django . utils import datastructures
+ self . _dimensions_cache = get_image_dimensions ( self , close = close )
+          key = self . make_key ( key , version = version )
+              conf = settings . CACHES [ backend ]
+   def _set_name ( self , name ) :
+   return d
+  else :
+ from functools import reduce
+    def get_key_func ( key_func ) :
+ import operator
+              if not self . close_called :
+ writelines = property ( lambda self : self . file . writelines )
+              return self . file . close ( )
+              return self . clear ( )
+ self . msg = msg
+          _anonymous_ = [ '_offset_union' ]
+ raise NotImplementedError ( 'subclasses of FileUploadHandler must provide a receive_data_chunk() method' )
+   def run_checks ( self , app_configs = None , tags = None ) :
+              if ( db . settings_dict [ 'ATOMIC_REQUESTS' ]  and db . alias not in non_atomic_requests ) :
+ self . level = level
+    elif isinstance ( message , list ) :
+          if self . _cull_frequency == 0 :
+   else :
+          return self . _name
+ from django . core . cache . backends . base import (  InvalidCacheBackendError , CacheKeyWarning , BaseCache )
+          try :
+  if response is None :
+   class _OFFSET_UNION ( Union ) :
+   size = property ( _get_size , _set_size )
+                      view_name = callback . __class__ . __name__ + '.__call__'
+   def make_key ( self , key , version = None ) :
+ pass
+   class ValidationError ( Exception ) :
+                  return default
+      directory = os . path . dirname ( full_path )
+ while 1 :
+          self . file = file
+   def unlock ( f ) :
+                  return True
+   def _cull ( self ) :
+          if hasattr ( self , 'error_dict' ) :
+      raise ImproperlyConfigured ( "You must define a '%s' cache" % DEFAULT_CACHE_ALIAS )
+  except ImportError as e :
+ if val is not None :
+              self . file . write ( raw_data )
+      renamed_methods = (  ( '_get_memcache_timeout' , 'get_backend_timeout' , RemovedInDjango19Warning ) ,  )
+          return [  Warning (  "Some project unittests may not execute as expected." ,  hint = ( "Django 1.6 introduced a new default test runner. It looks like "  "this project was generated using Django 1.5 or earlier. You should "  "ensure your tests are all running & behaving as expected. See "  "https://docs.djangoproject.com/en/dev/releases/1.6/#new-test-runner "  "for more information." ) ,  obj = None ,  id = '1_6.W001' ,  )  ]
+    with self . _lock . writer ( ) :
+ from django . db import models
+   def __getitem__ ( self , alias ) :
+ mode = stat . S_IMODE ( st . st_mode )
+   def get_response ( self , request ) :
+   return view
+   def get_many ( self , keys , version = None ) :
+   def __str__ ( self ) :
+    class CacheKeyWarning ( DjangoRuntimeWarning ) :
+  else :
+  for char in key :
+                        if isinstance ( receiver , types . FunctionType ) :
+  for name in dir ( models . signals ) :
+  except KeyError :
+ self . request = request
+    except IOError as e :
+ self . validate_key ( key )
+ self . validate_key ( key )
+          path = self . path ( path )
+  self . _cache . set_multi ( safe_data , self . get_backend_timeout ( timeout ) )
+               now = now . replace ( tzinfo = None )
+ return bool ( ret )
+          try :
+   class DjangoRuntimeWarning ( RuntimeWarning ) :
+ _expire_info = { }
+                  timeout = int ( timeout )
+      def __init__ ( self , server , params , library , value_not_found_exception ) :
+                              if _file is None :
+ now = now . replace ( microsecond = 0 )
+                      file_move_safe ( content . temporary_file_path ( ) , full_path )
+                  yield field , list ( ValidationError ( errors ) )
+  return self . _dimensions_cache
+   finally :
+ content = force_bytes ( content )
+  else :
+    class TemporaryUploadedFile ( UploadedFile ) :
+ if value is None :
+  else :
+   def open ( self , mode = None ) :
+                  self . _template_response_middleware . insert ( 0 , mw_instance . process_template_response )
+              return False
+ from django . db import connection
+  self . error_dict [ field ] = messages . error_list
+ if timeout is None :
+          key = self . make_key ( key , version = version )
+  logger = logging . getLogger ( 'django.request' )
+ raise NotImplementedError ( 'subclasses of Storage must provide a listdir() method' )
+          cache . close ( )
+   def make_view_atomic ( self , view ) :
+    class AppRegistryNotReady ( Exception ) :
+          return "<%s: level=%r, msg=%r, hint=%r, obj=%r, id=%r>" % ( self . __class__ . __name__ , self . level , self . msg , self . hint , self . obj , self . id )
+   def is_silenced ( self ) :
+          return getattr ( self . _caches , 'caches' , { } ) . values ( )
+   self . file . seek ( 0 )
+ assert is_iterable ( new_errors ) , (  "The function %r did not return a list. All functions registered "  "with the checks registry must return a list." % check )
+  else :
+ from datetime import datetime
+  super ( TemporaryUploadedFile , self ) . __init__ ( file , name , content_type , size , charset , content_type_extra )
+ errors . extend ( _check_test_runner ( ** kwargs ) )
+ self . _cache . delete ( key )
+      NamedTemporaryFile = tempfile . NamedTemporaryFile
+from __future__ import unicode_literals
+                  files . append ( entry )
+              if hasattr ( message , 'error_dict' ) :
+              timeout = self . default_timeout
+  import hashlib
+ from django . core . files . base import File
+     class TemporaryFileUploadHandler ( FileUploadHandler ) :
+    class CheckRegistry ( object ) :
+ UnlockFileEx . argtypes = [ HANDLE , DWORD , DWORD , DWORD , LPOVERLAPPED ]
+                      self . file . close ( )
+               return True
+                      raise
+ self . content_type = content_type
+          if callable ( key_func ) :
+ silent_variable_failure = True
+                  continue
+   @ python_2_unicode_compatible
+ if not chunk_size :
+ self . id = id
+          timeout = self . get_backend_timeout ( timeout )
+              self . set ( key , value , timeout = timeout , version = version )
+   def handle_uncaught_exception ( self , request , resolver , exc_info ) :
+ if self . _options :
+      def __init__ ( self , * args , ** kwargs ) :
+              return default
+              raise ValueError ( "Key '%s' not found" % key )
+ super ( MemcachedCache , self ) . __init__ ( server , params ,  library = memcache ,  value_not_found_exception = ValueError )
+  import os
+ return list ( chain ( * errors ) )
+ self . file_permissions_mode = (  file_permissions_mode if file_permissions_mode is not None  else settings . FILE_UPLOAD_PERMISSIONS  )
+ from . registry import register , run_checks , tag_exists , Tags
+  except OSError as e :
+ if exp is not None and exp < time . time ( ) :
+              name = getattr ( file , 'name' , None )
+   def close ( self ) :
+    self . _name = name
+ if num > self . _max_entries :
+   def set_many ( self , data , timeout = DEFAULT_TIMEOUT , version = None ) :
+  except KeyError :
+                  self . _set ( key , pickled , timeout )
+  if val is None :
+ directories , files = [ ] , [ ]
+                  pickled = self . _cache [ key ]
+          if not self . closed :
+ self . validate_key ( key )
+   gettempdir = tempfile . gettempdir
+ return import_string ( path ) ( * args , ** kwargs )
+    def tz ( request ) :
+      def __init__ ( self , * args , ** kwargs ) :
+ from django . utils . encoding import smart_text
+              pass
+   from django . conf import settings
+ pass
+                  if not isinstance ( messages , ValidationError ) :
+ if settings . DEBUG_PROPAGATE_EXCEPTIONS :
+          file = file_or_path
+ self . proxy = False
+ m = dict ( zip ( new_keys , keys ) )
+ self . validate_key ( key )
+     def clear ( self ) :
+          safe_data = { }
+ pickled = pickle . dumps ( new_value , pickle . HIGHEST_PROTOCOL )
+ if check not in self . registered_checks :
+          value = self . get ( key , version = version )
+          if hasattr ( self , 'error_dict' ) :
+   def tag_exists ( self , tag ) :
+ from django . utils . encoding import force_bytes
+   def __str__ ( self ) :
+ return self . _open ( name , mode )
+          key = self . make_key ( key , version = version )
+          return type ( self ) . __bool__ ( self )
+  db = router . db_for_read ( self . cache_model_class )
+ from django . utils . deprecation import RemovedInDjango19Warning
+ from django . utils import six
+   def incr ( self , key , delta = 1 , version = None ) :
+    signals . request_finished . connect ( cache . close )
+ if isinstance ( obj , models . signals . ModelSignal ) :
+   else :
+   def delete_many ( self , keys , version = None ) :
+ if _file is not None :
+     def _check_boolean_field_default_value ( app_configs = None , ** kwargs ) :
+ if response :
+ hint = "\n\tHINT: %s" % self . hint if self . hint else ''
+ with self . _lock . writer ( ) :
+          self . _wrapped = get_storage_class ( ) ( )
+ if exp is None or exp > time . time ( ) :
+ params = kwargs
+ CRITICAL = 50
+ import zlib
+          if len ( self . _cache ) >= self . _max_entries :
+ return self . incr_version ( key , - delta , version )
+    if settings . is_overridden ( 'TEMPLATE_LOADERS' ) :
+                      pass
+ safe_data [ key ] = value
+                  d [ k ] = val
+    def _create_cache ( backend , ** kwargs ) :
+from django . core . files . base import File
+ pickled = pickle . dumps ( value , pickle . HIGHEST_PROTOCOL )
+   class DummyCache ( BaseCache ) :
+ for k , v in ret . items ( ) :
+ def check_model_signals ( app_configs = None , ** kwargs ) :
+ def _get_width ( self ) :
+  __all__ = [ 'File' ]
+  except ( OSError , IOError ) :
+                      yield line
+                  message = message . error_dict
+   cull_frequency = params . get ( 'cull_frequency' , options . get ( 'CULL_FREQUENCY' , 3 ) )
+                          return pickle . loads ( zlib . decompress ( f . read ( ) ) )
+   def __str__ ( self ) :
+ readlines = property ( lambda self : self . file . readlines )
+                  return debug . technical_500_response ( request , * sys . exc_info ( ) , status_code = 400 )
+   response = self . apply_response_fixes ( request , response )
+              raise IOError ( "%s exists and is not a directory." % directory )
+          return 'ValidationError(%s)' % self
+   def _open ( self , name , mode = 'rb' ) :
+                          cursor . execute ( "INSERT INTO %s (cache_key, value, expires) "  "VALUES (%%s, %%s, %%s)" % table ,  [ key , b64encoded , exp ] )
+    def static ( request ) :
+ context_extras [ 'LANGUAGE_CODE' ] = translation . get_language ( )
+                      line = buffer_ + line
+   __all__ = [  'get_cache' , 'cache' , 'DEFAULT_CACHE_ALIAS' , 'InvalidCacheBackendError' ,  'CacheKeyWarning' , 'BaseCache' ,  ]
+              signals . got_request_exception . send ( sender = self . __class__ , request = request )
+ if name is None :
+  return val
+  except OSError :
+              response = None
+              timeout = self . default_timeout
+   def get_many ( self , keys , version = None ) :
+              file . seek ( file_pos )
+ self . hint = hint
+  yield force_text ( message )
+ if result :
+ self . _caches . caches [ alias ] = cache
+              return
+          hfile = msvcrt . get_osfhandle ( _fd ( f ) )
+ errors . extend ( new_errors )
+               timeout = - 1
+                  directories . append ( entry )
+   def make_template_fragment_key ( fragment_name , vary_on = None ) :
+          BaseCache . __init__ ( self , * args , ** kwargs )
+ return cache
+ newlines = property ( lambda self : self . file . newlines )
+      urlconf = settings . ROOT_URLCONF
+  from . import Error , Tags , register
+          hfile = msvcrt . get_osfhandle ( _fd ( f ) )
+          return [  Warning (  "MIDDLEWARE_CLASSES is not set." ,  hint = ( "Django 1.7 changed the global defaults for the MIDDLEWARE_CLASSES. "  "django.contrib.sessions.middleware.SessionMiddleware, "  "django.contrib.auth.middleware.AuthenticationMiddleware, and "  "django.contrib.messages.middleware.MessageMiddleware were removed from the defaults. "  "If your project needs these middleware then you should configure this setting." ) ,  obj = None ,  id = '1_7.W001' ,  )  ]
+          assert name , "The name argument is not allowed to be empty."
+  errors . append (  Error (  "%s was connected to the '%s' signal "  "with a lazy reference to the '%s' sender, "  "which has not been installed." % (  description , name , '.' . join ( reference )  ) ,  obj = receiver . __module__ ,  hint = None ,  id = 'signals.E001'  )  )
+    default_storage = DefaultStorage ( )
+class FileProxyMixin ( object ) :
+ security_logger . error (  force_text ( e ) ,  extra = {  'status_code' : 400 ,  'request' : request  } )
+          context_extras [ 'debug' ] = True
+      import pickle
+  else :
+ raise NotImplementedError ( 'subclasses of BaseCache must provide an add() method' )
+  if delta < 0 :
+  return response
+  if self . _cull_frequency == 0 :
+    except http . Http404 as e :
+ import warnings
+                  cursor . execute ( "DELETE FROM %s "  "WHERE cache_key = %%s" % table , [ key ] )
+                  break
+ def __init__ ( self , name , content_type , size , charset , content_type_extra = None ) :
+ self . validate_key ( key )
+ if value is None :
+    class ObjectDoesNotExist ( Exception ) :
+    class FileUploadHandler ( object ) :
+ return size
+    def __enter__ ( self ) :
+    if weight >= 6 :
+           LOCK_EX = LOCK_SH = LOCK_NB = 0
+                    if e . args [ 0 ] . startswith ( "Error -5" ) :
+ pickled = pickle . dumps ( value , pickle . HIGHEST_PROTOCOL )
+   def make_key ( self , key , version = None ) :
+   def url ( self , name ) :
+  except ( ValueError , TypeError ) :
+  def lock ( f , flags ) :
+   def __bool__ ( self ) :
+   super ( ValidationError , self ) . __init__ ( message , code , params )
+          return { }
+              val = None
+  return int ( timeout )
+  if settings . USE_TZ :
+   def _get_name ( self ) :
+                      view_name = callback . __name__
+ self . _options = params . get ( 'OPTIONS' , None )
+       except self . LibraryValueNotFoundException :
+              raise ValueError ( "Key '%s' not found" % key )
+     registry = CheckRegistry ( )
+  self . set ( key , value , timeout , version )
+ raise NotImplementedError ( 'subclasses of Storage must provide a delete() method' )
+  except ( OSError ) :
+   def temporary_file_path ( self ) :
+                  mw_instance = mw_class ( )
+              self . _delete ( key )
+   class UploadedFile ( File ) :
+    def _cull ( self , db , cursor , now ) :
+      class SkipFile ( UploadFileException ) :
+               return False
+          try :
+    if sizeof ( c_ulong ) != sizeof ( c_void_p ) :
+    def get_cache ( backend , ** kwargs ) :
+ return default
+ self . _response_middleware = [ ]
+ self . model_name = 'cacheentry'
+   if not hasattr ( content , 'chunks' ) :
+          self . file . close ( )
+   def clear ( self ) :
+ self . _createdir ( )
+          key = self . make_key ( key , version = version )
+  try :
+ truncate = property ( lambda self : self . file . truncate )
+   response . _closable_objects . append ( request )
+ db = router . db_for_write ( self . cache_model_class )
+ raise StopFutureHandlers ( )
+ from django . core import urlresolvers
+ from django . utils . http import urlquote
+              try :
+ chunk_size = 64 * 2 ** 10
+ d = { }
+   @ python_2_unicode_compatible
+          self . file . seek ( 0 )
+                    timeout += int ( time . time ( ) )
+      return import_string ( import_path or settings . DEFAULT_FILE_STORAGE )
+    class StopFutureHandlers ( UploadFileException ) :
+      class TemporaryFile ( FileProxyMixin ) :
+                  break
+                              current_expires = typecast_timestamp ( str ( current_expires ) )
+  height = property ( _get_height )
+          self . _createdir ( )
+   def __delattr__ ( self , name ) :
+ return self . _cache . add ( key , value , self . get_backend_timeout ( timeout ) )
+   def new_file ( self , file_name , * args , ** kwargs ) :
+ return filelist
+   @ property
+              now = datetime . utcnow ( )
+    class ViewDoesNotExist ( Exception ) :
+  except OSError :
+              obj = "?"
+      pass
+ INFO = 20
+  import os
+  return backend_cls ( location , params )
+ try :
+  finally :
+ import sys
+ import logging
+ self . params = params
+  except OSError as e :
+          return
+                 def get ( self , key , default = None , version = None ) :
+ name = name [ : 255 - len ( ext ) ] + ext
+   def __iter__ ( self ) :
+    class CacheHandler ( object ) :
+                model = self . obj
+ return self . _base_set ( 'add' , key , value , timeout )
+  except OSError as e :
+  if response is None :
+   def modified_time ( self , name ) :
+     class Error ( CheckMessage ) :
+ admin = 'admin'
+ from django . utils . _os import safe_join , abspathu
+              weight += 2
+ with self . _lock . writer ( ) :
+       self . LibraryValueNotFoundException = value_not_found_exception
+                              break
+          try :
+  try :
+ from django . utils . encoding import force_bytes
+ _fields_ = [  ( '_offset' , _OFFSET ) ,  ( 'Pointer' , PVOID ) ]
+          pass
+  self . error_list . extend ( message . error_list )
+              return reduce ( operator . add , dict ( self ) . values ( ) )
+ self . _expire_info . clear ( )
+  yield data
+  return False
+          key = self . make_key ( key , version = version )
+          assert isinstance ( level , int ) , "The first argument should be level."
+   from django . core . cache . backends . base import BaseCache , DEFAULT_TIMEOUT
+  from django . utils . itercompat import is_iterable
+              if not self . _has_expired ( key ) :
+ db = router . db_for_read ( self . cache_model_class )
+                        flags = ( os . O_WRONLY | os . O_CREAT | os . O_EXCL |  getattr ( os , 'O_BINARY' , 0 ) )
+                timeout = - 1
+ LOCK_SH = fcntl . LOCK_SH
+   def path ( self , name ) :
+          if six . PY3 :
+              with io . open ( fd , 'wb' ) as f :
+ from django . utils . encoding import force_text , filepath_to_uri
+  else :
+ import os
+                  if e . errno == errno . ENOENT :
+          db = router . db_for_write ( self . cache_model_class )
+                  warnings . warn ( 'Cache key contains characters that will cause '  'errors if used with memcached: %r' % key ,  CacheKeyWarning )
+     if buffer_ is not None :
+ from io import BytesIO , StringIO , UnsupportedOperation
+                          os . umask ( old_umask )
+   def new_file ( self , field_name , file_name , content_type , content_length , charset = None , content_type_extra = None ) :
+      import stat
+ if settings . DEBUG :
+              locks . unlock ( fd )
+      def delete ( self , name ) :
+ class FileSystemStorage ( Storage ) :
+ import sys
+          if self . connection_reset :
+      pass
+  LOCK_SH = 0
+          return [ ]
+from __future__ import unicode_literals
+  pickled = pickle . dumps ( value , pickle . HIGHEST_PROTOCOL )
+ LOCK_EX = 0x2
+          return set ( chain ( * [ check . tags for check in self . registered_checks if hasattr ( check , 'tags' ) ] ) )
+          if hasattr ( self , '_size' ) :
+            try :
+   for middleware_method in self . _view_middleware :
+   def __nonzero__ ( self ) :
+   def add ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+ if not os . path . exists ( self . _dir ) :
+ def __init__ ( self , content , name = None ) :
+                  name , ext = os . path . splitext ( name )
+ context_extras [ 'LANGUAGE_BIDI' ] = translation . get_language_bidi ( )
+   def accessed_time ( self , name ) :
+  except ImportError :
+      pass
+  self . base_url = base_url
+ self . content_type = content_type
+              return 'StopUpload: Halt current upload.'
+ from django . utils . text import get_valid_filename
+  except KeyError :
+ def check_1_7_compatibility ( ** kwargs ) :
+ self . content_type_extra = None
+  from django . core . cache . backends . base import BaseCache , DEFAULT_TIMEOUT
+     if not settings . is_overridden ( 'TEST_RUNNER' ) :
+ return callback ( request , ** param_dict )
+                  exp = datetime . fromtimestamp ( timeout )
+ self . size = len ( content )
+ self . field_name = field_name
+          self . _cache . clear ( )
+  else :
+          pass
+   def delete ( self , key , version = None ) :
+ self . validate_key ( key )
+              return debug . technical_500_response ( request , * exc_info )
+      def __init__ ( self , * args , ** kwargs ) :
+    if not settings . is_overridden ( 'MIDDLEWARE_CLASSES' ) :
+   def _cull ( self ) :
+  self . _size = self . _get_size_from_underlying_file ( )
+  options = params . get ( 'OPTIONS' , { } )
+              pass
+   def close_caches ( ** kwargs ) :
+       class InMemoryUploadedFile ( UploadedFile ) :
+ self . content_length = None
+         for cache in caches . all ( ) :
+ isatty = property ( lambda self : self . file . isatty )
+                  return os . path . getsize ( self . file . name )
+  TEMPLATE_FRAGMENT_KEY_TEMPLATE = 'template.cache.%s.%s'
+                if e . errno != errno . ENOENT :
+ self . content_type = None
+ if hasattr ( file , 'mode' ) :
+      try :
+ import codecs
+    if self . file_permissions_mode is not None :
+          key = self . make_key ( key , version = version )
+              settings . BASE_DIR
+  else :
+ raise NotImplementedError ( 'subclasses of BaseCache must provide a set() method' )
+          return self . level >= ERROR
+ from django . utils import six
+      def __init__ ( self , * args , ** kwargs ) :
+     def delete ( self , key , version = None ) :
+ def check_all_models ( app_configs = None , ** kwargs ) :
+  def close ( self ) :
+      import pickle
+          key = self . make_key ( key , version = version )
+   return name
+   def delete_many ( self , keys , version = None ) :
+       response_fixes = [  http . fix_location_header ,  http . conditional_content_removal ,  ]
+  return os . path . normpath ( path )
+  p = PillowImageFile . Parser ( )
+              os . utime ( dst , ( st . st_atime , st . st_mtime ) )
+  except ( ImportError , AttributeError ) :
+ from django . utils import timezone , six
+    def delete_many ( self , keys , version = None ) :
+              return 'StopUpload: Consume request data, then halt.'
+              self . _cull_frequency = 3
+   callback , param_dict = resolver . resolve_error_handler ( 500 )
+ if base_url is None :
+  db = router . db_for_write ( self . cache_model_class )
+ return TEMPLATE_FRAGMENT_KEY_TEMPLATE % ( fragment_name , args . hexdigest ( ) )
+  try :
+     if line [ - 1 : ] in ( b'\n' , b'\r' ) :
+              self . file . __exit__ ( exc , value , tb )
+ for entry in os . listdir ( path ) :
+ current_chunk = None
+          key = self . make_key ( key , version = version )
+     class SimpleUploadedFile ( InMemoryUploadedFile ) :
+          if not fname . startswith ( self . _dir ) or not os . path . exists ( fname ) :
+          return not ( self == other )
+  location = kwargs . pop ( 'LOCATION' , '' )
+   def register ( self , * tags ) :
+    class SuspiciousFileOperation ( SuspiciousOperation ) :
+              return False
+          if getattr ( self , '_client' , None ) is None :
+          return self . size
+          try :
+ yield self . read ( )
+   def get ( self , key , default = None , version = None ) :
+          """         Set a value in the cache if the key does not already exist. If         timeout is given, that timeout will be used for the key; otherwise         the default cache timeout will be used.         Returns True if the value was stored, False otherwise.         """
+  else :
+ return self . id in settings . SILENCED_SYSTEM_CHECKS
+ response = self . handle_uncaught_exception ( request , resolver , sys . exc_info ( ) )
+          file = open ( file_or_path , 'rb' )
+               signals . got_request_exception . send ( sender = self . __class__ , request = request )
+     if os . path . exists ( name ) :
+ self . _template_response_middleware = [ ]
+   def delete ( self , name ) :
+ errors . extend ( _check_middleware_classes ( ** kwargs ) )
+   except SuspiciousOperation as e :
+    def request ( request ) :
+  if name is None :
+ from django . views import debug
+              raise ValueError ( "This file is not accessible via a URL." )
+   filelist = random . sample ( filelist ,  int ( num_entries / self . _cull_frequency ) )
+ with self . _lock . writer ( ) :
+              try :
+  return False
+                  pass
+              base_url += '/'
+                 expires = typecast_timestamp ( str ( expires ) )
+          from django . conf import settings
+  except pickle . PickleError :
+  import errno
+ pass
+ import os
+              cursor . execute ( "DELETE FROM %s WHERE cache_key = %%s" % table , [ key ] )
+           if not allow_overwrite and os . access ( new_file_name , os . F_OK ) :
+   else :
+ buffer_ = None
+ max_entries = params . get ( 'max_entries' , options . get ( 'MAX_ENTRIES' , 300 ) )
+   def __bool__ ( self ) :
+ cursor . execute (  connections [ db ] . ops . cache_key_culling_sql ( ) % table ,  [ cull_num ] )
+ name = self . _save ( name , content )
+   def get ( self , key , default = None , version = None ) :
+              settings . SITE_ID
+ num_entries = len ( filelist )
+          if not os . path . exists ( self . _dir ) :
+ from django . db import models
+                  return not self . _is_expired ( f )
+          key = self . make_key ( key , version = version )
+ table = connections [ db ] . ops . quote_name ( self . _table )
+ if ret :
+                  self . _view_middleware . append ( mw_instance . process_view )
+ if hasattr ( file_or_path , 'read' ) :
+ return self . file . name
+  except ImportError :
+              self . _cull_frequency = int ( cull_frequency )
+                          current_expires = result [ 1 ]
+                  cull_num = num // self . _cull_frequency
+  def _get_height ( self ) :
+              check . tags = tags
+              warnings . warn ( 'Cache key will cause errors if used with memcached: '  '%s (longer than %s)' % ( key , MEMCACHE_MAX_KEY_LENGTH ) ,  CacheKeyWarning )
+          return "<%s: %s>" % ( self . __class__ . __name__ , self or "None" )
+ overlapped = OVERLAPPED ( )
+          self . seek ( 0 )
+                   import_string ( backend )
+   def _fd ( f ) :
+                  exp = datetime . max
+    return self . has_key ( key )
+     def get_storage_class ( import_path = None ) :
+ self . charset = charset
+               raise
+              for field , error_list in self . error_dict . items ( ) :
+  encoding = property ( lambda self : self . file . encoding )
+ raise NotImplementedError ( 'subclasses of BaseCache must provide a get() method' )
+                          os . makedirs ( directory , self . directory_permissions_mode )
+ from ctypes . wintypes import BOOL , DWORD , HANDLE
+    class SuspiciousOperation ( Exception ) :
+              file = tempfile . NamedTemporaryFile ( suffix = '.upload' )
+  except zlib . error as e :
+   else :
+   def accessed_time ( self , name ) :
+   def __exit__ ( self , exc , value , tb ) :
+ self . content_type_extra = content_type_extra
+  new_value = value + delta
+                      if not self . _is_expired ( f ) :
+   return client
+  elif not base_url . endswith ( '/' ) :
+   def unlock ( f ) :
+  from django import http
+  else :
+ from django . utils . module_loading import import_string
+              file . close ( )
+   class BaseMemcachedCacheMethods ( RenameMethodsBase ) :
+          obj = getattr ( models . signals , name )
+                          locks . lock ( fd , locks . LOCK_EX )
+   class _OFFSET ( Structure ) :
+  return check
+                  self . registered_checks . append ( check )
+            weight = 0
+          full_path = self . path ( name )
+ from django . core import signals
+  raise AttributeError ( "Unable to determine the file's size." )
+ return cls ( file_dict [ 'filename' ] ,  file_dict [ 'content' ] ,  file_dict . get ( 'content-type' , 'text/plain' ) )
+ context_extras [ 'sql_queries' ] = connection . queries
+      from django . utils . six . moves import cPickle as pickle
+      pass
+     if response is None :
+                   return False
+   if six . PY3 :
+ def __init__ ( self ) :
+    class FileBasedCache ( BaseCache ) :
+          return super ( Debug , self ) . __init__ ( DEBUG , * args , ** kwargs )
+ ERROR = 40
+ fname = self . _key_to_file ( key , version )
+                  message = message . error_list
+ self . validate_key ( key )
+ with self . _lock . writer ( ) :
+    class DefaultStorage ( LazyObject ) :
+ self . content_type_extra = content_type_extra
+  return default
+    def incr ( self , key , delta = 1 , version = None ) :
+  def __init__ ( self , file = None , name = None , content_type = None , size = None , charset = None , content_type_extra = None ) :
+     def open ( self , name , mode = 'rb' ) :
+      from django . utils import translation
+   def __setattr__ ( self , name , value ) :
+ return self . file . closed
+ errors = [ ]
+                security_logger = logging . getLogger ( 'django.security.%s' %  e . __class__ . __name__ )
+          self . file . write ( raw_data )
+              with io . open ( fname , 'rb' ) as f :
+  from django import http
+ if isinstance ( server , six . string_types ) :
+              pass
+  request_middleware = [ ]
+  self . _lib = library
+ for field , messages in message . items ( ) :
+ request . resolver_match = resolver_match
+ if connections [ db ] . features . needs_datetime_string_cast and not isinstance ( expires , datetime ) :
+ def message_dict ( self ) :
+               name = os . path . basename ( name )
+ super ( PyLibMCCache , self ) . __init__ ( server , params ,  library = pylibmc ,  value_not_found_exception = pylibmc . NotFound )
+ LOCK_EX = fcntl . LOCK_EX
+ return
+ return errors
+  chunk_size *= 2
+    @ register ( Tags . models , Tags . signals )
+              cursor . execute ( "SELECT cache_key, value, expires FROM %s "  "WHERE cache_key = %%s" % table , [ key ] )
+              return self . _caches . caches [ alias ]
+      def __init__ ( self , host , * args , ** kwargs ) :
+      import pickle
+ raise NotImplementedError ( 'subclasses of Storage must provide a size() method' )
+    def clear ( self ) :
+              try :
+          return super ( Info , self ) . __init__ ( INFO , * args , ** kwargs )
+  if hasattr ( mw_instance , 'process_response' ) :
+  import time
+  from django . apps import apps
+              chunk_buffer = BytesIO ( chunk )
+ from django . db import connections , transaction , router , DatabaseError
+ pass
+ params . update ( kwargs )
+    def new_file ( self , * args , ** kwargs ) :
+          key = self . make_key ( key , version = version )
+   def add ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+  return list ( self )
+                          raise
+ warnings . warn ( "'get_cache' is deprecated in favor of 'caches'." ,  RemovedInDjango19Warning , stacklevel = 2 )
+  backend_cls = import_string ( backend )
+          return getattr ( caches [ DEFAULT_CACHE_ALIAS ] , name )
+ from datetime import datetime
+   def set ( self , key , value , timeout = DEFAULT_TIMEOUT , version = None ) :
+              raise SuspiciousFileOperation ( "Attempted access to '%s' denied." % name )
+ file_pos = file . tell ( )
+          try :
+   name = self . get_available_name ( name )
+ from django . core . files . move import file_move_safe
+ self . _view_middleware = [ ]
+ from django . core . cache . backends . base import BaseCache , DEFAULT_TIMEOUT
+ def messages ( self ) :
+  def __init__ ( self , dir , params ) :
+      def __init__ ( self , name , params ) :
+                  os . makedirs ( self . _dir , 0o700 )
+                      raise
+              chunk_size = self . DEFAULT_CHUNK_SIZE
+   response = response . render ( )
+              return raw_data
+ for key , value in data . items ( ) :
+  def __iter__ ( self ) :
+   def incr ( self , key , delta = 1 , version = None ) :
+  fd = os . open ( full_path , flags , 0o666 )
+              if self . _has_expired ( key ) :
+    if response is None :
+              self . activated = True
+          key = self . make_key ( key , version = version )
+              self . mode = file . mode
+ import django . core . checks . compatibility . django_1_7_0
+ from django . core . files import locks
+ if num > self . _max_entries :
+  from django . conf import settings
+ with connections [ db ] . cursor ( ) as cursor :
+                  request_middleware . append ( mw_instance . process_request )
+   else :
+ return ( ret == 0 )
+ write = property ( lambda self : self . file . write )
+  from django . conf import settings
+     def get_valid_name ( self , name ) :
+ file_root , file_ext = os . path . splitext ( file_name )
+                  if buffer_ :
+ import random
+ self . error_list = [ self ]
+    def __str__ ( self ) :
+       def __init__ ( self ) :
+    class PermissionDenied ( Exception ) :
+ if os . path . exists ( fname ) :
+  from __future__ import unicode_literals
+  def _get_closed ( self ) :
+  def handle_raw_input ( self , input_data , META , content_length , boundary , encoding = None ) :
+   except SystemExit :
+ from django . conf import settings
+                  del self . _cache [ key ]
+              self . _delete ( fname )
+ location = params . pop ( 'LOCATION' , '' )
+ table = connections [ db ] . ops . quote_name ( self . _table )
+ return True

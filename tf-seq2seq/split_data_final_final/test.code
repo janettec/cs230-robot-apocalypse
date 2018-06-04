@@ -1,0 +1,1800 @@
+  if option [ 1 ] :
+ from django . utils import six
+       if transaction . get_autocommit ( self . using ) :
+ if self . alternatives :
+ return fp . getvalue ( )
+ MIMEMultipart . __setitem__ ( self , name , val )
+ if basetype == 'text' :
+   def handle ( self , * app_labels , ** options ) :
+ def __init__ ( self , cmd , ** kwargs ) :
+ if rel_to in known_models :
+ use_natural_primary_keys = options . get ( 'use_natural_primary_keys' )
+          locale = options . get ( 'locale' )
+              pass
+                       if self . _request_middleware is None :
+          self . stream = kwargs . pop ( 'stream' , sys . stdout )
+   return '\n' . join ( output )
+ criticals = [ e for e in all_issues if checks . CRITICAL <= e . level ]
+  commands = get_commands ( )
+ msg = SafeMIMEMultipart ( _subtype = self . alternative_subtype , encoding = encoding )
+  try :
+ extra_params . update ( field_params )
+          return len ( list ( email_messages ) )
+                  from django . core . servers . fastcgi import FASTCGI_OPTIONS
+              raise CommandError ( "Error: %s" % message )
+  excluded_models . add ( model )
+ self . buffer = b''
+     def compile_messages ( self , locations ) :
+ if not supported_platform or not is_a_tty :
+ interactive = options . get ( 'interactive' )
+              raise CommandError ( "This script should be run from the Django Git "  "checkout or your project or app tree, or with "  "the settings module specified." )
+  app_list = OrderedDict ( ( app_config , None )  for app_config in apps . get_app_configs ( )  if app_config . models_module is not None and app_config not in excluded_apps )
+  excluded_apps . add ( app_config )
+              val = Header ( val , encoding ) . encode ( )
+  return True
+          addr . encode ( 'ascii' )
+   sys . exit ( 1 )
+                  filename . encode ( 'ascii' )
+     class SafeMIMEMultipart ( MIMEMixin , MIMEMultipart ) :
+              self . settings_exception = exc
+  if options . pythonpath :
+              new_name += '_field'
+          return
+   queryset = objects . using ( using ) . order_by ( model . _meta . pk . name )
+   excluded_apps = set ( )
+  field_desc += ', ' . join ( [  '%s=%s' % ( k , strip_prefix ( repr ( v ) ) )  for k , v in extra_params . items ( ) ] )
+ g = generator . BytesGenerator ( fp , mangle_from_ = False )
+                      self . write_message ( message )
+  else :
+ while model_dependencies :
+ g . flatten ( self , unixfrom = unixfrom )
+              field_output = [ qn ( f . name ) , f . db_type ( connection = connection ) ]
+ if html_message :
+              for cache_alias in settings . CACHES :
+  except OSError :
+ self . resolver_match = None
+ raise
+from __future__ import unicode_literals
+ try :
+                  if model in excluded_models :
+          as_bytes = as_string
+ for f in fields :
+ fixture = open_method ( fixture_file , mode )
+ targets = set ( '.' . join ( ( fixture_name , suffix ) ) for suffix in suffixes )
+              usage = sorted ( get_commands ( ) . keys ( ) )
+    if new_name . startswith ( '_' ) :
+      with open ( fn , 'rb' ) as f :
+                          app_config = apps . get_app_config ( app_label )
+                        from django . db import connections , DEFAULT_DB_ALIAS
+ parser . add_argument ( 'args' , nargs = '*' )
+ infos = [ e for e in all_issues if checks . INFO <= e . level < checks . WARNING and not e . is_silenced ( ) ]
+              addr = Header ( addr , encoding ) . encode ( )
+   return commands
+ leave_locale_alone = False
+  app_list [ app_config ] = None
+ for label in labels :
+                  num += 1
+ self . _lock = threading . RLock ( )
+                  self . check ( )
+ from __future__ import unicode_literals
+ raise NotImplementedError ( 'subclasses of NoArgsCommand must provide a handle_noargs() method' )
+          self . _post = post
+              self . to = [ ]
+ self . attachments . append ( filename )
+          return getattr ( self . _out , name )
+  return value if six . PY2 else value . encode ( ISO_8859_1 ) . decode ( UTF_8 )
+              self . file_path = kwargs . pop ( 'file_path' )
+ import threading
+                  path_info = '/'
+ from email . mime . base import MIMEBase
+              options , args = parser . parse_args ( argv [ 2 : ] )
+              message . message ( )
+                  for dirpath , dirnames , filenames in os . walk ( ldir ) :
+  requires_system_checks = False
+ handle_default_options ( options )
+    if is_relation :
+ for message in messages :
+  from django . conf import settings
+ try :
+ from django . core . mail . message import (  EmailMessage , EmailMultiAlternatives ,  SafeMIMEText , SafeMIMEMultipart ,  DEFAULT_ATTACHMENT_MIME_TYPE , make_msgid ,  BadHeaderError , forbid_multi_line_headers )
+              mimetype , _ = mimetypes . guess_type ( filename )
+                      filename = filename . encode ( 'utf-8' )
+ for message in email_messages :
+ self . method = environ [ 'REQUEST_METHOD' ] . upper ( )
+  return True
+  if all_issues :
+  logger = logging . getLogger ( 'django.request' )
+          skipped = [ ]
+  def __call__ ( self , environ , start_response ) :
+ parser . add_option ( '--settings' ,  help = 'The Python path to a settings module, e.g. "myproject.settings.main". If this isn\'t provided, the DJANGO_SETTINGS_MODULE environment variable will be used.' )
+   def recipients ( self ) :
+ if self . _fname is None :
+ from django . core . management . color import no_style
+ import keyword
+              assert content is None
+ import time
+ self . buf_size = buf_size
+ if self . body :
+              return b''
+ parser . add_argument ( '--database' , action = 'store' , dest = 'database' ,  default = DEFAULT_DB_ALIAS ,  help = 'Nominates a database onto which the cache tables will be '  'installed. Defaults to the "default" database.' )
+ if label_output :
+ return self . to + self . cc + self . bcc
+   def print_help ( self , prog_name , subcommand ) :
+ return fp . getvalue ( )
+ super ( EmailBackend , self ) . __init__ ( * args , ** kwargs )
+              if self . verbosity > 0 :
+ val = force_text ( val )
+    def color_style ( ) :
+  except UnicodeEncodeError :
+              for fixture_label in fixture_labels :
+   def find_commands ( management_dir ) :
+     header_names = [ key . lower ( ) for key in self . extra_headers ]
+     if self . verbosity > 1 :
+          parser . add_argument ( 'args' , metavar = 'table_name' , nargs = '*' ,  help = 'Optional table names. Otherwise, settings.CACHES is used to '  'find cache tables.' )
+              raise ImproperlyConfigured ( 'Path for saving emails is invalid: %r' % self . file_path )
+  else :
+ import os
+ self . hide_empty = options . get ( 'hide_empty' , False )
+                   content = content . message ( )
+                            field_type , field_params , field_notes = self . get_field_type ( connection , table_name , row )
+              return
+  else :
+              self . loaddata ( fixture_labels )
+ msg_data = msg . as_bytes ( )
+ response = http . HttpResponseBadRequest ( )
+ options = [ ( '--help' , None ) ]
+ self . settings_exception = None
+  else :
+ if self . cc :
+          return self . get_fqdn ( )
+ self . buffer = b''
+              new_conn_created = self . open ( )
+  if has_old_option :
+   return model_list
+                  cache = caches [ cache_alias ]
+                          deps . append ( rel_model )
+   self . requires_system_checks = (  self . requires_system_checks if has_new_option else  self . requires_model_validation if has_old_option else  True )
+   def forbid_multi_line_headers ( name , val , encoding ) :
+ from email . message import Message
+from __future__ import unicode_literals
+               for tablename in tablenames :
+          return [ ]
+  used_column_names . append ( att_name )
+                  if not candidate :
+          self . fail_silently = fail_silently
+ return line
+                  payload = text . encode ( utf8_charset . output_charset )
+  except KeyError :
+   try :
+  table_name_filter = options . get ( 'table_name_filter' )
+ parser . add_argument ( '--pythonpath' ,  help = 'A directory to add to the Python path, e.g. "/home/djangoprojects/myproject".' )
+   def attach_alternative ( self , content , mimetype ) :
+ import os
+  return self . handle_noargs ( ** options )
+  else :
+              msg [ 'Date' ] = formatdate ( )
+ parser . add_argument ( '--indent' , default = None , dest = 'indent' , type = int ,  help = 'Specifies the indent level to use when pretty-printing output.' )
+ fixture_name = os . path . basename ( fixture_name )
+   args = [ self . program ] + self . program_options + [ '-o' ,  npath ( base_path + '.mo' ) , npath ( base_path + '.po' ) ]
+  return self . connection
+  commands_dict [ app ] . append ( name )
+ has_new_option = hasattr ( self , 'requires_system_checks' )
+ from django . utils . functional import cached_property
+ field_output . append ( "%sNULL" % ( "NOT " if not f . null else "" ) )
+ self . _out . write ( force_str ( style_func ( msg ) ) )
+ if extra_params :
+              assert content is not None
+  else :
+ if html_message :
+   except Exception :
+ return module . Command ( )
+ if router . allow_migrate ( self . using , obj . object . __class__ ) :
+              new_name = '%sfield' % new_name
+ try :
+   fields = (   models . CharField ( name = 'cache_key' , max_length = 255 , unique = True , primary_key = True ) ,  models . TextField ( name = 'value' ) ,  models . DateTimeField ( name = 'expires' , db_index = True ) ,  )
+              self . _load_post_and_files ( )
+              localpart , domain = addr . split ( '@' , 1 )
+                      model = apps . get_model ( exclude )
+                      locations . extend ( ( dirpath , f ) for f in filenames if f . endswith ( '.po' ) )
+ parser . add_argument ( '-n' , '--natural' , action = 'store_true' , dest = 'use_natural_keys' , default = False ,  help = 'Use natural keys if they are available (deprecated: use --natural-foreign instead).' )
+ try :
+ timeval = time . time ( )
+ yield "# into your database."
+ excluded_models = set ( )
+ if self . output_transaction :
+ self . cc = list ( cc )
+ mixed_subtype = 'mixed'
+ super ( CommandParser , self ) . __init__ ( ** kwargs )
+              if not self . fail_silently :
+              assert not isinstance ( bcc , six . string_types ) , '"bcc" argument must be a list or tuple'
+ yield "#"
+  def add_arguments ( self , parser ) :
+          parser . add_argument ( '--locale' , '-l' , dest = 'locale' , action = 'append' , default = [ ] ,  help = 'Locale(s) to process (e.g. de_AT). Default is to process all. '  'Can be used multiple times.' )
+          db = options . get ( 'database' )
+    elif cwords [ 0 ] in subcommands and cwords [ 0 ] != 'help' :
+ self . port = port or settings . EMAIL_PORT
+ loaded_objects_in_fixture = 0
+   def _get_request ( self ) :
+ MIMEMessage . __setitem__ ( self , name , val )
+ utcdate = time . strftime ( '%Y%m%d%H%M%S' , time . gmtime ( timeval ) )
+ parser . add_argument ( '--natural-foreign' , action = 'store_true' , dest = 'use_natural_foreign_keys' , default = False ,  help = 'Use natural foreign keys if they are available.' )
+          warnings . warn ( '`request.REQUEST` is deprecated, use `request.GET` or '  '`request.POST` instead.' , RemovedInDjango19Warning , 2 )
+                  if field . rel . through . _meta . auto_created :
+ six . reraise ( CommandError , CommandError ( new_msg ) , sys . exc_info ( ) [ 2 ] )
+      def handle_default_options ( options ) :
+  self . environ = environ
+ if use_natural_keys :
+    class CommandParser ( ArgumentParser ) :
+   if confirm == 'yes' :
+ output , errors , status = popen_wrapper ( args )
+  elif basetype == 'message' and subtype == 'rfc822' :
+ for name , app in six . iteritems ( get_commands ( ) ) :
+ from email . header import Header
+   def handle_app_config ( self , app_config , ** options ) :
+   if keyword . iskeyword ( new_name ) :
+      help = 'Installs the named fixture(s) in the database.'
+                          queryset = queryset . filter ( pk__in = primary_keys )
+                  deps = [ ]
+ from django . core . mail . message import sanitize_address
+              if new_name . endswith ( '_id' ) :
+              try :
+                      curs . execute ( "\n" . join ( full_statement ) )
+  msg += "System check identified %s (%s silenced)." % (  "no issues" if visible_issue_count == 0 else  "1 issue" if visible_issue_count == 1 else  "%s issues" % visible_issue_count ,  len ( all_issues ) - visible_issue_count ,  )
+              return '%s\n\n%s' % ( usage , self . help )
+   def run_from_argv ( self , argv ) :
+ sys . exit ( 1 )
+                              extra_params [ 'unique' ] = True
+     class EmailMultiAlternatives ( EmailMessage ) :
+ ser_fmts = serializers . get_public_serializer_formats ( ) if ser_fmt is None else [ ser_fmt ]
+ def emit_post_migrate ( verbosity , interactive , database ) :
+    basedirs = set ( map ( os . path . abspath , filter ( os . path . isdir , basedirs ) ) )
+  fixture_files = [ ]
+                        pass
+  base_path = os . path . splitext ( po_path ) [ 0 ]
+  except LookupError :
+           self . ignore = options . get ( 'ignore' )
+ sys . stderr . write ( "Unknown command: %r\nType '%s help' for usage.\n" %  ( subcommand , self . prog_name ) )
+ assert content is not None
+  else :
+              if self . fixture_count == 0 and self . hide_empty :
+ REQUEST = property ( _get_request )
+ if self . use_ssl and self . use_tls :
+              app_configs = None
+   if is_relation :
+ comment_notes . extend ( field_notes )
+   if new_name in used_column_names :
+  status = '%s %s' % ( response . status_code , response . reason_phrase )
+              subcommand = 'help'
+ field_params [ 'decimal_places' ] = row [ 5 ]
+            if self . _request_middleware is None :
+          if self . cmd . _called_from_command_line :
+   def handle ( self , * args , ** options ) :
+                  translation . activate ( saved_locale )
+  except LookupError :
+ has_bz2 = True
+              content_length = 0
+  else :
+  print ( opt_label )
+              confirm = 'yes'
+ if not email_message . recipients ( ) :
+ def GET ( self ) :
+   else :
+ raise
+  except ImportError :
+                  deps = getattr ( model . natural_key , 'dependencies' , [ ] )
+              msg [ 'Cc' ] = ', ' . join ( self . cc )
+              if row [ 4 ] is None or row [ 5 ] is None :
+          format = options . get ( 'format' )
+ from django . conf import settings
+    class WSGIHandler ( base . BaseHandler ) :
+                  self . close ( )
+              field_type = connection . introspection . get_field_type ( row [ 1 ] , row )
+   return num_sent
+    def handle ( self , * args , ** options ) :
+                      self . stdout . write ( "Resetting sequences\n" )
+  except IndexError :
+       def __init__ ( self , _subtype = 'mixed' , boundary = None , _subparts = None , encoding = None , ** _params ) :
+  except LookupError :
+          raise CommandError ( "Unknown command: %r" % name )
+ FILES = property ( _get_files )
+   return '\n' . join ( output )
+ from django . apps import apps
+  is_a_tty = hasattr ( sys . stdout , 'isatty' ) and sys . stdout . isatty ( )
+     if att_name == 'id' and extra_params == { 'primary_key' : True } :
+    except Exception as e :
+   def _get_filename ( self ) :
+                      objects_in_fixture += 1
+   def check ( self , app_configs = None , tags = None , display_num_errors = False ) :
+                  if hasattr ( field . rel , 'to' ) :
+ parser . print_help ( )
+  from django . conf import settings
+ for c in response . cookies . values ( ) :
+    return script_name . decode ( UTF_8 )
+                      for line in sequence_sql :
+ known_models . append ( table2model ( table_name ) )
+                  self . compile_messages ( locations )
+                  self . set_payload ( text , utf8_charset )
+ self . _lock = threading . RLock ( )
+       if format not in serializers . get_public_serializer_formats ( ) :
+                  skipped . append ( ( model , deps ) )
+              try :
+              try :
+ try :
+ if os . environ . get ( 'DJANGO_SETTINGS_MODULE' ) :
+ using = options . get ( 'database' )
+ self . use_ssl = settings . EMAIL_USE_SSL if use_ssl is None else use_ssl
+              self . bcc = [ ]
+              self . cc = [ ]
+   if col_name != new_name and field_notes :
+  from django . core import mail
+              curr = cwords [ cword - 1 ]
+ import re
+ connection = connections [ database ]
+                   try :
+ parser . add_option ( '--pythonpath' ,  help = 'A directory to add to the Python path, e.g. "/home/djangoprojects/myproject".' ) ,
+  output = [ ]
+ self . loaded_object_count = 0
+    def loaddata ( self , fixture_labels ) :
+   def handle_noargs ( self , ** options ) :
+ from importlib import import_module
+  return klass
+ if self . connection is None :
+                      raise CommandError (  "Cache table '%s' could not be created.\nThe error was: %s." %  ( tablename , force_text ( e ) ) )
+ if self . help :
+ yield ''
+   def handle ( self , ** options ) :
+              msg += ending
+ try :
+  requires_system_checks = False
+                  import_module ( '.management' , app_config . name )
+  self . stream . write ( '%s\n' % msg_data )
+   class LimitedStream ( object ) :
+                          continue
+ try :
+ from django . core . management . base import ( BaseCommand , CommandError ,  CommandParser , handle_default_options )
+  import codecs
+                  chunk = self . _read_limited ( )
+                 MIMEText . __init__ ( self , text , subtype , None )
+ for message in email_messages :
+ commands = { name : 'django.core' for name in find_commands ( __path__ [ 0 ] ) }
+              subcommand_cls = self . fetch_command ( cwords [ 0 ] )
+ attachment = SafeMIMEText ( content , subtype , encoding )
+              self . _fqdn = socket . getfqdn ( )
+   def message ( self ) :
+ parser . add_argument ( '--database' , action = 'store' , dest = 'database' ,  default = DEFAULT_DB_ALIAS , help = 'Nominates a specific database to load '  'fixtures into. Defaults to the "default" database.' )
+ self . subject = subject
+          parser . add_argument ( '--database' , action = 'store' , dest = 'database' ,  default = DEFAULT_DB_ALIAS , help = 'Nominates a database onto which to '  'open a shell. Defaults to the "default" database.' )
+                  output . append ( "%s = %s" % ( key , user_settings [ key ] ) )
+ return msg_count
+ for exclude in excludes :
+              try :
+          if size is None or size > self . remaining :
+                          objects = model . _default_manager
+   def handle ( self , * tablenames , ** options ) :
+ return http . QueryDict ( raw_query_string , encoding = self . _encoding )
+  except smtplib . SMTPException :
+                  field_notes . append (  'max_digits and decimal_places have been guessed, as this '  'database handles decimal fields as float' )
+ try :
+      help = ( 'Removes ALL DATA from the database, including data added during '  'migrations. Unmigrated apps will also have their initial_data '  'fixture reloaded. Does not achieve a "fresh install" state.' )
+  except Exception as e :
+              raise ImproperlyConfigured ( 'Could not write to directory: %s' % self . file_path )
+                  warnings . warn (  "No fixture data found for '%s'. (File format may be "  "invalid.)" % fixture_name ,  RuntimeWarning  )
+              sys . stdout . write ( self . main_help_text ( ) + '\n' )
+              self . execute ( * args , ** cmd_options )
+   def _get_files ( self ) :
+              _ , ser_fmt , cmp_fmt = self . parse_name ( os . path . basename ( fixture_file ) )
+  option_list = ( )
+     self . loaded_object_count += loaded_objects_in_fixture
+          parser . add_argument ( '--all' , action = 'store_true' , dest = 'all' , default = False ,  help = 'Display all settings, regardless of their value. '  'Default values are prefixed by "###".' )
+          path_info = get_bytes_from_wsgi ( environ , 'PATH_INFO' , '' )
+ try :
+ self . _fname = os . path . join ( self . file_path , fname )
+          return commands
+              return usage
+ try :
+ self . timeout = timeout
+      def send_messages ( self , email_messages ) :
+                              e . args = ( "Could not load %(app_label)s.%(object_name)s(pk=%(pk)s): %(error_msg)s" % {  'app_label' : obj . object . _meta . app_label ,  'object_name' : obj . object . _meta . object_name ,  'pk' : obj . object . pk ,  'error_msg' : force_text ( e )  } , )
+ self . models = set ( )
+   def has_bom ( fn ) :
+              app_configs = [ apps . get_app_config ( app_label ) for app_label in app_labels ]
+                  self . fetch_command ( options . args [ 0 ] ) . print_help ( self . prog_name , options . args [ 0 ] )
+  return attachment
+ cmd_options = vars ( options )
+                  raise
+    model_dependencies . append ( ( model , deps ) )
+                  if stream :
+  try :
+                  self . stdout . write ( "Cache table '%s' already exists." % tablename )
+ field_notes . append ( 'This field type is a guess.' )
+   parser = subcommand_cls . create_parser ( '' , cwords [ 0 ] )
+   def handle ( self , ** options ) :
+     class OutputWrapper ( object ) :
+              if size :
+ parser . add_argument ( '--list-tags' , action = 'store_true' , dest = 'list_tags' ,  help = 'List available tags.' )
+      has_old_option = hasattr ( self , 'requires_model_validation' )
+           from django . conf import settings , global_settings
+  return result
+  from argparse import ArgumentParser
+ g = generator . Generator ( fp , mangle_from_ = False )
+          defaults = parser . parse_args ( args = args )
+ addr = '@' . join ( [ localpart , domain ] )
+                      app_configs = apps . get_app_configs ( )
+ return connection . send_messages ( messages )
+   return '\n' . join ( output )
+  return self . _post
+  connection = connections [ database ]
+    model_dependencies . reverse ( )
+      help = "Introspects the database tables in the given database and outputs a Django model module."
+ if status :
+ fixture_name , ser_fmt , cmp_fmt = self . parse_name ( fixture_label )
+ if isinstance ( cache , BaseDatabaseCache ) :
+ from django . utils . six . moves import input
+  model_dependencies = skipped
+   def read ( self , size = None ) :
+  except ImportError :
+                  serializers . get_serializer ( format )
+  except ( ssl . SSLError , smtplib . SMTPServerDisconnected ) :
+              subcommand = self . argv [ 1 ]
+ extra_params . update ( params )
+              if self . verbosity > 0 :
+                          self . load_middleware ( )
+  if os . path . exists ( self . file_path ) and not os . path . isdir ( self . file_path ) :
+                      rel_model = field . rel . to
+ parser . add_argument ( '--settings' )
+  except serializers . SerializerDoesNotExist :
+                  dirs = [ basedir ]
+                      app_label , model_label = label . split ( '.' )
+ leave_locale_alone = True
+                              app_list_value . append ( model )
+          try :
+ self . _read_started = False
+ assert mimetype is not None
+ self . stream . write ( '-' * 79 )
+                  if not self . can_import_settings :
+ def use_argparse ( self ) :
+ self . connection . ehlo ( )
+ self . attachments . append ( ( filename , content , mimetype ) )
+ while model_dependencies :
+  else :
+                  try :
+ missing_args_message = "Enter at least one %s." % label
+ try :
+ sorted_issues = [  ( criticals , 'CRITICALS' ) ,  ( errors , 'ERRORS' ) ,  ( warnings , 'WARNINGS' ) ,  ( infos , 'INFOS' ) ,  ( debugs , 'DEBUGS' ) ,  ]
+ for opt in self . option_list :
+ saved_locale = translation . get_language ( )
+                          field_desc += '  # ' + ' ' . join ( comment_notes )
+from __future__ import unicode_literals
+    suffixes = ( '.' . join ( ext for ext in combo if ext )  for combo in product ( databases , ser_fmts , cmp_fmts ) )
+    @ staticmethod
+  program = 'msgfmt'
+ changed = True
+ import sys
+          name , val = forbid_multi_line_headers ( name , val , self . encoding )
+  try :
+ while '%s_%d' % ( new_name , num ) in used_column_names :
+  from __future__ import unicode_literals
+          self . stream . write ( message . message ( ) . as_bytes ( ) + b'\n' )
+ self . remaining -= len ( result )
+ try :
+  self . file_path = os . path . abspath ( self . file_path )
+ supported_platform = plat != 'Pocket PC' and ( plat != 'win32' or  'ANSICON' in os . environ )
+          with open ( path , 'a' ) :
+  def add_arguments ( self , parser ) :
+      def __init__ ( self , * args , ** kwargs ) :
+ if not self . connection :
+ self . style_func = None
+ msg = SafeMIMEMultipart ( _subtype = self . mixed_subtype , encoding = encoding )
+ if not settings . ADMINS :
+              model_list = app_config . get_models ( )
+      parser = CommandParser ( None , usage = "%(prog)s subcommand [options] [args]" , add_help = False )
+ del cmd_options [ 'args' ]
+      if isinstance ( addr , six . string_types ) :
+   app_list_value = app_list . setdefault ( app_config , [ ] )
+   return style
+  except UnicodeDecodeError :
+ field_notes = [ ]
+  with self . _lock :
+ from email import ( charset as Charset , encoders as Encoders ,  message_from_string , generator )
+          self . cmd = cmd
+ yield "# You'll have to do the following manually to clean this up:"
+              if key not in default_settings :
+              locale_dirs = filter ( os . path . isdir , glob . glob ( '%s/*' % basedir ) )
+              raise CommandError ( "Can't find %s. Make sure you have GNU gettext "  "tools 0.15 or newer installed." % self . program )
+  else :
+  self . serialization_formats = serializers . get_public_serializer_formats ( )
+ msg [ 'From' ] = self . extra_headers . get ( 'From' , self . from_email )
+ if os . path . sep in fixture_name :
+ for i , row in enumerate ( connection . introspection . get_table_description ( cursor , table_name ) ) :
+              yield "# This is an auto-generated Django model module."
+  formatted = "\n" . join ( sorted ( formatted ) )
+  return super ( CommandParser , self ) . parse_args ( args , namespace )
+  if subcommand == 'help' :
+     class CachedDnsName ( object ) :
+          idstring = ''
+ from django . db import ( connections , router , transaction , DEFAULT_DB_ALIAS ,  IntegrityError , DatabaseError )
+  locations = [ ]
+    def execute ( self , * args , ** options ) :
+   if any ( e . is_serious ( ) and not e . is_silenced ( ) for e in all_issues ) :
+          self . _out = out
+              self . compression_formats [ 'bz2' ] = ( bz2 . BZ2File , 'r' )
+  nm , addr = addr
+              options = parser . parse_args ( argv [ 2 : ] )
+  return handle_app ( app_config . models_module , ** options )
+  if not settings . configured :
+ return msgid
+          return self . _create_attachments ( self . _create_alternatives ( msg ) )
+                  self . connection . ehlo ( )
+                if isinstance ( content , EmailMessage ) :
+ with open ( path , 'rb' ) as f :
+    def is_writable ( path ) :
+ if '\n' in val or '\r' in val :
+   else :
+     class BaseCommand ( object ) :
+  if 'message-id' not in header_names :
+   def get_version ( self ) :
+ self . verbosity = int ( options . get ( 'verbosity' ) )
+ MIMEText . __setitem__ ( self , name , val )
+              options , args = parser . parse_known_args ( self . argv [ 2 : ] )
+    new_name , num_repl = re . subn ( r'\W' , '_' , new_name )
+ from django . utils import lru_cache
+                          objects = model . _base_manager
+ import sys
+ yield "from __future__ import unicode_literals"
+  from collections import OrderedDict
+  except LookupError :
+                  options += [ ( s_opt . get_opt_string ( ) , s_opt . nargs ) for s_opt in  parser . option_list ]
+ self . host = host or settings . EMAIL_HOST
+           defaults , _ = parser . parse_args ( args = [ ] )
+    sql_list = sql_flush ( self . style , connection , only_django = True ,  reset_sequences = reset_sequences ,  allow_cascade = allow_cascade )
+              size = self . remaining
+          ending = self . ending if ending is None else ending
+  elif size < len ( self . buffer ) :
+          return False
+ if options . settings :
+           raw_query_string = get_bytes_from_wsgi ( self . environ , 'QUERY_STRING' , '' )
+   return new_name , field_params , field_notes
+ usage . append ( style . NOTICE ( "[%s]" % app ) )
+ path_info = get_path_info ( environ )
+   return mail . send ( )
+ if self . connection :
+     if self . loaded_object_count > 0 :
+ raise
+              self . connection = connection_class ( self . host , self . port , ** connection_params )
+              result = self . buffer + self . _read_limited ( )
+ super ( NoArgsCommand , self ) . __init__ ( )
+   _called_from_command_line = False
+              field_params [ 'db_column' ] = col_name
+  if cc :
+  else :
+              field_type , new_params = field_type
+ exclude = options . get ( 'exclude' )
+                  args = options . args
+  self . from_email = from_email or settings . DEFAULT_FROM_EMAIL
+                      raise
+  else :
+                  if not isinstance ( e , CommandError ) :
+   return msg
+                          loaded_objects_in_fixture += 1
+ field_notes . append ( 'Field renamed because of name conflict.' )
+ self . body = body
+ pass
+  def add_arguments ( self , parser ) :
+  from django . conf import settings
+ filename = os . path . basename ( path )
+ from django . core . management . base import BaseCommand , CommandError
+ from django . core . management . color import no_style
+  table2model = lambda table_name : re . sub ( r'[^a-zA-Z0-9]' , '' , table_name . title ( ) )
+    return field_type , field_params , field_notes
+   except NotImplementedError :
+   if field_type == 'DecimalField' :
+ from django . core . management . color import color_style
+          return force_text ( settings . FORCE_SCRIPT_NAME )
+ def __init__ ( self , out , style_func = None , ending = '\n' ) :
+      if row [ 6 ] :
+ self . username = settings . EMAIL_HOST_USER if username is None else username
+  self . buffer = sio . read ( )
+ connection = connections [ options . get ( 'database' , DEFAULT_DB_ALIAS ) ]
+ from django . core . cache import caches
+                      self . stdout . write ( "Installing %s fixture '%s' from %s." %  ( ser_fmt , fixture_name , humanize ( fixture_dir ) ) )
+  try :
+              return
+      help = "Checks the entire Django project for potential problems."
+ import sys
+              from django . conf import settings
+    finally :
+   objects = serializers . deserialize ( ser_fmt , fixture ,  using = self . using , ignorenonexistent = self . ignore )
+                  try :
+       for field in model . _meta . many_to_many :
+          parser . add_argument ( 'args' , metavar = 'app_label[.ModelName]' , nargs = '*' ,  help = 'Restricts dumped data to the specified app_label or app_label.ModelName.' )
+  from django . apps import apps
+          app_name = get_commands ( ) [ name ]
+          parser . add_argument ( 'args' , metavar = 'app_label' , nargs = '+' ,  help = 'One or more application label.' )
+              usage = [  "" ,  "Type '%s help <subcommand>' for help on a specific subcommand." % self . prog_name ,  "" ,  "Available subcommands:" ,  ]
+                          if model not in app_list_value :
+          cache = BaseDatabaseCache ( tablename , { } )
+ self . _payload = payload . decode ( 'ascii' , 'surrogateescape' )
+ if output :
+ from django . core . management . base import BaseCommand , CommandError
+              raise CommandError ( "%s. Are you sure your INSTALLED_APPS setting is correct?" % e )
+   attachment = SafeMIMEMessage ( content , subtype )
+                  if not self . fail_silently :
+ locales = set ( locales ) - set ( exclude )
+from django . conf import settings
+  if stream_created :
+  except smtplib . SMTPException :
+  except DatabaseError as e :
+   self . check ( app_configs = app_configs , tags = tags , display_num_errors = True )
+          DJANGO_COLORS = os . environ . get ( 'DJANGO_COLORS' , '' )
+ pass
+          return self . environ . get ( 'wsgi.url_scheme' )
+ self . remaining = limit
+ try :
+ from email . mime . multipart import MIMEMultipart
+   def handle ( self , ** options ) :
+          def as_bytes ( self , unixfrom = False ) :
+ if not supports_color ( ) :
+ open_method , mode = self . compression_formats [ cmp_fmt ]
+      def as_string ( self , unixfrom = False ) :
+  raise
+                  raise
+ from django . core . mail . utils import DNS_NAME
+ self . stream . write ( '\n' )
+                      app = app . rpartition ( '.' ) [ - 1 ]
+              result = self . buffer [ : size ]
+  else :
+   def fetch_command ( self , subcommand ) :
+   ISO_8859_1 , UTF_8 = str ( 'iso-8859-1' ) , str ( 'utf-8' )
+   def handle ( self , * app_labels , ** options ) :
+   if column_name in indexes :
+                  output . append ( label_output )
+   def main_help_text ( self , commands_only = False ) :
+    def attach_file ( self , path , mimetype = None ) :
+  import django
+     class NoArgsCommand ( BaseCommand ) :
+              if '--commands' in args :
+   def supports_color ( ) :
+ parser . add_argument ( '--tag' , '-t' , action = 'append' , dest = 'tags' ,  help = 'Run only checks labeled with given tag.' )
+     found = True
+                          if not field_desc . endswith ( '(' ) :
+                      stream . close ( )
+  self . _stream = LimitedStream ( self . environ [ 'wsgi.input' ] , content_length )
+                      msg = "Execution of %s failed" % self . program
+ try :
+  else :
+  return attachment
+          self . close ( )
+                          self . stdout . write ( self . style . SQL_KEYWORD ( connection . ops . start_transaction_sql ( ) ) )
+  except ( LookupError , ImportError ) as e :
+                      yield meta_line
+  except LookupError :
+              mail . outbox = [ ]
+ all_locales . extend ( map ( os . path . basename , locale_dirs ) )
+ from django . core import checks
+               for model in sort_dependencies ( app_list . items ( ) ) :
+ messages = [ EmailMessage ( subject , message , sender , recipient ,  connection = connection )  for subject , message , sender , recipient in datatuple ]
+           name , val = forbid_multi_line_headers ( name , val , 'ascii' )
+   if new_name [ 0 ] . isdigit ( ) :
+    def get_bytes_from_wsgi ( environ , key , default ) :
+                  opt_label = option [ 0 ]
+   class BaseEmailBackend ( object ) :
+              self . stream = open ( self . _get_filename ( ) , 'ab' )
+                      deps = [ apps . get_model ( dep ) for dep in deps ]
+  else :
+                  raise CommandError ( "You can only use --pks option with one model" )
+          def __getattr__ ( self , attr ) :
+  else :
+ from django . utils . encoding import force_text
+  else :
+ indent = options . get ( 'indent' )
+     def load_label ( self , fixture_label ) :
+                  output . append ( app_output )
+              if '.' in exclude :
+                  serializers . serialize ( format , get_objects ( ) , indent = indent ,  use_natural_foreign_keys = use_natural_foreign_keys ,  use_natural_primary_keys = use_natural_primary_keys ,  stream = stream or self . stdout )
+  self . connection = None
+  requires_system_checks = False
+ field_notes . append ( "Field renamed because it ended with '_'." )
+   def usage ( self , subcommand ) :
+  except ImproperlyConfigured as exc :
+ if sent :
+                  if table_name_filter is not None and callable ( table_name_filter ) :
+                      raise CommandError ( 'Unknown app in excludes: %s' % exclude )
+    def sanitize_address ( addr , encoding ) :
+                              extra_params [ 'primary_key' ] = True
+  options += [ ( app_config . label , 0 ) for app_config in app_configs ]
+ msg = SafeMIMEText ( self . body , self . content_subtype , encoding )
+   def _set_post ( self , post ) :
+ for fixture_dir in fixture_dirs :
+  mail . send ( fail_silently = fail_silently )
+ stream = open ( output , 'w' ) if output else None
+              app_output = self . handle_app_config ( app_config , ** options )
+              if not self . fail_silently :
+      has_bz2 = False
+ show_traceback = options . get ( 'traceback' )
+ from django . db import connections , DEFAULT_DB_ALIAS
+  def add_arguments ( self , parser ) :
+  elif not isinstance ( content , Message ) :
+                  usage . append ( style . NOTICE (  "Note that only Django core commands are listed "  "as settings are not properly configured (error: %s)."  % self . settings_exception ) )
+ if has_bom ( po_path ) :
+   def write_message ( self , message ) :
+                          deps . append ( rel_model )
+ del self [ 'Content-Transfer-Encoding' ]
+  except IndexError :
+   def _create_alternatives ( self , msg ) :
+          addr = parseaddr ( force_text ( addr ) )
+              full_statement . append ( '    %s%s' % ( line , ',' if i < len ( table_output ) - 1 else '' ) )
+          command = load_command_class ( app_name , name )
+ allow_cascade = options . get ( 'allow_cascade' , False )
+ if new_name != col_name :
+                      msg . attach ( self . _create_attachment ( * attachment ) )
+ if self . verbosity >= 2 :
+                  if self . verbosity >= 2 :
+                  parser . add_option ( opt )
+  try :
+                      curs . execute ( statement )
+ if not self . use_argparse :
+  if isinstance ( app_name , BaseCommand ) :
+ def __init__ ( self , * args , ** kwargs ) :
+ qn = connection . ops . quote_name
+              body_msg = msg
+              app_configs = [ app_config ]
+ self . stdout = OutputWrapper ( options . get ( 'stdout' , sys . stdout ) )
+ from django . utils . deprecation import RemovedInDjango19Warning
+      def execute_from_command_line ( argv = None ) :
+ MIMEMultipart . __init__ ( self , _subtype , boundary , _subparts , ** _params )
+   basedirs = [ os . path . join ( 'conf' , 'locale' ) , 'locale' ]
+  else :
+ cword = int ( os . environ [ 'COMP_CWORD' ] )
+              self . stream = None
+ self . extra_headers = headers or { }
+                  pass
+ from django . db import connections , router , transaction , DEFAULT_DB_ALIAS
+          super ( EmailBackend , self ) . __init__ ( fail_silently = fail_silently )
+ commands . update ( { name : app_config . name for name in find_commands ( path ) } )
+                          if field_type == 'BooleanField(' :
+        script_url = get_bytes_from_wsgi ( environ , 'SCRIPT_URL' , '' )
+  for alternative in self . alternatives :
+  return False
+   return command . execute ( * args , ** defaults )
+ field_params [ 'max_digits' ] = row [ 4 ] if row [ 4 ] is not None else 10
+ if mimetype is None :
+  import datetime
+                  msg . attach ( self . _create_mime_attachment ( * alternative ) )
+ fp = six . StringIO ( )
+  num_sent = 0
+ from django . core . mail . backends . base import BaseEmailBackend
+              return
+ for app_config in app_configs :
+  new_name = col_name . lower ( )
+   from django . http . response import REASON_PHRASES as STATUS_CODE_TEXT
+                  sys . stdout . write ( self . main_help_text ( ) + '\n' )
+ try :
+  else :
+ if self . timeout is not None :
+                      found = False
+   return str ( name ) , val
+                          yield obj
+               return False
+ value = environ . get ( str ( key ) , str ( default ) )
+  for issues , group_name in sorted_issues :
+              raise CommandError ( "Command doesn't accept any arguments" )
+                  self . stderr . write ( "The po files under %s are in a seemingly not writable location. "  "mo files will not be updated/created." % dirpath )
+  for statement in index_output :
+     if type ( field_type ) is tuple :
+               settings . INSTALLED_APPS
+        try :
+   cwords = os . environ [ 'COMP_WORDS' ] . split ( ) [ 1 : ]
+                          continue
+ if sequence_sql :
+          name , val = forbid_multi_line_headers ( name , val , self . encoding )
+ from django . utils . encoding import force_str , force_text
+          self . argv = argv or sys . argv [ : ]
+              connection . client . runshell ( )
+ index_output . append ( "CREATE %sINDEX %s ON %s (%s);" %  ( unique , qn ( '%s_%s' % ( tablename , f . name ) ) , qn ( tablename ) ,  qn ( f . name ) ) )
+ parser . add_argument ( '--no-initial-data' , action = 'store_false' ,  dest = 'load_initial_data' , default = True ,  help = 'Tells Django not to load any initial data after database synchronization.' )
+  from django . core . mail . backends . base import BaseEmailBackend
+  output = [ ]
+              style = no_style ( )
+          mail . attach_alternative ( html_message , 'text/html' )
+  for name , value in self . extra_headers . items ( ) :
+                      if primary_keys :
+ if to :
+    def send_messages ( self , email_messages ) :
+    def mail_managers ( subject , message , fail_silently = False , connection = None ,  html_message = None ) :
+   def __enter__ ( self ) :
+ self . password = settings . EMAIL_HOST_PASSWORD if password is None else password
+              field_params [ 'max_length' ] = int ( row [ 3 ] )
+  if pks :
+  else :
+    style . ERROR_OUTPUT = style . ERROR
+              if msg :
+ parser . add_argument ( '--no-color' , action = 'store_true' , dest = 'no_color' , default = False ,  help = "Don't colorize the command output." )
+ self . META [ 'SCRIPT_NAME' ] = script_name
+ raise NotImplementedError ( 'subclasses of BaseEmailBackend must override send_messages() method' )
+ self . _called_from_command_line = True
+   def _create_attachment ( self , filename , content , mimetype = None ) :
+                      app_config = apps . get_app_config ( exclude )
+          if '@' in addr :
+      class SafeMIMEMessage ( MIMEMixin , MIMEMessage ) :
+ for candidate in ( ( d not in models or d in model_list ) for d in deps ) :
+               raise NotImplementedError (  "Subclasses of AppCommand must provide"  "a handle_app_config() method." )
+    DEFAULT_ATTACHMENT_MIME_TYPE = 'application/octet-stream'
+          return
+ from optparse import OptionParser
+ parser . add_argument ( '-a' , '--all' , action = 'store_true' , dest = 'use_base_manager' , default = False ,  help = "Use Django's base manager to dump all models stored in the database, "  "including those that would otherwise be filtered or modified by a custom manager." )
+  field_type += '('
+          self . _fname = None
+   def attach ( self , filename = None , content = None , mimetype = None ) :
+ self . prog_name = os . path . basename ( self . argv [ 0 ] )
+   finally :
+   def get_meta ( self , table_name ) :
+    def get_script_name ( environ ) :
+ from itertools import product
+  for basedir in basedirs :
+    return value if six . PY2 else value . encode ( ISO_8859_1 )
+ parser . add_option ( '--traceback' , action = 'store_true' ,  help = 'Raise on exception' )
+  randint = random . randrange ( 100000 )
+  def __init__ ( self , subject = '' , body = '' , from_email = None , to = None , bcc = None ,  connection = None , attachments = None , headers = None , alternatives = None ,  cc = None ) :
+            all_models = [ ]
+          parser . add_argument ( '--database' , action = 'store' , dest = 'database' ,  default = DEFAULT_DB_ALIAS , help = 'Nominates a database to '  'introspect. Defaults to using the "default" database.' )
+   subcommands = list ( get_commands ( ) ) + [ 'help' ]
+ parser . add_argument ( '--ignorenonexistent' , '-i' , action = 'store_true' ,  dest = 'ignore' , default = False ,  help = 'Ignores entries in the serialized data for fields that do not '  'currently exist on the model.' )
+  import collections
+  use_natural_foreign_keys = options . get ( 'use_natural_foreign_keys' ) or use_natural_keys
+    if display_num_errors :
+ options += [ ( k , 1 ) for k in FASTCGI_OPTIONS ]
+    def no_style ( ) :
+      def normalize_col_name ( self , col_name , used_column_names , is_relation ) :
+ fixture_name = os . path . basename ( fixture_name )
+ if self . body :
+  else :
+ self . bcc = list ( bcc )
+     class AppCommand ( BaseCommand ) :
+ index_output = [ ]
+  else :
+      def __str__ ( self ) :
+   def _create_attachments ( self , msg ) :
+                  pass
+   if self . can_import_settings :
+                      indexes = { }
+  try :
+ field_notes . append ( "Field renamed because it wasn't a valid Python identifier." )
+                      msg = "Execution of %s failed: %s" % ( self . program , errors )
+ self . buffer = self . buffer [ size : ]
+  raise CommandError ( msg )
+  except OSError :
+              self . stdout . write ( "Flush cancelled.\n" )
+                      visible_issue_count += len ( issues )
+ for fixture_file , fixture_dir , fixture_name in self . find_fixtures ( fixture_label ) :
+ is_relation = i in relations
+                      usage . append ( "    %s" % name )
+          if size is None :
+ setattr ( style , role , termcolors . make_style ( ** format ) )
+  return self . _fname
+                      return
+ parser . add_argument ( '--exclude' , '-x' , dest = 'exclude' , action = 'append' , default = [ ] ,  help = 'Locales to exclude. Default is none. Can be used multiple times.' )
+ from django . utils . _os import upath
+                  stream_created = self . open ( )
+ super ( EmailBackend , self ) . __init__ ( * args , ** kwargs )
+ basetype , subtype = mimetype . split ( '/' , 1 )
+   def write_message ( self , message ) :
+ import warnings
+          msg = message . message ( )
+ if ending and not msg . endswith ( ending ) :
+ msg_count += 1
+  full_statement . append ( ');' )
+  elif f . unique :
+          parser . add_argument ( '--noinput' , action = 'store_false' , dest = 'interactive' , default = True ,  help = 'Tells Django to NOT prompt the user for input of any kind.' )
+              warnings . warn (  '"requires_model_validation" is deprecated '  'in favor of "requires_system_checks".' ,  RemovedInDjango19Warning )
+ self . alternatives . append ( ( content , mimetype ) )
+ usage = '%%prog %s [options] %s' % ( subcommand , self . args )
+                  fixture_dirs = [ os . path . join ( dir_ , os . path . dirname ( fixture_name ) )  for dir_ in fixture_dirs ]
+       def make_msgid ( idstring = None ) :
+  idhost = DNS_NAME
+ from django . core . mail . backends . base import BaseEmailBackend
+  from_email = sanitize_address ( email_message . from_email , email_message . encoding )
+              if ( self . requires_system_checks and  not options . get ( 'skip_validation' ) and  not options . get ( 'skip_checks' ) ) :
+ excludes = options . get ( 'exclude' )
+    def create_parser ( self , prog_name , subcommand ) :
+   class EmailBackend ( ConsoleEmailBackend ) :
+   return dummy ( )
+              app_configs = None
+          return False
+ msg [ 'Subject' ] = self . subject
+   if msg :
+ field_params [ 'decimal_places' ] = row [ 5 ] if row [ 5 ] is not None else 5
+  except Exception as e :
+                          raise CommandError ( "Unknown model: %s.%s" % ( app_label , model_label ) )
+              if options . traceback or not isinstance ( e , CommandError ) :
+  from collections import OrderedDict
+                              cursor . execute ( sql )
+              app_configs = [ apps . get_app_config ( app_label ) for app_label in app_labels ]
+  for attachment in self . attachments :
+              self . _load_post_and_files ( )
+           if ( hasattr ( self . cmd , 'missing_args_message' ) and  not ( args or any ( [ not arg . startswith ( '-' ) for arg in args ] ) ) ) :
+   if not inhibit_post_migrate :
+              class dummy :
+   def _get_scheme ( self ) :
+    locales = locale or all_locales
+   if six . PY2 :
+    class Command ( BaseCommand ) :
+          script_url = get_bytes_from_wsgi ( environ , 'REDIRECT_URL' , '' )
+  if col_name . lower ( ) . find ( '__' ) >= 0 :
+ if not self . recipients ( ) :
+ self . connection = connection
+ if primary_keys :
+ fp = six . BytesIO ( )
+  finally :
+              os . utime ( path , None )
+ from __future__ import unicode_literals
+  style_func = [ f for f in ( style_func , self . style_func , lambda x : x )  if f is not None ] [ 0 ]
+ if charset == 'utf-8' :
+                  if isinstance ( attachment , MIMEBase ) :
+   class Command ( BaseCommand ) :
+  if bcc :
+     class EmailMessage ( object ) :
+          super ( EmailBackend , self ) . __init__ ( * args , ** kwargs )
+   def __getattr__ ( self , name ) :
+  elif len ( options . args ) < 1 :
+          script_name = get_bytes_from_wsgi ( environ , 'SCRIPT_NAME' , '' )
+   @ property
+ use_natural_keys = options . get ( 'use_natural_keys' )
+          if not hasattr ( self , '_fqdn' ) :
+      help = ( "Runs the command-line client for specified database, or the "  "default database if none is provided." )
+ defaults = dict ( defaults . __dict__ , ** options )
+  else :
+ parser . add_option ( '-v' , '--verbosity' , action = 'store' , dest = 'verbosity' , default = '1' ,  type = 'choice' , choices = [ '0' , '1' , '2' , '3' ] ,  help = 'Verbosity level; 0=minimal output, 1=normal output, 2=verbose output, 3=very verbose output' )
+  output = self . handle ( * args , ** options )
+ from django . core import serializers
+ parser . add_argument ( '--natural-primary' , action = 'store_true' , dest = 'use_natural_primary_keys' , default = False ,  help = 'Use natural primary keys if they are available.' )
+          nm = Header ( nm , 'utf-8' ) . encode ( )
+  except OSError as err :
+  new_name = '%s_%d' % ( new_name , num )
+  except AttributeError :
+  return self . get_connection ( fail_silently ) . send_messages ( [ self ] )
+                   field_notes . append ( "Field renamed because it contained more than one '_' in a row." )
+              connection . check_constraints ( table_names = table_names )
+                  raise
+ can_import_settings = True
+              primary_keys = pks . split ( ',' )
+              while new_name . find ( '__' ) >= 0 :
+   def parse_args ( self , args = None , namespace = None ) :
+  msg_count = 0
+  except ( ValueError , TypeError ) :
+              if len ( app_labels ) > 1 and primary_keys :
+   POST = property ( _get_post , _set_post )
+  msg [ name ] = value
+              for line in self . handle_inspection ( options ) :
+                  format = color_settings . get ( role , { } )
+  for obj in queryset . iterator ( ) :
+           command = app_name
+                  self . stream . close ( )
+   def get_fqdn ( self ) :
+              self . stderr . write ( msg )
+  elif self . argv [ 1 : ] in ( [ '--help' ] , [ '-h' ] ) :
+ self . use_tls = settings . EMAIL_USE_TLS if use_tls is None else use_tls
+ yield 'from %s import models' % self . db_module
+              field_type = 'TextField'
+                  if self . fail_silently :
+          script_name = get_script_name ( environ )
+ value = environ . get ( str ( key ) , str ( default ) )
+  if not chunk :
+              self . stdout . write ( '\n' . join ( sorted ( registry . tags_available ( ) ) ) )
+  except NotImplementedError :
+  table_output . append ( " " . join ( field_output ) )
+  raise CommandError ( "Unable to serialize database: %s" % e )
+ utf8_charset . body_encoding = None
+ self . app_label = options . get ( 'app_label' )
+ self . stream . write ( b'\n' )
+ try :
+     set_script_prefix ( get_script_name ( environ ) )
+    def send_mass_mail ( datatuple , fail_silently = False , auth_user = None ,  auth_password = None , connection = None ) :
+              response = self . get_response ( request )
+ strip_prefix = lambda s : s [ 1 : ] if s . startswith ( "u'" ) else s
+ if app_output :
+  style = dummy ( )
+                      self . close ( )
+   def __exit__ ( self , exc_type , exc_value , traceback ) :
+   if script_url :
+ self . stream . write ( b'-' * 79 )
+ self . buffer = b''
+   def __setitem__ ( self , name , val ) :
+   class EmailBackend ( BaseEmailBackend ) :
+          connection = connections [ options [ 'database' ] ]
+ from django . core . management import call_command
+                  self . connection . quit ( )
+  reset_sequences = options . get ( 'reset_sequences' , True )
+              self . connection = get_connection ( fail_silently = fail_silently )
+  mail . outbox . extend ( messages )
+  if ( 3 , 2 ) < sys . version_info < ( 3 , 3 , 4 ) :
+  except UnicodeEncodeError :
+  from django . apps import apps
+ mail = EmailMultiAlternatives ( subject , message , from_email , recipient_list ,  connection = connection )
+   no_settings_commands = [  'help' , 'version' , '--help' , '--version' , '-h' ,  'compilemessages' , 'makemessages' ,  'startapp' , 'startproject' ,  ]
+          self . stream = stream
+ yield "#   * Make sure each model has one field with primary_key=True"
+              raise CommandError ( "Database inspection isn't supported for the currently selected database backend." )
+  return
+              charset = msg . get_charset ( ) . get_output_charset ( ) if msg . get_charset ( ) else 'utf-8'
+                              comment_notes . append ( 'AutoField?' )
+  if has_old_option and has_new_option :
+              timestamp = datetime . datetime . now ( ) . strftime ( "%Y%m%d-%H%M%S" )
+ from django . core . checks . registry import registry
+  for meta_line in self . get_meta ( table_name ) :
+  if 'args' in options :
+  full_statement = [ "CREATE TABLE %s (" % qn ( tablename ) ]
+    class ManagementUtility ( object ) :
+   def add_arguments ( self , parser ) :
+              self . _request = datastructures . MergeDict ( self . POST , self . GET )
+          connection = connections [ options . get ( 'database' ) ]
+ yield "#   * Rearrange models' order"
+          if self . attachments :
+ if tags and any ( not checks . tag_exists ( tag ) for tag in tags ) :
+ parser . add_option ( '--no-color' , action = 'store_true' , dest = 'no_color' , default = False ,  help = "Don't colorize the command output." )
+              raise ImproperlyConfigured (  'Command %s defines both "requires_model_validation" '  'and "requires_system_checks", which is illegal. Use only '  '"requires_system_checks".' % self . __class__ . __name__ )
+   def handle ( self , ** options ) :
+          parser . add_argument ( 'args' , metavar = 'app_label' , nargs = '*' )
+   except ( IOError , OSError ) :
+   else :
+  def __init__ ( self , subject = '' , body = '' , from_email = None , to = None , bcc = None ,  connection = None , attachments = None , headers = None , cc = None ) :
+from django . core . management . base import BaseCommand
+  self . ending = ending
+  if 'DJANGO_AUTO_COMPLETE' not in os . environ :
+                          for sql in sql_list :
+                  mimetype = DEFAULT_ATTACHMENT_MIME_TYPE
+                          raise CommandError ( "Unknown application: %s" % app_label )
+ self . stderr = OutputWrapper ( options . get ( 'stderr' , sys . stderr ) )
+ if self . args :
+ msg += '\n%s:\n%s\n' % ( group_name , formatted )
+ from django . core . management . color import color_style , no_style
+  emit_post_migrate_signal ( set ( all_models ) , verbosity , interactive , database )
+ if commands_only :
+  return msg
+          try :
+ response_headers = [ ( str ( k ) , str ( v ) ) for k , v in response . items ( ) ]
+ alternative_subtype = 'alternative'
+    if len ( app_labels ) == 0 :
+              return lambda x : x
+ errors = [ e for e in all_issues if checks . ERROR <= e . level < checks . CRITICAL ]
+ def __init__ ( self , stream , limit , buf_size = 64 * 1024 * 1024 ) :
+                  if app == 'django.core' :
+ inhibit_post_migrate = options . get ( 'inhibit_post_migrate' , False )
+ return self
+ encoding = None
+ try :
+ import ssl
+ return dict ( ( k , repr ( v ) ) for k , v in module . __dict__ . items ( ) if not omittable ( k ) )
+  for obj in objects :
+  else :
+   @ cached_property
+ request_class = WSGIRequest
+ from django . core import checks
+ return http . parse_cookie ( raw_cookie )
+                  try :
+          self . encoding = charset
+              return False
+  requires_system_checks = False
+                  field_params [ 'db_column' ] = col_name
+  import os
+                  new_name = new_name [ : - 3 ]
+ parser . add_argument ( '-o' , '--output' , default = None , dest = 'output' ,  help = 'Specifies file to which the output is written.' )
+                      num_sent += 1
+ from django . core . exceptions import ImproperlyConfigured
+   saved_locale = None
+              app_name = commands [ subcommand ]
+              try :
+  self . compression_formats = {  None : ( open , 'rb' ) ,  'gz' : ( gzip . GzipFile , 'rb' ) ,  'zip' : ( SingleZipReader , 'r' ) ,  }
+   if not changed :
+   if new_name . find ( '__' ) >= 0 :
+ content_subtype = 'plain'
+                  self . create_table ( db , tablename )
+ yield "# Feel free to rename the models, but don't rename db_table values or field names."
+                              field_desc += ', '
+   def open ( self ) :
+  elif msg and visible_issue_count :
+                  self . fixture_count += 1
+  self . replace_header ( 'Content-Type' , 'text/%s; charset="%s"' % ( subtype , charset ) )
+              sys . stdout . write ( django . get_version ( ) + '\n' )
+  except ( DatabaseError , IntegrityError ) as e :
+ attachment . set_payload ( content )
+ def __init__ ( self , fail_silently = False , ** kwargs ) :
+    return '\n' . join ( usage )
+  except UnicodeEncodeError :
+ return True
+          if model_list is None :
+ self . models . add ( obj . object . __class__ )
+                          if field_type == 'AutoField(' :
+                  raise CommandError ( "You can only use --pks option with one model" )
+              warnings . warn (  "AppCommand.handle_app() is superseded by "  "AppCommand.handle_app_config()." ,  RemovedInDjango19Warning , stacklevel = 2 )
+  except KeyError :
+ return result
+          if self . stream is None :
+  try :
+                  new_name = new_name . replace ( '__' , '_' )
+    def __setitem__ ( self , name , val ) :
+ module = import_module ( '%s.management.commands.%s' % ( app_name , name ) )
+ field_params = { }
+          if options . get ( 'list_tags' ) :
+                  model_list . append ( model )
+ if options . get ( 'no_color' ) :
+ options = [ opt for opt in options if opt [ 0 ] not in prev_opts ]
+   def get_connection ( backend = None , fail_silently = False , ** kwds ) :
+  if size == 0 :
+ import glob
+                      opt_label += '='
+      def sort_dependencies ( app_list ) :
+              with connection . cursor ( ) as curs :
+ self . META [ 'PATH_INFO' ] = path_info
+  mail . send ( fail_silently = fail_silently )
+                  field_output . append ( "UNIQUE" )
+ parser = self . create_parser ( prog_name , subcommand )
+  style = color_style ( )
+              klass = load_command_class ( app_name , subcommand )
+    else :
+                  self . stdout . write ( "%s\n" % line )
+  po_path = os . path . join ( dirpath , f )
+    def call_command ( name , * args , ** options ) :
+      initLock = Lock ( )
+                  try :
+  else :
+              if saved_locale is not None :
+              confirm = input ( """You have requested a flush of the database. This will IRREVERSIBLY DESTROY all data currently in the %r database, and return each table to an empty state. Are you sure you want to do this?     Type 'yes' to continue, or 'no' to cancel: """ % connection . settings_dict [ 'NAME' ] )
+   def get_connection ( self , fail_silently = False ) :
+   self . _post_parse_error = False
+ pass
+          return [ f [ : - 3 ] for f in os . listdir ( command_dir )  if not f . startswith ( '_' ) and f . endswith ( '.py' ) ]
+              return
+ stderr . write ( '%s: %s' % ( e . __class__ . __name__ , e ) )
+ args = ''
+ from django . utils . encoding import force_text
+                          rel_to = "self" if relations [ i ] [ 1 ] == table_name else table2model ( relations [ i ] [ 1 ] )
+ self . alternatives = alternatives or [ ]
+   def _send ( self , email_message ) :
+ field_params = OrderedDict ( )
+              self . error ( self . cmd . missing_args_message )
+ if html_message :
+  elif msg :
+    stderr = getattr ( self , 'stderr' , OutputWrapper ( sys . stderr , self . style . ERROR ) )
+  import os
+  else :
+          self . encoding = encoding
+   elif cwords [ 0 ] in ( 'dumpdata' , 'sql' , 'sqlall' , 'sqlclear' ,  'sqlcustom' , 'sqlindexes' , 'sqlsequencereset' , 'test' ) :
+                  if errors :
+from __future__ import unicode_literals
+          from django . apps import apps
+ from django . utils . deprecation import RemovedInDjango19Warning , RemovedInDjango20Warning
+                  new_msg = (  "Database %s couldn't be flushed. Possible reasons:\n"  "  * The database isn't running or isn't configured correctly.\n"  "  * At least one of the expected database tables doesn't exist.\n"  "  * The SQL was invalid.\n"  "Hint: Look at the output of 'django-admin.py sqlflush'. That's the SQL this command wasn't able to run.\n"  "The full error: %s" ) % ( connection . settings_dict [ 'NAME' ] , e )
+  def add_arguments ( self , parser ) :
+    if not os . access ( self . file_path , os . W_OK ) :
+ command_dir = os . path . join ( management_dir , 'commands' )
+      table_names = [ model . _meta . db_table for model in self . models ]
+ msg_count += 1
+  msg = ""
+  else :
+                              extra_params [ 'blank' ] = True
+  elif indexes [ column_name ] [ 'unique' ] :
+ import os
+ msg [ 'To' ] = self . extra_headers . get ( 'To' , ', ' . join ( self . to ) )
+                   chunk = self . _read_limited ( size - len ( self . buffer ) )
+    return msg
+ def COOKIES ( self ) :
+              if locales :
+ return [ "" ,  "    class Meta:" ,  "        managed = False" ,  "        db_table = '%s'" % table_name ]
+  from django . utils import termcolors
+              raise ValueError (  "EMAIL_USE_TLS/EMAIL_USE_SSL are mutually exclusive, so only set "  "one of those settings to True." )
+ from django . core . management . base import BaseCommand , CommandError
+              self . style_func = style_func
+     class WSGIRequest ( http . HttpRequest ) :
+          return not bool ( self . option_list )
+ for option in options :
+ import gzip
+  if f . db_index :
+ if app_config . models_module is None :
+                  fixture . close ( )
+ missing_args_message = ( "No database fixture specified. Please provide the "  "path of at least one fixture in the command line." )
+ msgid = '<%s.%s.%s%s@%s>' % ( utcdate , pid , randint , idstring , idhost )
+          while b'\n' not in self . buffer and ( size is None or len ( self . buffer ) < size ) :
+                      with connection . cursor ( ) as cursor :
+   class Command ( BaseCommand ) :
+  return True
+  else :
+ if connection . ops . start_transaction_sql ( ) :
+  else :
+    @ lru_cache . lru_cache ( maxsize = None )
+ if hasattr ( out , 'isatty' ) and out . isatty ( ) :
+   for app_config in reversed ( list ( apps . get_app_configs ( ) ) ) :
+          if name . lower ( ) in ADDRESS_HEADERS :
+  if self . use_argparse :
+  except CommandError :
+                          raise CommandError ( "You can only use --pks option with one model" )
+  else :
+              request = self . request_class ( environ )
+ parser . add_argument ( '--traceback' , action = 'store_true' ,  help = 'Raise on exception' )
+                          continue
+ for i , line in enumerate ( table_output ) :
+          mail . attach_alternative ( html_message , 'text/html' )
+                      continue
+     def close ( self ) :
+   class EmailBackend ( BaseEmailBackend ) :
+ cmd_options = vars ( options )
+              self . file_path = getattr ( settings , 'EMAIL_FILE_PATH' , None )
+              curr = ''
+              try :
+              self . stdout . write ( msg )
+  self . add_arguments ( parser )
+ path_info = get_bytes_from_wsgi ( environ , 'PATH_INFO' , '/' )
+ return klass ( fail_silently = fail_silently , ** kwds )
+                   call_command ( 'loaddata' , 'initial_data' , ** options )
+  if interactive :
+                  raise CommandError ( "The %s file has a BOM (Byte Order Mark). "  "Django only supports .po files encoded in "  "UTF-8 and without any BOM." % po_path )
+   if i == 0 and not is_writable ( npath ( base_path + '.mo' ) ) :
+ msg_count = 0
+              debugs = [ e for e in all_issues if e . level < checks . INFO and not e . is_silenced ( ) ]
+                return 0
+  requires_system_checks = False
+              self . stdout . write ( "Cache table '%s' created." % tablename )
+              self . style = no_style ( )
+  model_dependencies = [ ]
+              raise CommandError ( msg )
+                  self . encoding = content_params [ 'charset' ]
+  except ImportError :
+ basedirs . extend ( [ upath ( path ) for path in settings . LOCALE_PATHS ] )
+  used_column_names = [ ]
+          database = options . get ( 'database' )
+ color_settings = termcolors . parse_color_setting ( DJANGO_COLORS )
+                      self . stdout . write ( '\n' + self . style . SQL_KEYWORD ( connection . ops . end_transaction_sql ( ) ) )
+ self . fixture_object_count += objects_in_fixture
+   return path_info . decode ( UTF_8 )
+   self . autocomplete ( )
+          if name . lower ( ) == 'subject' :
+                      e . args = ( "Problem installing fixture '%s': %s" % ( fixture_file , e ) , )
+ raise NotImplementedError ( 'subclasses of BaseCommand must provide a handle() method' )
+  def add_arguments ( self , parser ) :
+          sys . path . insert ( 0 , options . pythonpath )
+ import zipfile
+              new_name = 'number_%s' % new_name
+  def add_arguments ( self , parser ) :
+                      app = 'django'
+                      comment_notes = [ ]
+              connection_params [ 'timeout' ] = self . timeout
+   if isinstance ( app_name , BaseCommand ) :
+   connection_class = smtplib . SMTP_SSL if self . use_ssl else smtplib . SMTP
+ from django . db import connections , DEFAULT_DB_ALIAS
+ if deps :
+          pid = os . getpid ( )
+   return self . check ( app_configs = app_configs , display_num_errors = display_num_errors )
+     def load_command_class ( app_name , name ) :
+                  msg += '\n'
+ for i , ( dirpath , f ) in enumerate ( locations ) :
+          sample = f . read ( 4 )
+  return False
+  with connection . cursor ( ) as cursor :
+  raise
+  elif self . fixture_object_count == self . loaded_object_count :
+ from django . core . exceptions import ImproperlyConfigured
+ raise CommandError ( 'There is no system check with the "%s" tag.' % invalid_tag )
+                  options += [ ( sorted ( s_opt . option_strings ) [ 0 ] , s_opt . nargs != 0 ) for s_opt in  parser . _actions if s_opt . option_strings ]
+   class Command ( BaseCommand ) :
+   def handle ( self , * labels , ** options ) :
+ return
+              try :
+              label_output = self . handle_label ( label , ** options )
+ if not self . leave_locale_alone :
+              field_notes . append ( 'Field renamed to remove unsuitable characters.' )
+ known_models = [ ]
+ if comment_notes :
+   def get_objects ( ) :
+ args = ''
+    if objects_in_fixture == 0 :
+ if not email_messages :
+ klass = import_string ( backend or settings . EMAIL_BACKEND )
+       def __init__ ( self , text , subtype , charset ) :
+              new_name = 'field%s' % new_name
+  if hasattr ( model , 'natural_key' ) :
+   class BadHeaderError ( ValueError ) :
+ for app_config , model_list in app_list :
+ parser . add_argument ( '--format' , default = 'json' , dest = 'format' ,  help = 'Specifies the output serialization format for fixtures.' )
+ from django . utils import six
+ def get_commands ( ) :
+ from django . core import serializers
+ g . flatten ( self , unixfrom = unixfrom )
+  def add_arguments ( self , parser ) :
+  else :
+                      self . create_table ( db , cache . _table )
+                  raise CommandError (  "AppCommand cannot handle app '%s' in legacy mode "  "because it doesn't have a models module."  % app_config . label )
+      def create_table ( self , database , tablename ) :
+                              continue
+                      relations = connection . introspection . get_relations ( cursor , table_name )
+   def close ( self ) :
+                       self . _request_middleware = None
+ utility = ManagementUtility ( argv )
+ from django . core . management . base import BaseCommand , CommandError
+                    return
+ if filename :
+   def handle ( self , ** options ) :
+  db_module = 'django.db'
+   def write ( self , msg , style_func = None , ending = None ) :
+              fixture_dirs = self . fixture_dirs
+      if self . verbosity >= 1 :
+  att_name , params , notes = self . normalize_col_name (  column_name , used_column_names , is_relation )
+ assert mimetype is None
+  from django . apps import apps
+ message = email_message . message ( )
+ import warnings
+   def _read_limited ( self , size = None ) :
+ from email . mime . text import MIMEText
+          warnings . warn (  "NoArgsCommand class is deprecated and will be removed in Django 2.0. "  "Use BaseCommand instead, which takes no arguments by default." ,  RemovedInDjango20Warning  )
+          return self . _create_attachments ( msg )
+   def _get_post ( self ) :
+              num = 0
+   def close ( self ) :
+ from django . core . management . utils import find_command , popen_wrapper
+                  msg = "System check identified some issues:\n%s" % msg
+              val = Header ( val ) . encode ( )
+  else :
+ for app_config in apps . get_app_configs ( ) :
+  def add_arguments ( self , parser ) :
+ pass
+  else :
+   class EmailBackend ( BaseEmailBackend ) :
+  except smtplib . SMTPException :
+                      if not table_name_filter ( table_name ) :
+ try :
+   prev_opts = [ x . split ( '=' ) [ 0 ] for x in cwords [ 1 : cword - 1 ] ]
+  return True
+              models . add ( model )
+                          app_config = apps . get_app_config ( app_label )
+                  raise CommandError ( "Incompatible values of 'leave_locale_alone' "  "(%s) and 'can_import_settings' (%s) command "  "options." % ( self . leave_locale_alone ,  self . can_import_settings ) )
+ body_msg = msg
+  except UnicodeEncodeError :
+              raise CommandError ( "Can't resolve dependencies for %s in serialized app list." %  ', ' . join ( '%s.%s' % ( model . _meta . app_label , model . _meta . object_name )  for model , deps in sorted ( skipped , key = lambda obj : obj [ 0 ] . __name__ ) )  )
+ import threading
+   def module_to_dict ( module , omittable = lambda k : k . startswith ( '_' ) ) :
+ import sys
+  __all__ = [  'CachedDnsName' , 'DNS_NAME' , 'EmailMessage' , 'EmailMultiAlternatives' ,  'SafeMIMEText' , 'SafeMIMEMultipart' , 'DEFAULT_ATTACHMENT_MIME_TYPE' ,  'make_msgid' , 'BadHeaderError' , 'forbid_multi_line_headers' ,  'get_connection' , 'send_mail' , 'send_mass_mail' , 'mail_admins' ,  'mail_managers' ,  ]
+    def handle_inspection ( self , options ) :
+              content_length = int ( environ . get ( 'CONTENT_LENGTH' ) )
+ def __init__ ( self , host = None , port = None , username = None , password = None ,  use_tls = None , fail_silently = False , use_ssl = None , timeout = None ,  ** kwargs ) :
+ from django . utils import six
+ parser . add_argument ( '--app' , action = 'store' , dest = 'app_label' ,  default = None , help = 'Only look for fixtures in the specified app.' )
+                  output . append ( "### %s = %s" % ( key , user_settings [ key ] ) )
+   def execute ( self ) :
+   return formataddr ( ( nm , addr ) )
+                  if issues :
+   def send_messages ( self , email_messages ) :
+ return django . get_version ( )
+ output = options . get ( 'output' )
+    class MIMEMixin ( ) :
+  result = self . stream . read ( size )
+  field_desc += ')'
+              self . connection = None
+   @ cached_property
+  else :
+              MIMEText . __init__ ( self , text , subtype , charset )
+  else :
+                    content = message_from_string ( content )
+ from django . utils import six
+ _ , content_params = cgi . parse_header ( environ . get ( 'CONTENT_TYPE' , '' ) )
+ yield 'class %s(models.Model):' % table2model ( table_name )
+ fname = "%s-%s.log" % ( timestamp , abs ( id ( self ) ) )
+          path = os . path . join ( app_config . path , 'management' )
+   if locations :
+ comment_notes . extend ( notes )
+   def error ( self , message ) :
+  except NotImplementedError :
+  app_list = OrderedDict ( )
+                  sys . stdout . write ( self . main_help_text ( commands_only = True ) + '\n' )
+  else :
+  else :
+ from django . db . utils import DatabaseError
+ if hasattr ( rel_model , 'natural_key' ) and rel_model != model :
+    def mail_admins ( subject , message , fail_silently = False , connection = None ,  html_message = None ) :
+   for model in model_list :
+ if num_repl > 0 :
+   class Command ( BaseCommand ) :
+ import smtplib
+              super ( CommandParser , self ) . error ( message )
+import sys
+                  if self . output_transaction :
+ if size :
+                          model = app_config . get_model ( model_label )
+  try :
+                  field_output . append ( "PRIMARY KEY" )
+  elif options [ 'all' ] :
+                  args = ( )
+  return self . _request
+   response . _handler_class = self . __class__
+ parser . add_argument ( '--database' , action = 'store' , dest = 'database' ,  default = DEFAULT_DB_ALIAS ,  help = 'Nominates a specific database to dump fixtures from. '  'Defaults to the "default" database.' )
+  else :
+                  raise CommandError ( 'You appear not to have the %r program installed or on your path.' %  connection . client . executable_name )
+ commands_dict = collections . defaultdict ( lambda : [ ] )
+  with transaction . atomic ( using = self . using ) :
+                      relations = { }
+ parser . add_argument ( '--pks' , dest = 'primary_keys' ,  help = "Only dump objects with given primary keys. "  "Accepts a comma separated list of keys. "  "This option will only work when you specify one model." )
+ from django . core . cache . backends . db import BaseDatabaseCache
+ parser = self . create_parser ( argv [ 0 ] , argv [ 1 ] )
+              e . args = ( "Problem installing fixtures: %s" % e , )
+                      msg . attach ( attachment )
+   else :
+ if not router . allow_migrate ( database , cache . cache_model_class ) :
+ if not email_messages :
+   tags = options . get ( 'tags' , None )
+  from django . core . management . base import BaseCommand , CommandError
+ self . using = options . get ( 'database' )
+                  field_params [ 'max_digits' ] = row [ 4 ]
+   class EmailBackend ( BaseEmailBackend ) :
+   if not isinstance ( self . file_path , six . string_types ) :
+              self . stderr = OutputWrapper ( options . get ( 'stderr' , sys . stderr ) , self . style . ERROR )
+ formatted = (  color_style ( ) . ERROR ( force_str ( e ) )  if e . is_serious ( )  else color_style ( ) . WARNING ( force_str ( e ) )  for e in issues )
+ if not self . connection :
+      help = "Creates the tables needed to use the SQL cache backend."
+ import os
+ models = set ( )
+              self . fetch_command ( subcommand ) . run_from_argv ( self . argv )
+   if subcommand in no_settings_commands :
+  mail = EmailMultiAlternatives ( '%s%s' % ( settings . EMAIL_SUBJECT_PREFIX , subject ) ,  message , settings . SERVER_EMAIL , [ a [ 1 ] for a in settings . ADMINS ] ,  connection = connection )
+  try :
+  start_response ( force_str ( status ) , response_headers )
+  else :
+                              field_type = "ForeignKey('%s'" % rel_to
+ if six . PY3 :
+      def __init__ ( self , environ ) :
+  from django . core . mail . backends . base import BaseEmailBackend
+  if not basedirs :
+  finally :
+ from django . utils import lru_cache
+   raise CommandError ( "Unknown serialization format: %s" % format )
+ return
+ for app in sorted ( commands_dict . keys ( ) ) :
+   def open ( self ) :
+              django . setup ( )
+from django . core . management . base import BaseCommand , CommandError
+      from django . core . mail . utils import CachedDnsName , DNS_NAME
+          encoding = self . encoding or settings . DEFAULT_CHARSET
+   if found :
+   self . fixture_count = 0
+                          if indexes [ column_name ] [ 'primary_key' ] :
+ self . META = environ
+ utility . execute ( )
+    class Command ( BaseCommand ) :
+                              field_type = 'ForeignKey(%s' % rel_to
+          mail . attach_alternative ( html_message , 'text/html' )
+   else :
+ with self . _lock :
+  from django . core . management . base import BaseCommand , CommandError
+ if f . primary_key :
+      @ lru_cache . lru_cache ( maxsize = None )
+ if mimetype is None :
+ visible_issue_count = 0
+ import os
+              encoding = self . encoding or settings . DEFAULT_CHARSET
+                  raise
+ program_options = [ '--check-format' ]
+   if new_conn_created :
+   elif not os . path . exists ( self . file_path ) :
+              self . stdout . write ( "Loading '%s' fixtures..." % fixture_name )
+          raw_cookie = get_str_from_wsgi ( self . environ , 'HTTP_COOKIE' , '' )
+  sio = BytesIO ( self . buffer )
+          val . encode ( 'ascii' )
+  if app_config . models_module is None or app_config in excluded_apps :
+ objects_in_fixture = 0
+      pass
+   except :
+ from django . core . mail . backends . console import EmailBackend as ConsoleEmailBackend
+  user_settings = module_to_dict ( settings . _wrapped )
+ default_settings = module_to_dict ( global_settings )
+ for key in sorted ( user_settings ) :
+              assert not isinstance ( to , six . string_types ) , '"to" argument must be a list or tuple'
+              sequence_sql = connection . ops . sequence_reset_sql ( no_style ( ) , self . models )
+ msg_data = msg_data . decode ( charset )
+              field_notes . append ( 'Field name made lowercase.' )
+                  msg . attach ( body_msg )
+    for app_config in apps . get_app_configs ( ) :
+ if command . use_argparse :
+ use_base_manager = options . get ( 'use_base_manager' )
+  else :
+                  unique = "UNIQUE " if f . unique else ""
+          nm = Header ( nm , encoding ) . encode ( )
+ def find_fixtures ( self , fixture_label ) :
+ from django . core . management . base import BaseCommand , CommandError
+                      indexes = connection . introspection . get_indexes ( cursor , table_name )
+ plat = sys . platform
+                      raise CommandError ( 'Unknown model in excludes: %s' % exclude )
+   options = sorted ( ( k , v ) for k , v in options if k . startswith ( curr ) )
+ yield "# Also note: You'll have to insert the output of 'django-admin.py sqlcustom [app_label]'"
+              parser = CommandParser ( self , prog = "%s %s" % ( os . path . basename ( prog_name ) , subcommand ) ,  description = self . help or None )
+              logger . warning ( 'Bad Request (UnicodeDecodeError)' ,  exc_info = sys . exc_info ( ) ,  extra = {  'status_code' : 400 ,  }  )
+               warnings . warn ( "OptionParser usage for Django management commands "  "is deprecated, use ArgumentParser instead" ,  RemovedInDjango20Warning )
+    if self . settings_exception is not None :
+          parser . add_argument ( 'args' , metavar = 'fixture' , nargs = '+' ,  help = 'Fixture labels.' )
+ if not hasattr ( self , '_request' ) :
+   with connection . constraint_checks_disabled ( ) :
+          from django . core . mail import get_connection
+import warnings
+   if app_labels :
+              invalid_tag = next ( tag for tag in tags if not checks . tag_exists ( tag ) )
+                  continue
+  return self . _files
+          self . open ( )
+          if args :
+  from django . apps import apps
+ help = ''
+  self . style = no_style ( )
+  from django . conf import settings
+ if field_type not in ( 'TextField(' , 'CharField(' ) :
+     except Exception as e :
+              print ( ' ' . join ( sorted ( filter ( lambda x : x . startswith ( curr ) , subcommands ) ) ) )
+                  try :
+ if 'file_path' in kwargs :
+   class Command ( BaseCommand ) :
+ parser . add_argument ( '--pythonpath' )
+  attachment . add_header ( 'Content-Disposition' , 'attachment' ,  filename = filename )
+ field_notes = [ ]
+ from email . mime . message import MIMEMessage
+                              obj . save ( using = self . using )
+              if self . stream is not None :
+              if primary_keys :
+     class SafeMIMEText ( MIMEMixin , MIMEText ) :
+      class LabelCommand ( BaseCommand ) :
+                  if six . PY2 :
+   def handle ( self , * app_labels , ** options ) :
+                  self . stdout . write ( "Installed %d object(s) (of %d) from %d fixture(s)" %  ( self . loaded_object_count , self . fixture_object_count , self . fixture_count ) )
+              with self . initLock :
+ recipients = [ sanitize_address ( addr , email_message . encoding )  for addr in email_message . recipients ( ) ]
+ table_output = [ ]
+ signals . request_started . send ( sender = self . __class__ )
+ missing_args_message = "Enter at least one application label."
+ if idstring is None :
+  with transaction . atomic ( using = database ,  savepoint = connection . features . can_rollback_ddl ) :
+                  raise ImproperlyConfigured ( 'Could not create directory for saving email messages: %s (%s)' % ( self . file_path , err ) )
+ self . path_info = path_info
+          raise BadHeaderError ( "Header values can't contain newlines (got %r for header %r)" % ( val , name ) )
+      def __init__ ( self , * args , ** kwargs ) :
+              primary_keys = [ ]
+              raise ImproperlyConfigured ( 'Path for saving email messages exists, but is not a directory: %s' % self . file_path )
+     ADDRESS_HEADERS = set ( [  'from' ,  'sender' ,  'reply-to' ,  'to' ,  'cc' ,  'bcc' ,  'resent-from' ,  'resent-sender' ,  'resent-to' ,  'resent-cc' ,  'resent-bcc' ,  ] )
+  handle_default_options ( options )
+ from django . utils import six
+    for role in termcolors . PALETTES [ termcolors . NOCOLOR_PALETTE ] :
+                  os . makedirs ( self . file_path )
+     utf8_charset = Charset . Charset ( 'utf-8' )
+  requires_system_checks = False
+              result = self . buffer + self . _read_limited ( size - len ( self . buffer ) )
+      help = 'Compiles .po files to .mo files for use with builtin gettext support.'
+  if tablename in connection . introspection . table_names ( ) :
+                              field_type = 'NullBooleanField('
+     kwargs [ 'stream' ] = None
+    all_locales = [ ]
+                  break
+   def readline ( self , size = None ) :
+   connection_params = { 'local_hostname' : DNS_NAME . get_fqdn ( ) }
+   def handle_label ( self , label , ** options ) :
+                  output . append ( "%s = %s  ###" % ( key , user_settings [ key ] ) )
+  return parser
+   class Command ( BaseCommand ) :
+              response_headers . append ( ( str ( 'Set-Cookie' ) , str ( c . output ( header = '' ) ) ) )
+          output = [ ]
+  else :
+ self . to = list ( to )
+  else :
+   def handle ( self , * fixture_labels , ** options ) :
+  parser . add_argument ( '--settings' ,  help = 'The Python path to a settings module, e.g. "myproject.settings.main". If this isn\'t provided, the DJANGO_SETTINGS_MODULE environment variable will be used.' )
+  else :
+       def __init__ ( self ) :
+ self . fixture_object_count = 0
+    def send_mail ( subject , message , from_email , recipient_list ,  fail_silently = False , auth_user = None , auth_password = None ,  connection = None , html_message = None ) :
+ from email . utils import formatdate , getaddresses , formataddr , parseaddr
+          os . environ [ 'DJANGO_SETTINGS_MODULE' ] = options . settings
+ verbosity = options . get ( 'verbosity' )
+           pid = 1
+ yield "#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table"
+    parser = command . create_parser ( '' , name )
+              model , deps = model_dependencies . pop ( )
+ label = 'label'
+   attachment = self . _create_mime_attachment ( content , mimetype )
+                  usage . append ( "" )
+ connection = connection or get_connection ( username = auth_user ,  password = auth_password ,  fail_silently = fail_silently )
+ msg = self . _create_message ( msg )
+                          cursor . execute ( line )
+ if subcommand_cls . use_argparse :
+  except KeyError :
+    self . path = '%s/%s' % ( script_name . rstrip ( '/' ) ,  path_info . replace ( '/' , '' , 1 ) )
+              return
+              fixture_dirs = [ os . path . dirname ( fixture_name ) ]
+    if not self . use_ssl and self . use_tls :
+              assert not isinstance ( cc , six . string_types ) , '"cc" argument must be a list or tuple'
+  import glob
+  else :
+ from django . utils . encoding import force_text
+  import mimetypes
+ from importlib import import_module
+              from django . conf import settings
+ if isinstance ( filename , MIMEBase ) :
+ if settings . FORCE_SCRIPT_NAME is not None :
+ domain = domain . encode ( 'idna' ) . decode ( 'ascii' )
+   self . stdout . write ( output )
+ parser . add_argument ( '-e' , '--exclude' , dest = 'exclude' , action = 'append' , default = [ ] ,  help = 'An app_label or app_label.ModelName to exclude '  '(use multiple --exclude to exclude multiple apps/models).' )
+ warnings = [ e for e in all_issues if checks . WARNING <= e . level < checks . ERROR and not e . is_silenced ( ) ]
+  filename = ( 'utf-8' , '' , filename )
+     if app_list_value is not None :
+    return msg_count
+ parser = OptionParser ( prog = prog_name ,  usage = self . usage ( subcommand ) ,  version = self . get_version ( ) )
+                          raise CommandError ( "Unknown application: %s" % app_label )
+ from django . utils . module_loading import import_string
+  def __init__ ( self ) :
+      help = ( "Output the contents of the database as a fixture of the given "  "format (using each model's default manager unless --all is "  "specified)." )
+ field_notes . append ( 'Field renamed because it was a Python reserved word.' )
+  else :
+    except ValueError :
+ for table_name in connection . introspection . table_names ( cursor ) :
+              line = sio . readline ( size )
+  if app_config is None :
+                                  extra_params [ 'null' ] = True
+ parser . add_argument ( '--version' , action = 'version' , version = self . get_version ( ) )
+ def __init__ ( self , argv = None ) :
+  else :
+ from django . db import router , DEFAULT_DB_ALIAS
+   app_label = label
+   def send_messages ( self , email_messages ) :
+                  self . stdout . write ( "Installed %d object(s) from %d fixture(s)" %  ( self . loaded_object_count , self . fixture_count ) )
+ all_issues = checks . run_checks ( app_configs = app_configs , tags = tags )
+              msg [ 'Message-ID' ] = make_msgid ( )
+ from django . conf import settings
+  with connection . cursor ( ) as cursor :
+  mail = EmailMultiAlternatives ( '%s%s' % ( settings . EMAIL_SUBJECT_PREFIX , subject ) ,  message , settings . SERVER_EMAIL , [ a [ 1 ] for a in settings . MANAGERS ] ,  connection = connection )
+              all_models . extend ( router . get_migratable_models ( app_config , database , include_auto_created = True ) )
+ cmp_fmts = list ( self . compression_formats . keys ( ) ) if cmp_fmt is None else [ cmp_fmt ]
+    if options . get ( 'load_initial_data' ) :
+  self . attach ( filename , content , mimetype )
+ self . set_charset ( utf8_charset )
+              content = f . read ( )
+ from django . utils . _os import npath , upath
+ super ( EmailMultiAlternatives , self ) . __init__ ( subject , body , from_email , to , bcc , connection , attachments , headers , cc )
+              try :
+ field_params . update ( new_params )
+                handle_app = self . handle_app
+                  with transaction . atomic ( using = database ,  savepoint = connection . features . can_rollback_ddl ) :
+    DNS_NAME = CachedDnsName ( )
+              if name . lower ( ) in ( 'from' , 'to' ) :
+  return sample [ : 3 ] == b'\xef\xbb\xbf' or sample . startswith ( codecs . BOM_UTF16_LE ) or sample . startswith ( codecs . BOM_UTF16_BE )
+  except AttributeError :
+ connection = connection or get_connection ( username = auth_user ,  password = auth_password ,  fail_silently = fail_silently )
+ encoding = encoding or settings . DEFAULT_CHARSET
+  self . buffer += chunk
+  if self . verbosity >= 2 :
+   yield ''
+          if not hasattr ( self , '_files' ) :
+              self . connection . sendmail ( from_email , recipients , message . as_bytes ( ) )
+                  self . load_label ( fixture_label )
+                  sent = self . _send ( message )
+ try :
+   if cword == 1 :
+  else :
+               attachment = MIMEBase ( basetype , subtype )
+from __future__ import unicode_literals
+ yield ''
+   def autocomplete ( self ) :
+ from django . utils import six
+  try :
+                   parser . add_argument ( 'args' , nargs = '*' )
+ parser . add_argument ( '-v' , '--verbosity' , action = 'store' , dest = 'verbosity' , default = '1' ,  type = int , choices = [ 0 , 1 , 2 , 3 ] ,  help = 'Verbosity level; 0=minimal output, 1=normal output, 2=verbose output, 3=very verbose output' )
+ if not path_info :
+ raise NotImplementedError ( 'subclasses of LabelCommand must provide a handle_label() method' )
+ for basedir in basedirs :
+  else :
+   def _create_message ( self , msg ) :
+ from django . core . management . sql import sql_flush , emit_post_migrate_signal
+   def send ( self , fail_silently = False ) :
+  import django
+   def open ( self ) :
+     def validate ( self , app_config = None , display_num_errors = False ) :
+ for label in app_labels :
+ from django . utils . functional import cached_property
+   def _create_mime_attachment ( self , content , mimetype ) :
+                  settings . configure ( )
+              val = ', ' . join ( sanitize_address ( addr , encoding )  for addr in getaddresses ( ( val , ) ) )
+   settings . _setup ( )
+   def get_field_type ( self , connection , table_name , row ) :
+                  dirs = [ os . path . join ( basedir , l , 'LC_MESSAGES' ) for l in locales ]
+ self . verbosity = options . get ( 'verbosity' )
+ for ldir in dirs :
+    class Command ( BaseCommand ) :
+          style = no_style ( )
+              self . stdout . ending = None
+ if 'date' not in header_names :
+ self . verbosity = int ( options . get ( 'verbosity' ) )
+                     self . connection . close ( )
+                      if use_base_manager :
+ import random
+ return response
+ defaults = dict ( defaults . _get_kwargs ( ) , ** options )
+                  self . emit_post_migrate ( verbosity , interactive , database )
+    if settings . configured :
+                  pass
+ column_name = row [ 0 ]
+                  self . connection . login ( self . username , self . password )
+ localpart = str ( Header ( localpart , encoding ) )
+    def send_messages ( self , messages ) :
+ Encoders . encode_base64 ( attachment )
+          if not hasattr ( self , '_post' ) :
+ sys . exit ( 1 )
+  else :
+ if not script_url :
+          connection = connections [ self . using ]
+ if color_settings :
+ class dummy :
+       def __setitem__ ( self , name , val ) :
+                  self . stdout . write ( 'processing file %s in %s\n' % ( f , dirpath ) )
+   if new_name . endswith ( '_' ) :
+              settings . INSTALLED_APPS
+                  pass
+  except LookupError :
+                  codecs . lookup ( content_params [ 'charset' ] )
+ import sys
+              encoding = self . encoding or settings . DEFAULT_CHARSET
+         model_list = [ ]
+   else :
+   try :
+ databases = [ self . using , None ]
+                  msg . attach ( body_msg )
+ pks = options . get ( 'primary_keys' )
+ output_transaction = False
+  def add_arguments ( self , parser ) :
+ if 'charset' in content_params :
+   def _create_message ( self , msg ) :
+     from django . utils import translation
+ parser . add_argument ( '--database' , action = 'store' , dest = 'database' ,  default = DEFAULT_DB_ALIAS ,  help = 'Nominates a database to flush. Defaults to the "default" database.' )
+  try :
+ field_notes . append ( "Field renamed because it started with '_'." )
+      import bz2
+ if not settings . MANAGERS :
+ extra_params = OrderedDict ( )
+  elif field_type == 'IntegerField(' and not connection . features . can_introspect_autofield :
+  if app_config . models_module is None or app_config in excluded_apps :
+          encoding = self . encoding or settings . DEFAULT_CHARSET
+              line = sio . readline ( )
+              if show_traceback :
+  yield '    %s' % field_desc
+ from django . core . mail . utils import DNS_NAME
+  if self . username and self . password :
+                      rel_model = field . rel . to
+  return self . _fqdn
+ if not hasattr ( mail , 'outbox' ) :
+     for field in model . _meta . fields :
+ from django . core . exceptions import ImproperlyConfigured
+    if field_type == 'CharField' and row [ 3 ] :
+   finally :
+  if not model . _meta . proxy and router . allow_migrate ( using , model ) :
+                  pass
+          parser . add_argument ( 'args' , metavar = self . label , nargs = '+' )
+ self . stream . flush ( )
+  if find_command ( self . program ) is None :
+ changed = False
+  elif user_settings [ key ] != default_settings [ key ] :
+ self . attachments = attachments or [ ]
+  def add_arguments ( self , parser ) :
+ self . connection . starttls ( )
+ translation . activate ( 'en-us' )
+  import socket
+   class CommandError ( Exception ) :
+ for name in sorted ( commands_dict [ app ] ) :
+ from django . db import connections , router , transaction , models , DEFAULT_DB_ALIAS
+              warnings . warn ( "``--natural`` is deprecated; use ``--natural-foreign`` instead." ,  RemovedInDjango19Warning )
+ if has_bz2 :
+   if cwords [ 0 ] == 'runfcgi' :
+               klass = app_name
+          idstring = '.' + idstring
+   if os . path . isabs ( fixture_name ) :
+ if len ( tablenames ) :
+     field_desc = '%s = %s%s' % (  att_name ,   '' if '.' in field_type else 'models.' ,  field_type ,  )
+          self . style = color_style ( )
+     def get_path_info ( environ ) :
+     elif subcommand == 'version' or self . argv [ 1 : ] == [ '--version' ] :
+              connections [ self . using ] . close ( )
+      try :
+  else :
+    def get_str_from_wsgi ( environ , key , default ) :
+ if hasattr ( rel_model , 'natural_key' ) and rel_model != model :
+ script_name = script_url [ : - len ( path_info ) ]
+ from django . utils . encoding import force_str
+  except Exception as e :
