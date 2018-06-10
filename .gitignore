@@ -1,5 +1,7 @@
 tf-seq2seq/*
 
+!*.py
+
 !tf-seq2seq/train.py
 
 !tf-seq2seq/split_data_final/*
