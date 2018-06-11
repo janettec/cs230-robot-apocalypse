@@ -36,5 +36,5 @@ Seq2seq model modified from JayParks (https://github.com/JayParks/tf-seq2seq)
 
 BLEU score calculation: 
 ```perl
-perl multi-bleu.perl data/dev.code < output$MODEL_NUM_dev/output_train_$BEAM_WIDTH
+perl multi-bleu-detok.perl data/dev.code < output$MODEL_NUM_dev/output_train_$BEAM_WIDTH
 ```
