@@ -1,10 +1,13 @@
 # cs230-robot-apocalypse
 
 ## Preprocessing: 
+- Normalize punctuation
+- Tokenize (word and character level)
+- Learn and apply Byte Pair Encoding (BPE)
 - Generate python code corpus
 - Generate annotation corpus
 - Shuffle data
-- Split data to train/dev
+- Split data to train/dev/test sets
 
 ## Running: 
 A shell script for hyperparameter tuning was generated using generate_sweep_commands.py. The data used for the coarse sweep can be found in split_data.
